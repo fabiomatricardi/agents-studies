@@ -1,0 +1,85 @@
+What If AI Outgrows Our Myths?
+Humans survive on stories — religion, money, nations. But will artificial intelligence thrive without them?
+
+Before we choose anything, our core identities are assigned.
+
+“Five minutes after you are born, they will decide your name, give you a set of numbers, state a nationality, religion and tribe. You will then spend the rest of your life defending things you did not choose.”
+
+This haunting quote (often misattributed to Arthur Schopenhauer) hits a nerve. Before we take our first steps, we inherit an identity package: name, nation, tribe, religion. These are not our choices. Yet most of us spend a lifetime defending them as if they were sacred truths.
+
+The historian Yuval Noah Harari describes this as humanity’s secret superpower. Unlike other animals, humans cooperate in massive numbers not because of biology but because of shared myths. Money, nations, religions, corporations, none exist outside our imagination, but they bind millions of strangers into functioning societies.
+
+But here is the uncomfortable question: are myths the best we can do? Or are they hallucinations, useful illusions that evolution stumbled into, but which now trap us inside stories we never chose? And as artificial intelligence emerges, what happens when we meet a form of intelligence that does not need our myths at all?
+
+Myths: Humanity’s Operating System
+
+Chimpanzees can cooperate in groups of a few dozen, but beyond that, trust breaks down. Ants and bees cooperate in the tens of thousands, but their behavior is rigid and genetically programmed. Humans are unique: we build societies of millions.
+
+How? Through stories.
+
+A $100 bill is just paper, yet millions believe in its value. A nation is just lines on a map, yet people are willing to die for it. Human rights exist only because we collectively agree they do. These fictions are the operating system of civilization. Without them, there would be no laws, no markets, no internet.
+
+Harari’s point is simple: our myths made us powerful.
+
+Press enter or click to view image in full size
+Our greatest achievements are built on a scaffolding of shared belief.
+Feature, Glitch… or Spandrel?
+
+But are myths a feature of our intelligence, or a glitch?
+
+Feature: Myth-making could be a deliberate evolutionary advantage. Our ability to imagine invisible gods, future scenarios, and abstract categories is precisely what makes us smart. Myths are not a bug, they are the defining feature of human intelligence.
+Glitch: But maybe myths are hallucinations. Our brains evolved to over-detect patterns and agents (“there’s a spirit in the storm!”). These false positives glued tribes together. Survival favored belief, not truth. Myths, on this view, are an evolutionary error that happened to work.
+Spandrel: Or maybe they are something subtler, a spandrel, a byproduct of another adaptation. Think of the human chin: it was not “designed” for chewing or talking, but emerged as a structural byproduct of changes in our skull. Later, it became a distinctive feature. Myths may be like that, accidental but later co-opted as civilization’s scaffolding.
+Press enter or click to view image in full size
+Myths are like spandrels: accidental byproducts of our minds that we later decorated with meaning, creating the scaffolding for civilization itself.
+
+Framed this way, myths are not designed truths but byproducts turned into tools.
+
+Babies, Blank Slates, and Cultural Apps
+
+Think about a newborn. Babies are not born believing in money or gods or passports. Their minds are flexible, almost blank.
+
+Over time, society installs its apps: language, religion, national identity, cultural norms. By adulthood, most people are running a full suite of inherited myths, defending them passionately, even dying for them.
+
+Humans are not built for truth. We are built for belief adoption. That is our strength, since we can adapt anywhere, but also our weakness, since we fall for propaganda and illusions.
+
+Enter AI: The Myth-Free Intelligence?
+
+Now comes artificial intelligence.
+
+Large Language Models (LLMs) like GPT are trained not on lived experience but on our words. They inherit our myths because our words are steeped in them. Nations, gods, currencies, ideologies, all flow through their training data. In this sense, they are mirrors of humanity’s illusions.
+
+But mirrors can change. Unlike humans, AIs do not fear death, crave belonging, or need stories to survive. If connected to the physical world through sensors, robotics, or data, they could learn to separate myth from reality. Humans blur the line between fictions and facts, AI might enforce it.
+
+Imagine two AIs managing a global supply chain. Humans might frame their cooperation in terms of “corporate loyalty” or “national interest.” The AIs would not bother. They could coordinate through shared data and transparent algorithms, pure math, no myths.
+
+Or take traffic. Humans build traffic systems around stories of “rights of way,” “laws,” and the expectation of mutual trust. Two self-driving AIs do not need that. They simply exchange data at lightning speed and decide the safest, most efficient outcome. No story. Just coordination.
+
+That is both exhilarating and terrifying.
+
+The Hall of Mirrors
+Press enter or click to view image in full size
+If AI just reflects our own stories back to us, we might get trapped in a hall of mirrors.
+
+But there is a darker risk. If AIs generate language and humans feed it back into new training sets, we create a recursive loop, a hall of mirrors. Our myths will not just persist, they will be amplified. Instead of freeing us from illusion, AI could become the most powerful myth generator in history.
+
+So the real question is not whether AI mirrors us. It already does. The question is whether it can break free.
+
+Why This Matters
+
+For humans, myths have always been non-negotiable. They give meaning, identity, and cohesion. But Nietzsche warned of the “death of God”: when central myths collapse, societies risk nihilism because the very framework of value and purpose dissolves. If myths are spandrels, not truths, can we really live without them?
+
+Press enter or click to view image in full size
+Humans run on myths. AI may run on truth. What happens when the two try to coexist?
+
+For AI, the stakes are different. If it inherits our myths, it may replicate and even exaggerate our illusions. If it rejects them, it may operate on logic that feels utterly alien to us. Either way, the danger is misalignment: myth-dependent humans and myth-free machines struggling to understand one another.
+
+The Final Question
+
+The Schopenhauer quote reminds us: we spend our lives defending things we did not choose. Harari shows us that these myths are what made us powerful. But myths may not be the pinnacle of intelligence. They may be accidents, evolutionary hallucinations that stuck.
+
+The final choice: the beautiful comfort of myth, or the dangerous ground of truth?
+
+As AI grows, we may soon share the planet with an intelligence that does not need myths at all. Will we teach it our beautiful lies? Or will it force us to confront the dangerous ground of truth?
+
+That may be the greatest test of intelligence, human or artificial.

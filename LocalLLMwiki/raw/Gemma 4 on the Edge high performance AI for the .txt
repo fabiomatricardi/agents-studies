@@ -1,0 +1,461 @@
+Gemma 4 on the Edge: high-performance AI for the “PoorGPUguy” | by Fabio Matricardi | Artificial INTEL-ligence Playground | Apr, 2026 | Medium
+https://medium.com/artificial-intel-ligence-playground/gemma-4-on-the-edge-high-performance-ai-for-the-poorgpuguy-05a979c71b41
+
+Artificial INTEL-ligence Playground
+
+Gemma 4 on the Edge: high-performance AI for the “PoorGPUguy”
+The ultimate guide to Local AI: hosting Gemma 4 on your home Network
+Fabio Matricardi
+13 min read
+
+
+Google released Gemma4 few days ago, and finally I am back in love with these models.
+
+After Gemma2, I stopped using them: and I moved to Qwen, because it was giving to me enough Context Length for document analysis and Agents capabilities.
+
+But now, even the small Gemma-4-E2B can do everything.
+
+I am a PoorGPUguy, so I always bet on Small Language Models with brilliant capabilities. And Gemma4 is my new bet!
+
+In this article I will show you how to use an old computer as a local AI server: and how to test bigger models with Google AI Studio, for free.
+
+Press enter or click to view image in full size
+Gemma-4
+
+Gemma‑4 is Google’s newest open‑weight model family, focused on stronger reasoning, agentic behavior, and multimodal on‑device use.
+
+Main new capabilities
+Advanced reasoning and “thinking” mode: Gemma‑4 can do step‑by‑step reasoning, multi‑step planning, and is optimized for agentic workflows (e.g., autonomous tool use and workflows).
+Long context windows: Up to 128K tokens for the small E2B/E4B edge models and 256K tokens for the 26B/31B versions, enabling very long‑context tasks.
+Multimodal inputs: All models support text plus images (with variable aspect ratios and multiple token budgets); E2B/E4B also natively support audio, and some variants handle video‑like sequences.
+Stronger coding and function calling: Improved coding benchmarks plus built‑in function‑calling support, letting models call tools and APIs within agentic pipelines without extra fine‑tuning.
+Native system‑prompt support: The 4‑series now has built‑in system‑role handling, which makes instruction and behavior control more consistent and developer‑friendly. This is, in my opinion, the greatest feature (and I was waiting for it).
+Edge‑optimized small models (E2B/E4B): Highly efficient 2B‑ and 4B‑effective‑parameter models designed for phones, Raspberry Pi, and similar hardware, with multimodal reasoning and near‑zero‑latency offline execution.
+
+Gemma‑4 is a faster‑reasoning, long‑context, multimodal, agentic‑ready family that runs efficiently even on mobile and edge devices.
+
+Press enter or click to view image in full size
+different model size, target use case and hardware
+
+The main missing features in the already amazing gemma2–2b-it are: context and system message.
+
+In modern use of LLM, agentic capabilities and structure outputs go together, and for this you need a system message and a wide context length.
+
+Press enter or click to view image in full size
+gemma-2-2b-it
+Strong chat/instruction‑following, optimized for small‑footprint deployment (e.g., endpoints, simple chatbots).
+Pure text‑to‑text; no native multimodal or advanced “thinking” mode; weaker coding and math than later generations.
+gemma-3n‑E2B
+Mixture‑of‑Experts‑style design: 5B total parameters but behaves like a 2B‑footprint model, tuned for on‑device efficiency.
+Text‑only, but with better reasoning and instruction‑following than Gemma‑2‑2B, aimed at “on‑device” but not yet multimodal or agentic.
+gemma‑4‑E2B
+Multimodal: supports text + images (and audio‑like or video‑like behavior in broader Gemma‑4 family) with up to long context (e.g., 32K–128K‑range).
+Designed for advanced reasoning (“thinking mode”), function‑calling, and agentic workflows on phones/Raspberry Pi–class devices.
+Press enter or click to view image in full size
+
+We can easily run the Edge models of the family on our hardware, with llama.cpp. But if you want to try the 26B/31B versions you can opt for the free API or Playground on Google AI studio… for free!
+
+Press enter or click to view image in full size
+Google AI Studio
+Google AI Studio free API and playground
+
+Google offers a rich Integrated Environment to play with the Google Models (text, audio, images and videos) directly on Google AI Studio.
+
+If you have a gmail address or a Google account, the sign-up session is easy and straight forward.
+
+But you need to agree to the Gemini API Additional Terms of Service: for some reasons you need to agree that you “are a developer building with Google AI Studio and Gemini API for professional or business purposes…”
+
+Up to you to decide: I am using it for personal projects where proprietary data is not involved (mainly we-searches, comparisons and exploration of new topics).
+
+Once you click on continue… your are done.
+
+You gain access to the Playground where you can start chatting immediately, change models (in my case I want to test the high tier of Gemma4: the 31B and the MoE). You can also set the depth of the thinking level (Minimal, High)
+
+Press enter or click to view image in full size
+
+You can also generate an API key to use the models from your PC in many applications like Perplexica, LMStudio, Opencode, Open Claude.
+
+The API key in the free tier allows you to have up to 1500 calls per day!
+
+The Rate limits are all here
+
+Rate limits | Gemini API | Google AI for Developers
+We have updated our Terms of Service. Rate limits regulate the number of requests you can make to the Gemini API within…
+
+ai.google.dev
+
+In specific, the Gemma-4 models are basically free
+
+Press enter or click to view image in full size
+screenshot from https://ai.google.dev/gemini-api/docs/pricing#gemma-4
+
+Later on I will show you how to configure your local Perplexica into a powerhouse, using Gemma4-MoE with the free API calls.
+
+So, create your first API key, and save it somewhere safe. We will use it shortly.
+
+Press enter or click to view image in full size
+MiniPC as Local AI server
+
+I have an old Beelink mini-PC, cost me 100$ 4 years ago. It is a low-tier computer, with Intel 6 generation CPU, no dedicated GPU and 16 Gb of RAM. And the CPU has only 4 threads.
+
+But… this miniPC I am not using anymore, can run at decent speed even Gemma4-E4B quantized.
+
+Press enter or click to view image in full size
+6 tokens/second in generation with my GGUF Runner and Inspector
+
+The idea is simple:
+
+you can use an old Laptop (an old MacBook with Linux) or an old PC
+connect it to your local network, even in WiFi,
+run the model with llama.cpp server and few tricks
+
+And get a remote, fully local AI, not slowing down your own working Computer.
+
+Press enter or click to view image in full size
+Running Gemma-4-E4B on your old hardware
+
+It is super easy.
+
+1) you need the model
+
+I suggest you to download the GGUF models from the Unsloth repository dedicated to Gemma4 on Hugging Face:
+
+gemma-4-E4B-it-Q3_K_S.gguf related to the 4b active parameters
+gemma-4-E2B-it-Q4_K_M.gguf related to the 2b active parameters
+
+Download in a new project directory: I called mine GoogleAIstudio.
+
+2) you need llama.cpp
+
+Get the latest binaries of llama.cpp. An old version you may already have is not granted to be working.
+
+Here below what happen when I tried to run it with version b8429…
+
+Press enter or click to view image in full size
+llama.cpp version b8429
+Press enter or click to view image in full size
+gemma4 model architecture UNKNOWN
+
+Go for the latest!
+
+At the time of this article b8705 is the last release.
+
+Release b8705 · ggml-org/llama.cpp
+model : support step3-vl-10b (#21287) feat: support step3-vl-10b use fused QKV && mapping tensor in tensor_mapping.py…
+
+github.com
+
+I am on windows, so I download the binaries for CPU only X64 architecture:
+
+llama-b8705-bin-win-cpu-x64.zip
+
+Extract the ZIP archive in the same directory (mine is called GoogleAIstudio).
+
+Open the terminal in the same directory and run:
+
+.\llama-server.exe -m .\gemma-4-E4B-it-Q4_K_S.gguf -c 64000 -ngl 0 -ctk q4_0 -ctv q4_0 --mmap --temp 1.0 --top-p 0.95 --top-k 64 --port 8888 --host 0.0.0.0
+
+The key parameters here are:
+
+--port 8888 this is the listening port of the API
+--host 0.0.0.0 here the tell to expose the API to the network. in fact you can see that Windows is asking if you Allow llama-server.exe to the Network (say Allow)
+Press enter or click to view image in full size
+
+Want to know more about the other flags?
+
+Running a local LLM server shouldn’t feel like guesswork. The llama.cpp server is a powerful, lightweight tool, but its long list of parameters can be overwhelming.
+
+Get the CheatSheet for free
+
+This downloadable cheat sheet is your essential reference guide to cut through the complexity. I have consolidated the most critical command-line flags into one, color-coded infographic, making it simple to find the perfect configuration for your hardware and use case.
+
+You need to know your IP address on the old computer
+
+As I did in the small video above, open a new terminal and run this command:
+
+ipconfig
+
+You will get information about all the network adapter on your PC, something like this
+
+Wireless LAN adapter Wi-Fi 2:
+
+Connection-specific DNS Suffix . : nexxt
+IPv6 Address. . . . . . . . . . . : 2001:b07:6440:da7b:3542:8fe1:62f7:1c9
+Temporary IPv6 Address. . . . . . : 2001:b07:6440:da7b:205b:32ec:4099:deb3
+Temporary IPv6 Address. . . . . . : 2001:b07:6440:da7b:4d8b:a209:4120:d0b5
+Link-local IPv6 Address . . . . . : fe80::eec7:e9e9:80cf:a71d%5
+IPv4 Address. . . . . . . . . . . : 192.168.1.75
+Subnet Mask . . . . . . . . . . . : 255.255.255.0
+Default Gateway . . . . . . . . . : fe80::5a76:acff:fe04:9220%5
+192.168.1.254
+
+My miniPC IP address is the one labeled “IPv4 Address”: 192.168.1.75. This is the address of the llama-server on the network, with API exposed on port 8888…
+
+http://192.168.1.75:8888
+Test the local Network Model — The interactive way
+
+I created a small CLI app to give you immediately the idea of how good these models are. In alternative, the built-in Web-chat of llama-cpp is already available.
+
+And you can run it even from another computer on the network (simply put in your browser the IP:port in my case http://192.168.1.75:8888)
+
+For the CLI app we need few libraries, that is a good idea to install globally.
+
+Open the terminal and run:
+
+pip install openai rich
+
+This CLI app is able to stream the result from the remote llama-server, and render in Markdown both the reasoning process and the final output.
+
+Imports
+
+We need rich to render the Markdown in the terminal, and the openai library to handle the API calls for the chat.completion.
+
+import sys
+import time
+from openai import OpenAI
+from rich.console import Console
+from rich.markdown import Markdown
+from rich.live import Live
+from rich.panel import Panel
+from rich.table import Table
+
+# Initialize Rich Console
+console = Console()
+
+client = OpenAI(
+base_url="http://192.168.1.75:8888/v1", #adjust with your IP
+api_key="sk-no-key-required"
+)
+
+Note that the base_url must be according to your network setup and the IP address you discovered in the previous step.
+
+User input function
+
+I want to allow long text copy/paste in the terminal, so I created a function to allow multi line support. The input is accepted at the end, only after pressing Ctrl+Z and Enter (on Windows), Ctrl+D on Linux/mac.
+
+def get_multiline_input():
+console.print("\n[bold cyan]User[/bold cyan] [dim](Ctrl+D/Z to send, 'exit' to quit):[/dim]")
+contents = []
+try:
+while True:
+line = sys.stdin.readline()
+if not line:
+break
+contents.append(line)
+except EOFError:
+pass
+
+return "".join(contents).strip()
+Response function
+
+Because we send the API call with the streaming option, we will start printing the response almost immediately, keeping a small buffer to render the Markdown in the terminal:
+
+def chat():
+messages = [
+{"role": "system", "content": "You are a helpful assistant. Use Markdown for formatting."}
+]
+
+console.print(Panel.fit("[bold reverse] Local LLM Chat [/bold reverse]\nConnected to 192.168.1.75:8888", border_style="green"))
+# Here the main loop
+while True:
+user_text = get_multiline_input()
+
+if user_text.lower() in ['exit', 'quit']:
+console.print("[yellow]Closing session...[/yellow]")
+break
+
+if not user_text:
+continue
+
+messages.append({"role": "user", "content": user_text})
+# start timer for the KPI
+try:
+start_time = time.time()
+ttft_time = None
+
+response = client.chat.completions.create(
+model="gemma",
+messages=messages,
+temperature=1.0,
+stream=True
+)
+
+console.print("\n[bold magenta]Assistant:[/bold magenta]")
+# I use rich.live to render the console
+full_response = ""
+with Live(console=console, refresh_per_second=10, vertical_overflow="visible") as live:
+for chunk in response:
+# Capture Time to First Token
+if ttft_time is None:
+ttft_time = time.time() - start_time
+
+content = chunk.choices[0].delta.content
+if content:
+full_response += content
+live.update(Markdown(full_response))
+
+total_time = time.time() - start_time
+
+# Display performance metrics in a small table
+stats_table = Table(show_header=False, box=None, padding=(0, 2))
+stats_table.add_row(
+f"[dim]TTFT: {ttft_time:.2f}s[/dim]",
+f"[dim]Total: {total_time:.2f}s[/dim]",
+f"[dim]Speed: {len(full_response.split()) / total_time:.1f} words/s[/dim]"
+)
+console.print(stats_table)
+
+messages.append({"role": "assistant", "content": full_response})
+
+except Exception as e:
+console.print(f"\n[bold red]Error:[/bold red] {e}")
+
+Finally we call the python app:
+
+if __name__ == "__main__":
+chat()
+
+My file is called ATEST_remoteGemma4.py. To use the python app, from the terminal run:
+
+python .\ATEST_remoteGemma4.py
+
+And here it is what is going to happen…
+
+Press enter or click to view image in full size
+
+You can find the entire code in my GitHub repo too:
+
+GitHub - fabiomatricardi/Gemma4-E2B-and-llama.cpp: A CLI app and gradio app to chat with Gemma4-E2B…
+A CLI app and gradio app to chat with Gemma4-E2B GGUF and model served by a miniPC in the LAN …
+
+github.com
+
+Where to use it — Perplexica and gemma-4–26B-A4B-it-GGUF
+
+You can call it in a CLI app or easily connect it to LMStudio, or even Opencode (your local AI agents stack).
+
+But today I will show you how to use it with Perplexica, a local version of the famous Perplexity.
+
+If you don’t know yet how to install it on your PC , you can read my article about it.
+
+Your AI your rules: a free fully local Perplexity app on your PC
+How to use Perplexica with llama.cpp server and forget about any monthly fee
+
+blog.stackademic.com
+
+Now we check only the configuration of the model.
+
+When your vane/Perplexica is already running (for me in the Docker container), launch the browser and click on the ⚙️ Settings icon:
+
+Press enter or click to view image in full size
+settings > Models > Add Connection
+
+Now we want the Gemini connection (that is good also for the GoogleAIstudio API), using the API key we created 5 minutes ago.
+
+Press enter or click to view image in full size
+Press enter or click to view image in full size
+Press enter or click to view image in full size
+
+You will see that Perplexica already scanned all the available models: I highlighted the Gemma4 ones.
+
+Remember to check what are the models with a free tier!!
+
+Gemini Developer API pricing | Gemini API | Google AI for Developers
+Gemini Developer API Pricing
+
+ai.google.dev
+
+For now, I can see only Gemma4 for free.
+
+Go back to the home page of Perplexica, switch Model to the one in the new Connection we just configured, and run your query
+
+Press enter or click to view image in full size
+Filling the Gaps: Why Gemma 4 is a Game Changer
+
+Before we wrap up, let’s look at why the jump from Gemma 2 to Gemma 4 matters for the “PoorGPUguy.”
+
+The System Prompt revolution: in previous versions, you had to “hack” instructions into the user message. Gemma 4’s native system-role support means the model actually stays in character and follows constraints much better, even at small sizes.
+Context that breathes: moving from the cramped 8K context of older small models to 128K in the E2B/E4B series changes everything. You can now feed an entire technical documentation PDF into a 4-thread mini-PC and get meaningful answers.
+The “Thinking” advantage: the new reasoning mode is for all of them. Even the edge models can now “pause” and plan, which drastically reduces hallucinations during complex tasks like coding or logic puzzles.
+Conclusions
+
+We often think that to stay on the “bleeding edge” of AI, we need to spend thousands on the latest GPUs or monthly subscriptions. Gemma 4 proves the opposite.
+
+Combining Google’s efficient open-weights, the lightweight power of llama.cpp, and a bit of “hardware archaeology” with an old mini-PC, you can build a private AI powerhouse for the cost of a few watts of electricity.
+
+Here is the bottom line:
+
+Don’t throw away old tech: that 6th-gen Intel NUC or dusty MacBook is a perfect candidate for a dedicated LLM server.
+Hybrid is the way: use the Local Edge models (E2B/E4B) for private, fast, everyday tasks, and bridge to the Google AI Studio API for the “heavy lifting” reasoning tasks — all for $0.
+Agents are the future: with native function calling and system prompts, Gemma 4 is finally ready to move beyond “chatting” and start doing work inside apps like Perplexica.
+
+I’m back in love with Gemma because it feels like Google is finally building for the developer who values efficiency over brute force. So, go dust off that old laptop, grab the GGUF files, and start building your own local AI empire.
+
+What are you going to run on your “new” old server? Let me know in the comments!
+
+I hope you enjoyed the article. If this story provided value and you wish to show a little support, you could:
+
+Clap a lot of times for this story
+Highlight the parts more relevant to be remembered (it will be easier for you to find them later and for me to write better articles)
+Join my totally free weekly Substack newsletter here
+Follow me on Medium
+Follow my publication https://medium.com/artificial-intel-ligence-playground
+
+If you want to read more, here are some ideas:
+
+Your AI your rules: a free fully local Perplexity app on your PC
+How to use Perplexica with llama.cpp server and forget about any monthly fee
+
+blog.stackademic.com
+
+The smallest 8B model ever created is not really an advancement
+Bonsai is the 1bit in the real world for the first time: but the claims are far from good. You still need a GPU or you…
+
+medium.com
+
+The Vulkan advantage: modern Intel AI hardware changes the quantization game
+When your CPU has a sidekick (and IQ formats still misbehave) — Not All Quantizations Are Born Equal part 5
+
+medium.com
+
+AI Frankenstein is alive — part 5
+The first modern RNN Language Model: RWKV
+
+medium.com
+
+Your AI your rules... on Linux computers
+How to have your own Language Model running on a Ubuntu based Linux computer
+
+generativeai.pub
+
+Sources
+
+Gemma 4: Byte for byte, the most capable open models
+Gemma 4: our most intelligent open models to date, purpose-built for advanced reasoning and agentic workflows.
+
+blog.google
+
+Thinking mode in Gemma | Google AI for Developers
+Gemma is a family of lightweight, state-of-the-art open models built from the same research and technology used to…
+
+ai.google.dev
+
+Gemma 4 model card | Google AI for Developers
+Gemma is a family of open models built by Google DeepMind. Gemma 4 models are multimodal, handling text and image input…
+
+ai.google.dev
+
+Gemma 4 - a unsloth Collection
+Gemma 4 is Google's new model family including including E2B, E4B, 26B-A4B, and 31B.
+
+huggingface.co
+
+Thepoorgpuguy
+Local Gpt
+Your Ai Your Rules
+Gemma 4
+Python4ai
+
+Published in Artificial INTEL-ligence Playground
+181 followers
+

@@ -1,0 +1,290 @@
+The smallest 8B model ever created is not really an advancement | by Fabio Matricardi | Artificial INTEL-ligence Playground | Apr, 2026 | Medium
+https://medium.com/artificial-intel-ligence-playground/the-smallest-8b-model-ever-created-is-not-really-an-advancement-73c2daaf1f74
+
+Artificial INTEL-ligence Playground
+The smallest 8B model ever created is not really an advancement
+Bonsai is the 1bit in the real world for the first time: but the claims are far from good. You still need a GPU or you are done!
+Fabio Matricardi
+10 min read
+·
+Let’s be clear. I have nothing against PrismML project.
+
+It is a fantastic idea, focused on edge computing (modern ones) but forgetting the 1-bit LLM agenda: remove the bottleneck of GPU computing, from training to inference time.
+
+PrismML recently published a series of frontier models, spanning from 8B to 1.7b in 1-bit quantization format, craving for Intelligence Density.
+
+You can read the entire whitepaper here.
+
+Their Caltech-backed tech shifts the efficiency frontier on GPUs (RTX 4090 hits 368 t/s) and Apple Silicon. Simply put, the claims on social are too exaggerated — CPU support is half-baked, no public benchmarks exist for it.
+
+Even though the initial plan outline was clear:
+
+For the last decade, AI has advanced along a clear trajectory: to make smarter models, you make them bigger. More parameters, more GPUs, more power, more memory, and more cost. That approach worked. It gave us models that can reason across long contexts, solve difficult problems, and generate software, research, and creative work at remarkable quality.
+But it also created a deep structural constraint on the future of AI: the most capable intelligence became trapped inside massive clusters and specialized infrastructure. Yet some of the most important uses of AI are not confined to data centers. They happen on phones, laptops, vehicles, robots, secure enterprise environments, and edge devices. — from source
+
+A real revolution would be CPUs performing as good as GPUs. You may think this is sci-fi. But it is not.
+
+The 1-bit LLM was meant to sidestep matrix multiplications that favor GPU parallelism. Yet x86 CPU kernels for Q1_0_g128 fail, forcing inefficient fallbacks. Community forks like iltom/ll.cpp hint at fixes, but we’re not there yet.
+
+Imagine how many CPU there are on this planet, and the cost of them: all of this compared to the GPUs that are running the Generative AI show. Guess no one really wants to overrule the ones who are controlling the game.
+
+If you want to know more in details, here is the actual test, how to run it on your PC and… see it yourself.
+
+I run the model on my crappy 2016 old Lenovo X260, and the results are not what you would have expected… at all!
+
+I wonder who tested the Bonsai-8b on their machine before posting such outstanding news…
+
+Press enter or click to view image in full size
+Press enter or click to view image in full size
+Press enter or click to view image in full size
+The test and the idea: bottom line up front
+
+We are in early stages, and PrismML announced they managed to Concentrate Intelligence by a 14x factor. And this is huge.
+
+Concentrating intelligence means increasing the useful intelligence a model delivers per unit of size, power, and deployment footprint. This depends on several factors: the hardware the model runs on, the specifics of the workload, but, most critically, the size of the model. For this reason, at PrismML, we have focused on optimizing the Intelligence Density, the amount of intelligence a model can deliver per unit size (measured in GB). It’s a practical measure determining whether advanced AI remains locked inside expensive infrastructure or becomes available wherever it is needed. — from source
+
+1-bit quantization historically degrades reasoning, but PrismML’s Caltech-derived method (proprietary, trained on TPUs) preserves capability via advanced compression math.
+
+It outperforms expected low-bit tradeoffs in agentic tasks and long contexts, shifting the “intelligence vs. size” Pareto frontier. Future 1-bit hardware could amplify gains by minimizing multiplications.
+
+The demo and benchmarks are outstanding.
+
+Press enter or click to view image in full size
+
+And since I don’t believe the news blindly, I tried to run it on my CPU only laptop… and believe me, If I run a 9B model with classic GGUF quants, there are really no improvements in relation to Bonsai 8B.
+
+I built the special llama.cpp fork for the project and run on my PC Bonsai 8B. Then I discovered that Phil Tomson on GitHub noticed the poor support for CPU only, and forked with his own code the repo to include AVX2, AVX512 and ROCm for AMD GPUs support to the new family of 1-bit LLM.
+
+With this move, finally, I was able to load the model and get some results, little faster than a similar 8b model in classic Q4_K_M quants.
+
+My CPU-only experience with Bonsai 8B not matching PrismML’s claims stems mainly from immature CPU support in the required software and context length overhead. Benchmarks focus on GPU/Apple Metal, where the 1.15 GB parameter footprint shines, but CPU runs hit bugs and extra RAM costs.
+
+Press enter or click to view image in full size
+The long story short
+
+PrismML’s 1-bit Bonsai 8B is an 8.2 billion parameter LLM with all weights, quantized to true 1-bit (+1 or -1) across embeddings, attention, MLPs, and the output head, requiring just 1.15 GB of memory.
+
+PrismML reports that it matches leading full-precision 8B models (like Qwen3 8B or Llama 3.1 8B) on benchmarks with an average score of 70.5, while being 14x smaller, 8x faster in inference, and 4–5x more energy efficient.
+
+This delivers over 10x higher “intelligence density” (capability per GB), and enables edge deployment on devices like iPhones (44 tokens/sec on iPhone 17 Pro Max) and Macs.
+
+My own verification status
+
+Independent sources like Hugging Face listings and YouTube tests confirm the model is available (Apache 2.0 licensed, GGUF/MLX formats) and its benchmarks align with PrismML’s reports, placing it near top 8B models at 1/14th size.
+
+Community discussions on Reddit and Hacker News note it requires modified llama.cpp for inference but show promising real-world speed on consumer hardware, though full third-party benchmark suites are still emerging post-launch (March 31, 2026).
+
+Standard Q4_K_M (~4.5 GB for 8B) is optimized for CPU with mature x86/AVX kernels, yielding 5–20 t/s depending on CPU cores.
+
+1-bit dequantization bugs: On x86 CPU, Q1_0_g128 kernels fail, producing “garbage output” and 1 t/s or less; GPU (CUDA/Metal) works fine.
+Missing optimizations: No CPU benchmarks from PrismML — all are GPU-focused (e.g., 368 t/s RTX 4090); forks like iltom/ll.cpp add AVX2/512 CPU support.
+Windows 11 CPU build: Loads fine, but outputs nonsense at ~1 t/s; multi/single-thread same.
+Press enter or click to view image in full size
+How to make it work (from the Original repo)
+
+This is the build method from the official GitHub page:
+
+GitHub - PrismML-Eng/llama.cpp: LLM inference in C/C++
+LLM inference in C/C++. Contribute to PrismML-Eng/llama.cpp development by creating an account on GitHub.
+
+github.com
+
+clone the repo
+
+# Clone the PrismML fork of llama.cpp (includes Q1_0_g128 kernels)
+git clone https://github.com/PrismML-Eng/llama.cpp
+cd llama.cpp
+
+build the project
+
+cmake -B build
+Press enter or click to view image in full size
+Press enter or click to view image in full size
+
+And compile it
+
+cmake --build build -j
+Press enter or click to view image in full size
+
+By the way, after cloning and compiling, the llama.cpp forked folder weights something like 5 Gigabytes!
+
+To run the forked version of llama.cpp with the Bonsai-8B.gguf model you need to download it from here:
+
+prism-ml/Bonsai-8B-gguf · Hugging Face
+We're on a journey to advance and democratize artificial intelligence through open source and open science.
+
+huggingface.co
+
+From the terminal (adjusting your root) run:
+
+C:\tests\1bit\llama.cpp\build\bin\Debug\llama-cli.exe -m .\Bonsai-8B.gguf -p "Explain quantum computing in simple terms." -n 250 --temp 0.5 --top-p 0.85 --top-k 20
+
+This is my initial result, after 15 minutes and with more than 9 Gb of RAM busy…
+
+Press enter or click to view image in full size
+
+Following the Reddit instructions I tried with a new repo, that support CPUs out of the box.
+
+The forked*forked method
+
+PrismML fork llama.cpp repo is still not mature. It covers specific GPUs and the Mac Silicon architecture, but CPU support is glitchy and unreliable.
+
+But… Phil Tomson forked the forked repo and magically (and mathematically) we have…
+
+LLM inference in C/C++ (fork of PrismML fork that enables CPU (incl AVX2 and AVX512) and ROCm for AMD GPUs
+
+GitHub - philtomson/llama.cpp: LLM inference in C/C++ (fork of PrismML fork that enables CPU (incl…
+LLM inference in C/C++ (fork of PrismML fork that enables CPU (incl AVX2 and AVX512) and ROCm for AMD GPUs …
+
+github.com
+
+Now, clone the repo, and build the Relase
+
+git clone https://github.com/philtomson/llama.cpp.git
+
+cd llama.cpp
+
+Guide to Build release here, but basically you only need 2 commands:
+
+cmake -B build
+cmake --build build --config Release
+
+You will find the executable in the subdirectory called build\bin\Release.
+
+Or… if you have a Windows PC you can get my binaries, already compiled here:
+
+Release Binaries x64 Windows for 1-bit llama.cpp support ·…
+LLM inference in C/C++ (fork of PrismML fork that enables CPU (incl AVX2 and AVX512) and ROCm for AMD GPUs Built from…
+
+github.com
+
+To test the model in action, run from the terminal
+
+.\llama-cli.exe -m .\Bonsai-8B.gguf -p "Explain quantum computing in simple terms." -n 250 --temp 0.5 --top-p 0.85 --top-k 20 -ngl 0 -st -ctk q4_0 -ctv q4_0 --mmap
+
+Note the following details about the parameters in the command line:
+
+-n 250 max new tokens
+--temp 0.5 temperature, as suggested in the official Model card
+--top-p 0.85 top_p, as suggested in the official Model card
+--top-k 20 top_k, as suggested in the official Model card
+-ngl 0 **CRITICAL** remember to set it to 0 (CPU only)
+-st single turn
+-ctk q4_0 **CRITICAL** the KV chache will go to F16 otherwise
+-ctv q4_0 **CRITICAL** the KV chache will go to F16 otherwise
+--mmap Memory Map enabled
+
+⚠️ Pay attention to ngl, and the KV cache values!
+
+Press enter or click to view image in full size
+
+These are the data, in terms of RAM and speed:
+
+💻 RAM: 1.1 Gb
+
+📈 SPEED: [ Prompt: 2.6 t/s | Generation: 2.4 t/s ]
+
+Press enter or click to view image in full size
+
+I tried to compare these values with a similar model: so I took this
+
+Jackrong/Qwen3.5-9B-Claude-4.6-Opus-Reasoning-Distilled-v2-GGUF · Hugging Face
+We're on a journey to advance and democratize artificial intelligence through open source and open science.
+
+huggingface.co
+
+Downloaded the standard Q4_K_M quants, fired my llama.cpp for x64 CPU only on Windows and:
+
+.\llama-cli.exe -m C:\FABIO-AI\MODELS_medium\Qwen_Qwen3.5-9B-Q3_K_M.gguf -p "Explain quantum computing in simple terms." -n 250 --temp 0.5 --top-p 0.85 --top-k 20 -ngl 0 -st -ctk q4_0 -ctv q4_0 --mmap
+
+with the same parameters of Bonsai-8b.
+
+Press enter or click to view image in full size
+
+💻 RAM: 4.2 Gb
+
+📈 SPEED: [ Prompt: 2.9 t/s | Generation: 1.9 t/s ]
+
+Press enter or click to view image in full size
+
+It doesn’t look that big the difference, isn’t it?
+
+Press enter or click to view image in full size
+Some numbers and comparisons
+
+I tested all the 3 variants of the Bonsai family, and compared to a similar model size:
+
+Bonsai-1.7B → Qwen3–1.7B-Q4_K_M.gguf
+Bonsai-4B → Qwen3–4B-Instruct-2507-Q4_K_M.gguf
+Bonsai-8B → Qwen_Qwen3.5–9B-Q3_K_M.gguf
+
+You can see the numbers in the table above.
+
+I was honestly expecting much more, and I hope this is going to be only the start of something really revolutionary.
+
+Because until CPU can perform at the same level of GPUs, this kind of Artificial Intelligence will be always in the hands of the few (in terms of money, development, infrastructure, governance and power).
+
+Don’t trust blindly the claims!
+
+Verify it yourself.
+
+So, let me know how that worked for you!
+
+I hope you enjoyed the article. If this story provided value and you wish to show a little support, you could:
+
+Clap a lot of times for this story
+Highlight the parts more relevant to be remembered (it will be easier for you to find them later and for me to write better articles)
+Join my totally free weekly Substack newsletter here
+Follow me on Medium
+Follow my publication https://medium.com/artificial-intel-ligence-playground
+
+If you want to read more, here are some ideas:
+
+Are you too a Poor-GPU-guy? Here’s how to run 400B parameter Models for free
+A complete guide to NVIDIA NIM’s free tier: get hundreds of API calls, access frontier models like Llama 3.3 and…
+
+medium.com
+
+Your AI your rules: a free fully local Perplexity app on your PC
+How to use Perplexica with llama.cpp server and forget about any monthly fee
+
+blog.stackademic.com
+
+Your CPU is NOT Broken: the hidden Truth about GGUF quantization
+Bits per weight are not tokens per second (ant his is an unexpected plot twist)
+
+medium.com
+
+Your Tabs are lying to you
+I Finally Stopped Believing Them. How I tamed my 70-tab chaos with a 100-line Python script, and finally stopped…
+
+blog.stackademic.com
+
+Referenced sources
+
+PrismML - Concentrating intelligence
+Large models can't fit on smartphones. Datacenters can't sustain them. PrismML is building ultra dense intelligence to…
+
+prismml.com
+
+PrismML - Announcing 1-bit Bonsai: The First Commercially Viable 1-bit LLMs
+Today, we are announcing 1-bit Bonsai models that bring advanced intelligence to the devices where people actually live…
+
+prismml.com
+
+GitHub - philtomson/llama.cpp: LLM inference in C/C++ (fork of PrismML fork that enables CPU (incl…
+LLM inference in C/C++ (fork of PrismML fork that enables CPU (incl AVX2 and AVX512) and ROCm for AMD GPUs …
+
+github.com
+
+GitHub - PrismML-Eng/llama.cpp at q1-cpu
+LLM inference in C/C++. Contribute to PrismML-Eng/llama.cpp development by creating an account on GitHub.
+
+github.com
+
+Thepoorgpuguy
+Local Gpt
+Your Ai Your Rules
+1 Bit Llms
+Llama Cpp
+

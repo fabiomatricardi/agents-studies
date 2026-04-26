@@ -1,0 +1,5 @@
+- **Markdown**: The fundamental plain-text formatting syntax.
+- **AI Training**: Dominates due to its structured nature in LLM training data.
+- **Model Syntax**: Provides clean tokens for efficient model consumption.
+- **Local Experience**: Requires rendering tools (like `md-preview`) to achieve a visually appealing local experience.
+- **Versatility**: Functions as a universal container for prompts and documentation.

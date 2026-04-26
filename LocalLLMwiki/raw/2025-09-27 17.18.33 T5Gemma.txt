@@ -1,0 +1,292 @@
+T5Gemma: A new collection of encoder-decoder Gemma models - Google Developers Blog
+https://developers.googleblog.com/en/t5gemma/
+
+In the rapidly evolving landscape of large language models (LLMs), the spotlight has largely focused on the decoder-only architecture. While these models have shown impressive capabilities across a wide range of generation tasks, the classic encoder-decoder architecture, such as T5 (The Text-to-Text Transfer Transformer), remains a popular choice for many real-world applications. Encoder-decoder models often excel at summarization, translation, QA, and more due to their high inference efficiency, design flexibility, and richer encoder representation for understanding input. Nevertheless, the powerful encoder-decoder architecture has received little relative attention.
+
+Today, we revisit this architecture and introduce T5Gemma, a new collection of encoder-decoder LLMs developed by converting pretrained decoder-only models into the encoder-decoder architecture through a technique called adaptation. T5Gemma is based on the Gemma 2 framework, including adapted Gemma 2 2B and 9B models as well as a set of newly trained T5-sized models (Small, Base, Large and XL). We are excited to release pretrained and instruction-tuned T5Gemma models to the community to unlock new opportunities for research and development.
+
+
+From decoder-only to encoder-decoder
+
+In T5Gemma, we ask the following question: can we build top-tier encoder-decoder models based on pretrained decoder-only models? We answer this question by exploring a technique called model adaptation. The core idea is to initialize the parameters of an encoder-decoder model using the weights of an already pretrained decoder-only model, and then further adapt them via UL2 or PrefixLM-based pre-training.
+
+An overview of our approach, showing how we initialize a new encoder-decoder model using the parameters from a pretrained, decoder-only model.
+
+This adaptation method is highly flexible, allowing for creative combinations of model sizes. For instance, we can pair a large encoder with a small decoder (e.g., a 9B encoder with a 2B decoder) to create an "unbalanced" model. This allows us to fine-tune the quality-efficiency trade-off for specific tasks, such as summarization, where a deep understanding of the input is more critical than the complexity of the generated output.
+
+
+Towards better quality-efficiency trade-off
+
+How does T5Gemma perform?
+
+In our experiments, T5Gemma models achieve comparable or better performance than their decoder-only Gemma counterparts, nearly dominating the quality-inference efficiency pareto frontier across several benchmarks, such as SuperGLUE which measures the quality of the learned representation.
+
+Encoder-decoder models consistently offer better performance for a given level of inference compute, leading the quality-efficiency frontier across a range of benchmarks.
+
+This performance advantage isn't just theoretical; it translates to real-world quality and speed too. When measuring the actual latency for GSM8K (math reasoning), T5Gemma provided a clear win. For example, T5Gemma 9B-9B achieves higher accuracy than Gemma 2 9B but with a similar latency. Even more impressively, T5Gemma 9B-2B delivers a significant accuracy boost over the 2B-2B model, yet its latency is nearly identical to the much smaller Gemma 2 2B model. Ultimately, these experiments showcase that encoder-decoder adaptation offers a flexible, powerful way to balance across quality and inference speed.
+
+
+Unlocking foundational and fine-tuned capabilities
+
+Could encoder-decoder LLMs have similar capabilities to decoder-only models?
+
+Yes, T5Gemma shows promising capabilities both before and after instruction tuning.
+
+After pre-training, T5Gemma achieves impressive gains on complex tasks that require reasoning. For instance, T5Gemma 9B-9B scores over 9 points higher on GSM8K (math reasoning) and 4 points higher on DROP (reading comprehension) than the original Gemma 2 9B model. This pattern demonstrates that the encoder-decoder architecture, when initialized via adaptation, has the potential to create a more capable, performant foundational model.
+
+Detailed results for pretrained models, illustrating how adapted models have significant gains on several reasoning-intensive benchmarks compared to decoder-only Gemma 2.
+
+These foundational improvements from pre-training set the stage for even more dramatic gains after instruction tuning. For example, comparing Gemma 2 IT to T5Gemma IT, the performance gap widens significantly across the board. T5Gemma 2B-2B IT sees its MMLU score jump by nearly 12 points over the Gemma 2 2B, and its GSM8K score increases from 58.0% to 70.7%. The adapted architecture not only potentially provides a better starting point but also responds more effectively to instruction-tuning, ultimately leading to a substantially more capable and helpful final model.
+
+Detailed results for fine-tuned + RLHFed models, illustrating the capabilities of post-training to significantly amplify the performance advantages of the encoder-decoder architecture.
+Explore our models: Releasing T5Gemma checkpoints
+
+We’re very excited to present this new method of building powerful, general purpose encoder-decoder models by adapting from pretrained decoder-only LLMs like Gemma 2. To help accelerate further research and allow the community to build on this work, we are excited to release a suite of our T5Gemma checkpoints.
+
+The release includes:
+
+Multiple Sizes: Checkpoints for T5-sized models (Small, Base, Large, and XL), the Gemma 2-based models (2B and 9B), as well as an additional model in between T5 Large and T5 XL.
+
+Multiple Variants: Pretrained and instruction-tuned models.
+
+Flexible Configurations: A powerful and efficient unbalanced 9B-2B checkpoint to explore the trade-offs between encoder and decoder size.
+
+Different Training Objectives: Models trained with either PrefixLM or UL2 objectives to provide either state-of-the-art generative performance or representation quality.
+
+
+We hope these checkpoints will provide a valuable resource for investigating model architecture, efficiency, and performance.
+
+
+---
+
+
+Encoder-Decoder Gemma: Improving the Quality-Efficiency Trade-Off via Adaptation
+https://arxiv.org/html/2504.06225v1
+
+
+While decoder-only large language models (LLMs) have shown impressive results, encoder-decoder models are still widely adopted in real-world applications for their inference efficiency and richer encoder representation. In this paper, we study a novel problem: adapting pretrained decoder-only LLMs to encoder-decoder, with the goal of leveraging the strengths of both approaches to achieve a more favorable quality-efficiency trade-off. We argue that adaptation not only enables inheriting the capability of decoder-only LLMs but also reduces the demand for computation compared to pretraining from scratch. We rigorously explore different pretraining objectives and parameter initialization/optimization techniques. Through extensive experiments based on Gemma 2 (2B and 9B) and a suite of newly pretrained mT5-sized models (up to 1.6B), we demonstrate the effectiveness of adaptation and the advantage of encoder-decoder LLMs. Under similar inference budget, encoder-decoder LLMs achieve comparable (often better) pretraining performance but substantially better finetuning performance than their decoder-only counterpart. For example, Gemma 2B-2B outperforms Gemma 2B by
+∼
+7% after instruction tuning. Encoder-decoder adaptation also allows for flexible combination of different-sized models, where Gemma 9B-2B significantly surpasses Gemma 2B-2B by
+>
+3%. The adapted encoder representation also yields better results on SuperGLUE. We will release our checkpoints to facilitate future research.
+
+1Introduction
+
+Neural network architectures are often designed to incorporate certain assumptions or inductive biases regarding the input data, leading to either improved model performance or better computational efficiency, if not both. Unlike the popular decoder-only architecture used for large language model (LLM) (Brown et al., 2020), the encoder-decoder architecture adopts separate modeling modules – an encoder for input understanding and a decoder for output generation (Vaswani et al., 2017). This separation decouples parameters for different functionalities and thus enjoys higher freedom in handling contextual representation and challenging tasks (Tay et al., 2022; Wang et al., 2022). It also offers high flexibility in changing the encoder and decoder size (e.g., a large encoder paired with a small decoder) to control the quality-efficiency trade-off (Kasai et al., 2020; Zhang et al., 2022), an increasingly important aspect for LLM deployment (Gemini et al., 2024). Despite these benefits, however, the study on encoder-decoder LLMs receive little to no attention nowadays.
+
+In this paper, we revisit this classical architecture by exploring the following question: can we get strong(er) encoder-decoder LLMs by adapting from existing pretrained decoder-only LLMs? We consider the adaptation more significantly than pretraining new models from scratch since pretraining is resource-intensive and powerful decoder-only models at different sizes are already widely available (Dubey et al., 2024; Team et al., 2024; Liu et al., 2024a; Yang et al., 2024; Jiang et al., 2024). Our hypothesis is that, by reusing parameters from decoder-only models, we can accelerate training and effectively transfer their internal knowledge to encoder-decoder, preserving (even enhancing) their capabilities. Note adaptation also allows for pairing varying-sized decoder-only models to achieve specific quality-efficiency considerations. Yet, the optimal method for such adaptation and the extent to which performance can be improved remain open questions, which we aim to address rigorously.
+
+Figure 1: Overview of our approach. We build encoder-decoder models by adapting from pretrained decoder-only models. Model architecture and parameters are inherited from the decoder-only model except the cross-attention, for which we adopt different initialization methods depending on the encoder and decoder size. “ROPE”: rotary embedding; “FFN”: feed-forward layer.
+
+We employ Gemma 2 (Team et al., 2024) as the testbed. As shown in Figure 1, the encoder-decoder architecture follows the original Transformer (Vaswani et al., 2017) but equipped with Gemma 2 modifications. The key idea behind the adaptation is to initialize the parameters of the encoder-decoder model from pretrained decoder-only model(s) as a warmup and then pretrain or adapt all parameters with self-supervised learning. Depending on whether the encoder and the decoder share the same configuration, we propose different initialization and optimization strategies for the cross-attention layer. We also compare different pretraining objectives, including prefix language modeling with knowledge distillation (Hinton et al., 2015) and UL2 (Tay et al., 2022). Apart from Gemma 2 2B and 9B, we pretrain a series of small models to better understand the adaptation at different scales.
+
+To thoroughly evaluate model performance, we adopt different benchmarks for pretrained and instruction-tuned models respectively, each covering a range of established academic evaluations. In addition, we use SuperGLUE (Wang et al., 2019a) to measure the quality of the learned contextual representations. Our main findings are below:
+
+•
+
+Leveraging pretrained decoder-only LLMs is an effective way to build powerful encoder-decoder LLMs, which yields substantially improved downstream performance particularly after instruction tuning under similar inference flops.
+
+•
+
+Our adaptation method is highly flexible, allowing for pairing large encoder with small decoder, such as 9B-2B, with significant quality gains over Gemma 2 2B but similar generation latency.
+
+•
+
+Adaptation is not only more compute efficient but also more effective than pretraining from scratch.
+
+•
+
+Pretraining objective matters. Models trained with prefix language modeling and knowledge distillation are generally better at generative tasks, while UL2 models have better encoder representations.
+
+2Related Work
+
+While the decoder-only architecture has become the de facto standard for LLMs, the debate between encoder-decoder and decoder-only modeling is still not conclusive. Many prior studies proposed different approaches to pretrain strong encoder-decoder models, e.g., MASS (Song et al., 2019), T5 (Raffel et al., 2020), mT5 (Xue et al., 2021), byT5 (Xue et al., 2022), BART (Lewis et al., 2020), and OpenBA (Li et al., 2023). Tay et al. (2022) compared different pretraining objectives, highlighting the superiority of UL2 and encoder-decoder modeling. Zhang et al. (2022) systematically examined the scaling behavior of both architectures on machine translation, showing their similarity when adequate objectives are applied. Wang et al. (2022) thoroughly explored different modeling choices and training objectives with a focus on LLM zero-shot generalization. They discovered that encoder-decoder LLMs after instruction tuning achieve the best performance, echoing with our experiments. They also studied adaptation, but it is between different pretraining objectives rather than from decoder-only LLMs to encoder-decoder LLMs.
+
+Leveraging pretrained models for encoder-decoder modeling has been extensively explored. In the BERT era (Devlin et al., 2019), researchers developed different ways of utilizing it to enhance encoder-decoder performance on downstream tasks, such as machine translation (Zhu et al., 2020; Clinchant et al., 2019; Yang et al., 2020), grammatical error correction (Kaneko et al., 2020), summarization (Liu & Lapata, 2019), and text generation (Chen et al., 2019). Our work follows a similar spirit but is based on pretrained decoder-only LLMs and focuses on developing general-purpose encoder-decoder LLMs.
+
+Another related direction is the development of inference friendly LLMs. Techniques for improving inference efficiency are many, ranging from quantization (Dettmers & Zettlemoyer, 2023), key-value cache optimization (Corallo & Papotti, 2024), recurrent modeling (Gu & Dao, 2023; Botev et al., 2024), to strong small LLMs with improved pretraining (Abdin et al., 2024; Liu et al., 2024b), to name a few. While these techniques offer significant efficiency gains, their focus is fundamentally distinct and complementary to our proposed encoder-decoder adaptation, i.e., both approaches can be used in conjunction to realize greater overall efficiency.
+
+3Approach: Encoder-Decoder Adaptation
+
+#Params
+Decoder-Only Encoder-Decoder
+2B 26 2304 18432 8/4 256 2.0B 4.0B (2B-2B)
+9B 42 3584 28672 16/8 256 8.3B 16.7B (9B-9B)
+S (Small) 8 512 1024 8/8 64 14.7M 29.4M (S-S)
+B (Base) 12 768 2048 12/12 64 56.7M 113.3M (B-B)
+L (Large) 24 1024 2816 16/16 64 204.6M 409.1M (L-L)
+XL (Xlarge) 24 2048 5120 32/32 64 780.3M 1.6B (XL-XL)
+Table 1: Model configurations. #Layers: number of layers;
+
+: model/feed-forward/head dimension; #heads (q/kv): number of query/key-value heads. #Params: number of model parameters excluding embeddings. For encoder-decoder models, we show the number of parameters for the balanced architecture, e.g. 2B-2B. The 9B-2B model has 10.4B parameters. “B/M”: billion/million.
+3.1Architecture
+
+Pretraining LLMs is both compute and time intensive. To reduce the amount of training required, we propose to adapt existing decoder-only LLMs to encoder-decoder and leverage pretrained decoder-only checkpoints for initialization, as shown in Figure 1. Due to this, we keep the encoder-decoder architecture as similar as possible to original decoder-only model, only introducing changes when necessary. This results in the following architecture:
+
+1.
+
+Encoder has exactly the same architecture as the decoder-only model, but self-attention is switched from causal to bidirectional. We provide ablations in Section 6 that illustrate the critical effect of bidirectional attention on downstream performance.
+
+2.
+
+In each Decoder block, FFN and self-attention parts are identical to the corresponding parts in decoder-only models, and cross-attention has the same number of heads and head dimension as self-attention, but attends to the whole output of the encoder.
+
+We base our study on Gemma 2 (Team et al., 2024). But note our approach is highly flexible and isn’t restricted to specific decoder-only architectures. We can easily apply our method to other model families, such as LLaMA (Dubey et al., 2024), QWen (Yang et al., 2024), and DeepSeek (Liu et al., 2024a). In theory, we can also adapt decoder-only models from different families, such as pairing LLaMA models with QWen models.
+
+In addition, our approach allows for unbalanced encoder-decoder models, where the decoder is significantly smaller than the encoder. This provides better support for applications where input processing capabilities are more important than generative capacity. For example, for summarization, deep understanding of the input text is often more important than the generation part, as it doesn’t need to generate any new information. As a result, generation time is significantly reduced, while providing competitive quality.
+
+3.2Initialization
+
+When initializing an encoder-decoder model from a decoder-only checkpoint, we try to map every layer to the most similar weight in the decoder-only checkpoint. In particular, the encoder is fully initialized from the decoder-only checkpoint, as it doesn’t introduce any new weights. In the decoder, FFN and self-attention subblocks are initialized from the FFN and self-attention weights from the corresponding layers in the decoder-only checkpoint.
+
+Cross-attention is initialized from self-attention weights in the balanced setup where encoder and decoder have the same configuration. Otherwise, we first initialize cross-attention from scratch and then finetune it for the first
+𝐾
+steps as a warmup while freezing other model parameters. After
+𝐾
+steps, all model parameters are tuned.
+
+3.3Pretraining Objective
+
+Decoder-only pretraining often adopts causal language modeling on a single sequence. In contrast, encoder-decoder adaptation requires separate input and target sequences to be fed to the encoder and decoder separately. We explore two classical pretraining objectives for encoder-decoder modeling: prefix language modeling (PrefixLM) and UL2 (Tay et al., 2022; Wang et al., 2022).
+
+PrefixLM behaves similar to causal language modeling except for its prefix condition. To simplify the preprocessing, we split a sequence equally into two halves, the first half used as input and the second one as target. This also eases the adoption of knowledge distillation from decoder-only models. UL2 is more complicated. It is composed of several denoising tasks at different levels of complexity. We prepare UL2 data following Tay et al. (2022). We compare their performance in experiments.
+
+4Setup
+Data Setting
+
+Our data for pretraining and instruction tuning – including supervised finetuning (SFT) and reinforcement learning from human feedback (RLHF) – follow Gemma 2 (Team et al., 2024). For the adaptation, we preprocess the Gemma 2 pretraining data (8 trillion tokens) with PrefixLM and UL2. Note Gemma 2 pretraining data comes with knowledge distillation. We preserve this information for PrefixLM while adopting ground-truth targets for UL2 as mapping the teacher logits to UL2 is non-trivial. The preprocessed data has an input-output sequence length of 4096-4096 and 8192-8192 for PrefixLM and UL2, respectively. We adapt our models on up to 2 trillion tokens.
+
+Model Setting
+
+We use Gemma 2 (2B and 9B) as the base decoder-only LLM. We also pretrain several smaller models (Small, Base, Large, and XL) following mT5 configurations (Xue et al., 2021) under the Gemma 2 framework, and then adapt them to encoder-decoder LLMs. Detailed model configurations are given in Table 1.
+
+Evaluation
+
+We employ diverse academic evaluation datasets to evaluate different capabilities of LLMs. Concretely, we use the following benchmarks:
+
+•
+
+Pretraining (PT) benchmark: Boolq (Clark et al., 2019), SIQA (Sap et al., 2019), PIQA (Bisk et al., 2020), ARC-c&ARC-e (Clark et al., 2018), MMLU (Hendrycks et al., 2021), MMLU Pro (Wang et al., 2024), HellaSwag (Zellers et al., 2019), Winogrande (Sakaguchi et al., 2021), TruthfulQA (Lin et al., 2021), AGIEval (Zhong et al., 2023), BBH (Suzgun et al., 2022), DROP (Dua et al., 2019), GPQA (Rein et al., 2023), GSM8K (Cobbe et al., 2021), HumanEval (Chen et al., 2021), Lambada (Paperno et al., 2016), MATH-500 (Hendrycks et al., 2021), MBPP (Austin et al., 2021), NQ (Kwiatkowski et al., 2019), TriviaQA (Joshi et al., 2017), and WMT23 (Kocmi et al., 2023). We perform zero/few-shot prompting for pretrained LLMs, and report the averaged result as PT score.
+
+•
+
+Instruction-tuning (IT) benchmark: GSM8K, MMLU, MMLU Pro, MBPP, HumanEval, MATH-500, BBH, GPQA (Diamond), WMT23, and MGSM (Shi et al., 2022). We perform zero/few-shot prompting with task-specific instruction for instruction-tuned models, and report the averaged result as IT score.
+
+•
+
+SuperGLUE (Wang et al., 2019b): we use this benchmark to examine the learned contextual representation. We stack a task-specific head on the representation of the last token in the encoder (decoder) of the encoder-decoder (decoder-only) LLM, and finetune all parameters on the training set. Learning rate, batch size, and dropout are grid-searched for each task. We reformulate all tasks as classification tasks and report averaged dev-set accuracy over COPA, WIC, WSC, RTE, MultiRC, CB, and Boolq.
+
+For generative tasks, we always apply greedy sampling. We perform pretraining, SFT, and RLHF based on the Gemma 2 recipe except for the learning rate which we tune empirically for encoder-decoder LLMs. In unbalanced encoder-decoder adaptation, e.g. 9B-2B, we set the cross-attention warmup step
+𝐾
+to 1000.
+
+5Results
+Figure 2: Pretraining performance as a function of the number of pretrained tokens during the adaptation.
+The encoder-decoder adaptation converges rapidly, particularly for balanced architectures.
+
+While adaptation leverages pretrained parameters for initialization, whether and how this benefits model convergence is still questionable. Figure 2 shows the change of PT performance with respect to the amount of pretrained tokens. Obviously, adaptation is very computationally efficient, converging quickly and achieving similar performance to its decoder-only counterpart after only tens of billions of tokens. Balanced architectures (2B-2B and 9B-9B) converge much faster than the unbalanced ones (9B-2B) since all parameters in the former are initialized from pretrained decoder-only models while the cross-attention in the latter is randomly initialized.
+
+We also notice that additional pretraining improves balanced models a little on average but substantially benefits some tasks, like GSM8K and DROP. Besides, 9B-2B performance increases consistently during the adaptation, quickly surpassing Gemma 2 2B and moving towards Gemma 2 9B. This demonstrates the feasibility of encoder-decoder adaptation from varying-sized decoder-only LLMs, as well as its ability to utilize the knowledge from pretrained models.
+
+PT Score IT Score
+Gemma 2 + PrefixLM + UL2 Gemma 2 + PrefixLM + UL2
+2B-2B 47.9 49.7 50.1 (39.0) 46.4 (46.1) 42.4
+9B-2B - 55.0 52.9 - 49.3 (50.6) 45.7
+9B-9B 61.7 63.1 63.9 (59.6) 62.9 (64.5) 61.5
+S-S 23.4 22.8 23.1 6.2 9.8 10.7
+B-B 26.7 26.9 26.0 9.8 12.9 11.1
+L-L 32.3 31.6 30.9 12.9 17.5 18.9
+XL-XL 39.7 39.5 38.5 23.5 30.7 29.2
+(a) Results on PT and IT benchmarks.
+PT Models IT Models
+Gemma 2 + PrefixLM + UL2 Gemma 2 + PrefixLM + UL2
+2B-2B 75.5 88.1 88.1 (86.2) 88.3 (87.9) 90.5
+9B-2B - 90.2 90.7 - 90.6 (90.3) 91.3
+9B-9B 82.5 91.4 91.8 (89.8) 91.8 (91.4) 91.6
+S-S 67.6 69.8 69.6 67.6 68.8 69.4
+B-B 68.6 71.2 71.5 68.7 72.3 73.6
+L-L 68.4 78.7 79.7 68.8 78.1 80.3
+XL-XL 70.7 84.4 85.4 69.2 85.7 87.0
+(b) Finetuned performance on SuperGLUE.
+Table 2: Main results on PT, IT, and SuperGLUE benchmarks. “Gemma 2”: decoder-only models; “+PrefixLM/UL2”: encoder-decoder models adapted via prefix language modeling (with knowledge distillation)/UL2. We put Gemma 2 results into the corresponding encoder-decoder rows to save space, e.g. 2B-2B for Gemma 2 means Gemma 2 2B. Numbers in parentheses are for RLHFed models. Best results are in bold. Note PT and IT scores are not directly comparable since they are averaged over different tasks.
+G
+Pretraining objective matters: UL2 and PrefixLM show different characteristics.
+
+Previous study reported the superiority of UL2 over PrefixLM (Tay et al., 2022), but PrefixLM in our study is enhanced with knowledge distillation, which often improves small models significantly. We compare these two objectives for the adaptation in Table 2.
+
+We find that PrefixLM and UL2 have their own strengths. Specifically, UL2 delivers stronger contextual representations, outweighing PrefixLM on SuperGLUE across most model scales, resonating with previous findings (Tay et al., 2022). In contrast, PrefixLM produces more powerful generative LLMs thanks to its generation nature and the knowledge distillation. It surpasses UL2 on PT and IT benchmarks in most cases. Particularly, it outperforms UL2 at 9B-2B on both PT and IT by up to 3.6, a significant margin. Since generative LLMs have become the mainstream, we base our following analysis on PrefixLM. We discuss our attempts to combine PrefixLM and UL2 in the next section.
+
+Encoder-decoder LLMs outperform decoder-only LLMs especially after instruction tuning.
+
+Table 2 also shows that the adapted encoder-decoder LLMs achieve comparable or slightly better pretraining performance than their decoder-only counterpart but with substantially improved instruction-tuning performance, echoing with the findings of Wang et al. (2022). For example, the 9B-9B encoder-decoder LLM surpasses Gemma 2 9B by 1.4 and 4.9 on PT and IT, respectively. The performance gap further increases to 1.8 and 7.1 at 2B-2B scale. We notice that the adaption performs slightly worse at scales below 2B on PT, but the improvements on IT are still promising, e.g. 7.2 at XL-XL.
+
+Regardless of PT or IT models, pretraining objectives, and model scales, encoder-decoder LLMs perform consistently better than decoder-only LLMs on SuperGLUE. This suggests that the contextual representation from encoder-decoder LLMs is often of higher quality, likely due to bidirectional self-attention.
+
+We need to highlight that the above analysis is based on the overall performance, which may not apply when it comes to a specific downstream task. As shown in Table 3, there are some tasks favoring encoder-decoder models while others favoring decoder-only models especially for PT models. For example, after pretraining, Gemma 2 9B surpasses 9B-9B by 4.1 on ARC-C but underperforms it by 4.4 on Winogrande; while encoder-decoder LLM shows more consistent advantage after instruction tuning, 9B-9B still lags behind Gemma 2 9B by 0.9 on WMT23. This illustrates the complexity when evaluating LLM capability as well as the risk of reaching misleading conclusions when adopting biased evaluation tasks. We reduce such risk by selecting as diverse and broad tasks as possible for evaluation.
+
+Figure 3: Comparisons of decoder-only LLMs with adapted encoder-decoder models under inference flops. We show PT, IT, and SuperGLUE performance. Inference flops is estimated with a sequence length of 4096-4096 and 8192 for encoder-decoder and decoder-only LLMs, respectively. Note the upper left corner marks the quality-efficiency frontier.
+Figure 4: GSM8K performance as a function of latency for RLHFed models. Latency is estimated as milliseconds (ms) per query by answering 200 reasoning questions from GSM8K. Batch size of 1 is used.
+Encoder-decoder LLMs balance quality and inference efficiency more effectively.
+
+We next analyze different models from the perspective of inference efficiency which becomes increasingly crucial for model deployment. Figure 3 shows that balanced encoder-decoder LLMs have similar inference flops to their decoder-only counterparts, e.g. 2B-2B vs. Gemma 2 2B. As such, encoder-decoder models often dominate the quality-inference efficiency frontier across PT, IT, and SuperGLUE benchmarks.
+
+We acknowledge that inference flops may not correlate well with actual running speed due to factors like inter-device communication, key-value caching, and autoregressive bottleneck. We then provide the latency results measured on GSM8K for 2B and 9B models in Figure 4, which further verified the above analysis. 9B-9B and 2B-2B show similar latency to Gemma 2 9B and 2B, respectively, but clearly better performance. In particular, 9B-2B, the one pairing large encoder and small decoder, shows similar latency to Gemma 2 2B but significantly better performance than 2B-2B.
+
+Together, these confirm that encoder-decoder adaptation indeed provides a more flexible way for balancing between quality and inference speed.
+
+6Discussion
+Is the improvement after the adaptation simply due to the extra pretraining compute?
+
+Not really. We also tried to apply more pretraining compute to Gemma 2 2B by going through another 6 trillion tokens, which leads to a PT score of 48.57, still significantly below the encoder-decoder adaptation, 49.7. This indicates that the additional pretraining compute can’t fully explain the improvements from the adaptation and we argue that the inductive bias of encoder-decoder modeling plays a crucial role.
+
+Does cross-attention warmup matter for unbalanced encoder-decoder?
+
+Yes. Our preliminary experiments with 9B-2B and UL2 on 800B tokens show that the pretraining performance over Boolq and GSM8K reduces from 62.5 to 61.8 without the warmup. Besides, increasing warmup steps from 1K to 5K further reduces performance to 60.2. An adequate amount of warmup optimization is required to reach the optimal performance.
+
+Can we switch from grouped-query attention to multi-head self attention for the encoder?
+
+Yes but with mixed results. Gemma 2 adopts grouped-query attention (GQA) to improve its decoding efficiency. However, unlike the decoder, the encoder can be fully parallelized during inference, making the use of multi-head attention (MHA) reasonable. We tried to expand GQA in Gemma 2 2B to MHA by replicating head parameters for the encoder self-attention. Under PrefixLM, this improves PT performance to 50.2 by 0.5 at 2B-2B but reduces IT performance to 43.5 by 2.9. We thus still stick to GQA when adapting Gemma 2 2B and 9B for the encoder.
+
+Does bidirectional self-attention matter for the encoder?
+
+Yes. A crucial difference between encoder-decoder and decoder-only LLMs is the use of bidirectional self-attention. We also tested keeping the encoder self-attention causal at 2B-2B, which achieves a PT and IT score of 45.6 and 41.7, lagging behind its bidirectional counterpart substantially by 4.1 and 4.7, respectively. Note, the causal 2B-2B model surpasses Gemma 2 2B on IT by 2.7, although it performs worse on PT. This suggests that bidirectional self-attention contributes greatly to the success of our adaptation, but is not the only factor.
+
+Adaptation Scratch
+PT IT SG PT IT SG
+S-S 22.8 9.8 68.8 24.0 9.9 70.5
+B-B 26.9 12.9 72.3 28.1 11.8 75.5
+L-L 31.6 17.5 78.1 30.9 17.1 78.5
+XL-XL 39.5 30.7 85.7 37.7 28.8 79.5
+2B-2B 49.7 46.4 88.3 47.1 43.9 84.5
+Table 4: Results for encoder-decoder models adapted with PrefixLM (Adaptation) and pretrained from scratch (Scratch). SG: SuperGLUE score for SFTed models.
+Figure 5: Quality change for the two-stage optimization. “UL2-then-PrefixLM”: switch the training objective from UL2 to PrefixLM for the final 10% tokens; “PrefixLM-then-UL2”: similar but from PrefixLM to UL2.
+Figure 6: Correlation analysis between PT performance and its corresponding IT/SuperGLUE performance.
+Would pretraining encoder-decoder LLMs from scratch yield better performance?
+
+Not really. Pretraining from scratch is a common method for developing new LLMs. We also pretrained encoder-decoder LLMs from scratch on 8 trillion tokens with PrefixLM. Table 4 summarizes the results. Despite using more pretraining tokens, encoder-decoder LLMs pretrained from scratch only perform better at small scales, such as S-S and B-B, beyond which adaptation shows clear superiority. As such, adaptation is a more computationally efficient way of developing powerful encoder-decoder LLMs.
+
+Is IT/SuperGLUE score predicable from PT score?
+
+Mixed. A general assumption in LLM development is that PT performance can be used as an indicator for downstream applications. We summarize all our ablations and put them in Figure 6. Over all data points and across all model sizes, the correlation is pretty strong: a Spearman’s
+𝜌
+of 0.97 and 0.89 for IT vs. PT and SuperGLUE vs. PT, respectively. However, when considering data points within each model size separately, the averaged Spearman’s
+𝜌
+reduces to 0.42 and 0.05, respectively and is not significant anymore.
+
+In practice, we also noticed that PT checkpoints with weaker performance sometimes yield significantly better IT or SuperGLUE performance. When selecting PT checkpoints for a specific model size, it’s better to also examine their IT performance apart from PT results to avoid some biases or overfitting.
+
+Can we get the best of both worlds from PrefixLM and UL2?
+
+This is non-trivial. Our first attempt is to merge checkpoints trained from PrefixLM and UL2 with uniform weighting. Unfortunately, the merged model results in either similar or much worse performance. We argue that PrefixLM and UL2 lead to different training dynamics and converge to very different local minima. Directly merging their weights doesn’t work right out of the box.
+
+We next explore a two-stage optimization, where we first adapt with PrefixLM and then shift to UL2 for the last 10% of training, and vice versa. Figure 5 shows very mixed results. Switching from PrefixLM to UL2 generally hurts performance. In contrast, switching from UL2 to PrefixLM improves IT performance, but suffers from reduction in PT and SuperGLUE performance.
+
+Another direction is to jointly optimize the model on PrefixLM and UL2, which we leave for future work.
+
+7Conclusion and Future Work
+
+In this paper, we presented methods for building powerful, general purpose encoder-decoder LLMs by adapting from pretrained decoder-only LLMs. Such adaptation offers high flexibility in leveraging different types/families of pretrained decoder-only models as well as combining different-sized models. Through extensive experiments based on Gemma 2, we demonstrated the feasibility and effectiveness of the adaptation: the adapted encoder-decoder LLMs outperform their decoder-only counterparts substantially after instruction tuning, dominating the quality-inference efficiency frontier. Besides, encoder-decoder LLMs also provide better contextual representations as evaluated on SuperGLUE.
+
+We hope our findings inspire more researchers from academia and industry to revisit the encoder-decoder paradigm for LLM development. To facilitate the research, we will release the code and checkpoints at XXX (coming soon).
+
+Our work still suffers from several limitations. Particularly, we only experimented with Gemma 2 models up to 9B, although the proposed approach could apply to other LLM families. In the future, we are interested in scaling the model size (e.g, to 27B), exploring other LLMs (such as LLaMA), examining more unbalanced setups, and testing the combination of dense and MoE LLMs. As mentioned above, we will also investigate better ways to leverage PrefixLM, knowledge distillation, and UL2. Extending our adapted encoder-decoder LLM to cross/multi-modality modeling (e.g., vision-language and speech-language) would be another intriguing direction.

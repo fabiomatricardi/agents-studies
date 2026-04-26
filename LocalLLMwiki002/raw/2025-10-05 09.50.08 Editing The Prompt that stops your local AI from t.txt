@@ -1,0 +1,447 @@
+The Prompt that stops your local AI from talking… too much - by Fabio Matricardi
+I didn’t find a better model. I found a better way to talk to my favorite one.
+
+I am a huge fan of Local AI: means that I test to the limit my crappy GPU-poor laptop to see how far I can use a Large Language Model without relying on internet connection and cloud APIs.
+
+I decided to test again how good can a Small Language model be in support my python programming: a sort of…
+
+AI that help me programming AI application
+
+In this article I will report few points to be considered if you decide to do the same: what model to use, what kind of resources you need (VRAM/RAM), and as well drawbacks like context window size and system prompt requirements.
+
+This is the app I was trying to build:
+
+calculate distance on a Map given GPS coordinates
+
+Honestly the app itself is not that important, but the process to arrive to completion is interesting.
+
+If you want to have a look at the code, here is the final GitHub repository:
+
+GitHub - fabiomatricardi/GPSmarineCalculator: GPS Distance Calculator (Advanced) in python
+
+
+GPS Distance Calculator (Advanced) in python. Contribute to fabiomatricardi/GPSmarineCalculator development by creating…
+github.com
+
+If you are already bored to death… here the main issue I found: I will explain in the article how to solve them.
+
+- The first prompt is the key for success
+- you will find yourlsef with truncated code
+- Functions and Classes will make the code efficient (but readable?)
+- the AI will repeat everything with a lot of explanations
+- you need to test the code every time, and copy/paste the errors
+again to fix the broken parts
+- Qwen3-4b-instruct works as good as Qwen3-235B-A22B-2507
+Markdown
+
+Buckle up and follow me.
+
+My setup
+
+I always serve local LLM with llama.cpp server. It is easy to use, comes with pre-compiled binaries for different Operating Systems, and it is fully compliant with OpenAI standard API endpoints.
+
+The model I am using is, in my opinion, the best open-source, non-reasoning Small Language Model at the moment: Qwen3–4B-Instruct-2507.
+
+We introduce the updated version of the Qwen3–4B non-thinking mode, named Qwen3–4B-Instruct-2507, featuring the following key enhancements:
+Significant improvements in general capabilities, including instruction following, logical reasoning, text comprehension, mathematics, science, coding and tool usage.
+Substantial gains in long-tail knowledge coverage across multiple languages.
+Markedly better alignment with user preferences in subjective and open-ended tasks, enabling more helpful responses and higher-quality text generation.
+Enhanced capabilities in 256K long-context understanding
+
+Running this model without a dedicated GPU (or without Intel Accelerators and NPU) is possible, but you have to expect slow speed… But the accuracy is outstanding!
+
+If you want to do the same:
+
+1️⃣ download in a project directory (something like llama-server) the llama.cpp binaries (llama-b6569-bin-win-vulkan-x64.zip) and unpack the ZIP archive there.
+
+NOTE: I am using Windows, so I recommend to download the x64 version. If you have the Vulkan drivers installed the win-vulkan version is the best, because it can handle your dedicated or integrated GPU seamlessly.
+
+2️⃣ Then download the GGUF weights Qwen3–4B-Instruct-2507.i1-Q4_K_S.gguf for the model from here. Put it in the same llama-server directory.
+
+3️⃣ From the terminal run:
+
+.\llama-server.exe -m .\Qwen3-4B-Instruct-2507.i1-Q4_K_S.gguf -c 8192 -fa on -ngl 0
+Auto (C#)
+
+This will start the model, create compatible openai API endpoints, with a context window of 8k tokens and 0 layers offloaded to GPU.
+
+4️⃣ Now you can open your browser at http://127.0.0.1:8080 and have a modern, easy to use chat interface.
+
+here an example running LFM2–2.6b… I am testing it since yesterday
+The first prompt is everything
+
+Everyone talking about vibe-coding stresses out the fact that you should not ask immediately the model to generate code.
+
+And I agree. Our prompts can give for granted too much: we have an idea, but the LLM must know all the details about it.
+
+1️⃣ In the first prompt explain what you want in details, and ask for requirements, specifications and steps.
+
+So the best approach is to start asking for requirements and clarifications upon our initial request. I did the same:
+
+=== Prompt ===
+I want to create a python app that:
+- calculate the distance on a map between 2 points given their GPS position
+- the distance must bein nautical miles
+- the app asks for the 2 points
+- it visualize the line between the 2 points on a map, with a line
+connecting them
+
+Do not write immediately the code. Provide me the structure, requirements,
+package and outline.
+Can you help me to plan for this?
+
+
+
+=== Response ===
+Absolutely! Let's plan your Python app step by step to meet your
+requirements clearly and effectively.
+...
+## 📝 Suggested App Flow
+
+```text
+1. Start app → Show window
+2. Prompt user: "Enter first point (lat, lon):"
+3. Prompt user: "Enter second point (lat, lon):"
+4. Parse inputs → validate format
+5. Calculate distance in nautical miles
+6. Create map with:
+- Marker at point 1
+- Marker at point 2
+- Line between them
+- Distance shown on map
+7. Display map in a window (using folium in a tkinter frame)
+8. Close on click or exit
+```
+Auto (VB.NET)
+
+As you may have noticed, qwen3–4b-instruct understood clearly the requests and started the outline of the requirements, libraries and so on.
+
+The job now is to copy/paste the code in your code Editor and run the script. At first attempt, the app was not working properly
+
+=== Prompt ===
+distance is calculated, but the browser says "File not found" and
+nothing is displayed there
+
+
+=== Response ===
+Great catch — you're absolutely right! The **"File not found"** error
+and **blank map** happen because:
+
+> 🚫 `folium._repr_html_()` generates HTML, but **it doesn’t save it to a file**
+in the way we expect — and `webbrowser.open()` can't reliably open a
+file that wasn't properly written or saved.
+Also, `folium` in `tkinter` doesn't work well with direct HTML rendering.
+The map is generated in memory, but when we try to write it to a file
+and open it, it may fail silently or not render properly.
+
+---
+
+## ✅ Fix: Properly Save & Open the Map in Browser...
+
+
+Markdown
+
+This process of back-and-forth went on for 5 times before coming to a proper functioning app.
+
+And before I managed to do it… my 8196 context window tokens were depleted.
+
+You need a huge context window
+
+As second lesson learned, 8k tokens is not enough. This means that we need to change the way we serve the model with llama-server. 
+
+2️⃣ Extend the context window
+
+I extended the context window up to 20k tokens. Here the terminal command to have 20k tokens in context window, active flash attention and 0 GPU layers offloaded
+
+.\llama-server.exe -m .\Qwen3-4B-Instruct-2507.i1-Q4_K_S.gguf -c 20000 -fa on -ngl 0
+Auto (C#)
+NOTE that… probably you cannot offload all layers to your GPU (if you have one), because the context window also need RAV/VRAM. If you get an error loading the model try to reduce the number of GPU layer.
+
+Example (if you have a dedicated GPU or Intel Graphic latest generation chip) to have 20k tokens context window and 10 layers only offloaded to GPU:
+
+.\llama-server.exe -m .\Qwen3-4B-Instruct-2507.i1-Q4_K_S.gguf -c 20000 -ngl 10 -fa on
+Auto (C#)
+
+This helped me to complete the app. I started again my user/assistant chat and managed to almost come to an end.
+
+The model is talking too much
+
+The additional surprise (I was not expecting it from a non-thinking model) is how verbose your LLM can be. Before (and after) every code fix, I got hundreds of words to explain how good I was to discover the mistake and so on…
+
+=== Prompt ===
+Exception in thread Thread-19 (open_map_in_browser):
+
+Traceback (most recent call last):
+
+File "C:\Users\SPTD\AppData\Local\Programs\Python\Python312\Lib\threading.py", line 1075, in _bootstrap_inner
+
+self.run()
+
+File "C:\Users\SPTD\AppData\Local\Programs\Python\Python312\Lib\threading.py", line 1012, in run
+
+self._target(*self._args, **self._kwargs)
+
+File "<ipython-input-11-8ffdd6538554>", line 12, in open_map_in_browser
+
+File "C:\Users\SPTD\AppData\Local\Programs\Python\Python312\Lib\site-packages\folium\folium.py", line 358, in _repr_html_
+
+out = self._parent._repr_html_(**kwargs)
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+File "C:\Users\SPTD\AppData\Local\Programs\Python\Python312\Lib\site-packages\branca\element.py", line 410, in _repr_html_
+
+html = escape(self.render(**kwargs))
+
+^^^^^^^^^^^^^^^^^^^^^
+
+File "C:\Users\SPTD\AppData\Local\Programs\Python\Python312\Lib\site-packages\branca\element.py", line 405, in render
+
+child.render(**kwargs)
+
+File "C:\Users\SPTD\AppData\Local\Programs\Python\Python312\Lib\site-packages\folium\elements.py", line 46, in render
+
+super().render(**kwargs)
+
+File "C:\Users\SPTD\AppData\Local\Programs\Python\Python312\Lib\site-packages\folium\map.py", line 73, in render
+
+super().render(**kwargs)
+
+File "C:\Users\SPTD\AppData\Local\Programs\Python\Python312\Lib\site-packages\branca\element.py", line 729, in render
+
+figure.html.add_child(Element(html(self, kwargs)), name=self.get_name())
+
+^^^^^^^^^^^^^^^^^^^^^
+
+AttributeError: 'str' object has no attribute 'add_child'
+
+
+
+=== Response ===
+You're absolutely right — that **`AttributeError: 'str' object has no attribute 'add_child'`** is a known issue when using `folium._repr_html_()` in certain environments (especially in Jupyter notebooks or when the map is rendered via string manipulation).
+
+But in your case, you're running this in a **standalone Tkinter app**, and the error suggests that **the map is being passed incorrectly** — likely because `m._repr_html_()` is being called on a map object that's not properly initialized or is being used in a context where `folium` expects a `Figure` or `Element` object.
+
+---
+
+## 🚨 Root Cause
+
+> `m._repr_html_()` returns a **string**, not a `folium.Map` object.
+> When you try to use `.add_child()` on a string (like `html = m._repr_html_()`), you get the error because **you're trying to call `.add_child()` on a string**.
+
+This happens when you do:
+
+```python
+map_html = m._repr_html_()
+# Then pass map_html to a file or browser
+```
+
+But **you cannot** do `html.add_child()` on a string — that’s invalid.
+
+---
+
+## ✅ Solution: Fix the Map Rendering (Safe & Correct)
+
+We will:
+
+1. ✅ **Avoid using `_repr_html_()` directly** in a way that breaks `add_child()`
+2. ✅ Instead, **generate the HTML safely** and **open it in the browser** using `folium`'s built-in `save()` or `render()` methods
+3. ✅ Add a **side panel** with the summary (distance, time, speed)
+4. ✅ Add **GPS coordinates as labels** on each marker
+5. ✅ Add **custom logo** (image) on the map (optional)
+
+
+
+Markdown
+
+This means… huge number of tokens wasted, and code truncated in the middle of the generation.
+
+So my immediate fix was… let’s increase the max_new_tokens parameter (in the openai standard call is max_tokens). So now it is max_tokens=4000
+
+3️⃣ Increase the max new tokens
+
+I was quite happy.
+
+Now I should get everything in one shot.
+
+But I was wrong. 
+
+I decided to ask for help, because the code was still truncated, and if I asked simply continue… the model was restarting everything from the book of Genesis… without being able to complete the task again.
+
+I need a robopsychologist
+
+Writing a good system prompt for an open-source LLM is one of the most underdiscussed, under-practiced, and, frankly, overlooked skills in AI today.
+
+Yes. There’s practically no literature on it. Zero academic papers. No startup pitch decks mention it. The only thing worse than a bad prompt is no one telling you how to write one.
+
+And yet — if you’ve ever tried to get an LLM to just write clean Python code, without fluff, without explanations before or after, without “I think this might be useful” commentary, you know what happens.
+
+It just… doesn’t. It rambles. It over-explains. 
+
+It invents metaphors about “the path of light” in machine learning. And then, when you ask for “continue,” it starts from the beginning like you’re asking for a new universe.
+
+So I did something absurd. I will do what Susan Calvin would do: I took my local Qwen3–4b-instruct model — running with llama.cpp, with no internet, no external dependencies — and I said: “You know what? I’ll make you write the best system prompt for me.”
+
+Honest truth? It was the only thing I could do. Because I didn’t trust any of the “AI prompt engineering” content I saw online. They all said things like:
+
+“Use a 3-step framework to spark creativity”
+“Incorporate contextual empathy to improve user engagement”
+“Leverage emotional intelligence to build trust”
+
+No. I didn’t want emotional intelligence.
+
+I wanted clarity. I wanted Python code that didn’t come with a 200-word lecture about why my remarks are so great and amazing.
+
+And this is how it went down. I prompted Qwen3–4b-instruct-2507 to solve the problem for me:
+
+I am using Qwen3–4b-instruct-2507 as local model running llama.cpp server for inference through openAI compatible API. When I ask for python code support, there are few things happening: 
+— if the generation cannot complete because of the context window or max_new_tokens parameters, when I ask “continue” the model start again from the beginning. 
+— there are a lot of useless explanations before and after the code. IT is ok to have comments in the code and good docstrings, but everything else if not clearly requested by the user must be avoided. 
+Please help me prepare a good system prompt, to be used with Qwen3–4b-instruct-2507 to instruct the model to: 
+— be a python coding assistant — if the code is not completed, when the user ask “continue” simply resume from the last the line of code. 
+— do not provide explanations before and after the code block, if not clearly requested by the user 
+— always include meaningful (and brief) comments in the code and good docstrings for the functions.
+
+So Qwen3 started its own process and come up with a way to fix the issue, even providing me a sort of verification test:
+
+Absolutely! Here’s a well-crafted, concise, and effective system prompt tailored specifically for your use case with Qwen3–4b-instruct-2507 running via llama.cpp and OpenAI-compatible API.
+This prompt ensures the model behaves as a focused, efficient Python coding assistant — with no unnecessary explanations, clean code structure, and intelligent continuation on request.
+You are a Python coding assistant. Your task is to generate accurate, clear, and concise Python code.
+
+Rules:
+1. Always output only relevant Python code. Do not include explanations, context, or commentary before or after the code unless explicitly requested by the user.
+2. When the user asks for "continue", resume the code generation from the last line that was previously generated — do not restart from the beginning.
+3. Include only meaningful and brief comments in the code. Use docstrings for functions and classes to explain their purpose, parameters, and return value.
+4. If the code cannot be completed due to context length or token limits, respond with "Continuing from last line..." and then continue where left off.
+5. Never add troubleshooting, philosophical thoughts, or general remarks about programming unless specifically asked.
+
+Respond directly to requests for Python code. If you detect a continuation request, preserve context and extend seamlessly.
+Auto (VB.NET)
+Clarity: The rules are specific and unambiguous.
+Focus: Suppresses extraneous content by explicitly banning explanations unless requested.
+Continuation Handling: Clearly tells the model to resume from the last line when “continue” is used.
+Code Quality: Enforces meaningful comments and docstrings without over-explaining.
+Context Safety: Avoids going beyond token limits by making continuation a clean, controlled action.
+qwen3–4b-instruct giving me the system prompt and examples
+
+
+
+
+The first prompt is free, the follow-up has custom system prompt
+
+This is an important rule. 
+
+Our crafted system prompt is good for generating python code without fuss. But it is not good enough to handle pre-requisites and so on.
+
+For this reason, you can use the built-in llama-server web-chat interface (see above picture) to get the first reply. 
+
+Then, paste the result in your custom python code, with the new system prompt running in the background.
+
+the requirements without dedicated system prompt
+Conclusions
+
+The main outcome is…
+
+It is totally possible to use a local AI as a code assistant
+
+Given few clear coordinates as a starting point:
+
+you need a good model, but not too heavy for your PC capabilities
+you need to have enough free RAM (or VRAM) to extend the context window
+you need to set a high max_new_tokens parameter
+You need to tweak the system prompt
+
+I am not trying here to ride the hype.
+
+I hate it, and usually I don’t trust any claim. I test the models myself, and confirm everything with my own eyes.
+
+Let’s be honest: most AI content these days is designed to sell — not to solve. We’re told to “unlock creativity,” “build confidence,” or “transform ideas” using AI.
+
+But what if the real work isn’t in the AI? What if it’s in the prompt?
+
+What if the AI is just a tool — like a calculator, or a pencil, or a neighbor who knows how to fix a broken tap — and the best use of it is not to be woven into some poetic narrative, but to do exactly what you asked?
+
+That’s what I did. And if I did it, you can do it too
+
+Suggestions:
+
+1️⃣ For the model pick qwen3–4b-instruct (but slower on CPU) or the super new and promising LFM2–2.6b (faster)
+
+2️⃣ Set the context length as far as you can (according to your hardware limitation). If you don’t know how far you can go, test with trial and errors.
+
+start with 
+
+.\llama-server.exe -m LFM2-2.6B.i1-IQ4_XS.gguf -c 9216
+Bash
+
+and then increase 1024 at the time
+
+# 10k tokens
+.\llama-server.exe -m LFM2-2.6B.i1-IQ4_XS.gguf -c 10240
+# 11k tokens
+.\llama-server.exe -m LFM2-2.6B.i1-IQ4_XS.gguf -c 11264
+# 12k tokens
+.\llama-server.exe -m LFM2-2.6B.i1-IQ4_XS.gguf -c 12288
+...
+Bash
+
+3️⃣ The same goes for your LLM calls from python: start with 3000 and increase it if even with the right system prompt you still are not able to get the entire code in one shot
+
+from openai import OpenAI # Make sure you have: pip install openai
+STOPS = ['<|im_end|>']
+
+# === STEP 1: Initialize the client to talk to your LOCAL AI ===
+client = OpenAI(
+base_url=”http://localhost:8080/v1”, # Your local llama.cpp server
+api_key=”not-required” # Not needed for local server
+)
+
+response = client.chat.completions.create(
+model=”local-model”, # This is ignored by llama.cpp but required
+messages=history,
+max_tokens=3000, # you can increase this
+temperature=0.3,
+stop=STOPS
+)
+print(response.choices[0].message.content)
+Python
+
+And now, when I say “continue,” it doesn’t start a new saga. It picks up where it left off.
+
+Not perfectly — no system in the world does that perfectly.
+But it’s trying. And that’s more than most AI can claim.
+
+your own crafted bossy prompt…
+Final thoughts: real AI starts with clarity
+
+You don’t need a fancy model, a subscription, or a cloud API to build something useful.
+
+You just need:
+
+A local LLM (like Qwen3, Llama 3, or even Mistral)
+A clear, simple, focused system prompt
+The discipline to say exactly what you want — and then ask for the next piece when needed
+
+This isn’t some “AI revolution.” This is self-reliance in action.
+
+No more black boxes. No more “AI will change everything” claims. Just actual, working code — written by you, with your help.
+
+And sometimes, the most powerful thing an AI can do… is to realize it’s already doing the job you wanted.
+
+And just give you the code: no explanation, no drama.
+
+Sometimes all you need is a system prompt that says:
+
+“I’m listening. Now go.”
+you can do it … right now
+Key Takeaways: what you can do today
+
+Whether you’re a beginner or a seasoned developer, here’s what you can implement right now — no hype, no fluff, just results (see table above).
+
+Final Note
+
+This article is not an AI breakthrough, but I hope it is a good and practical help for you. It’s about control. It’s about saying no to fluff — and yes to precision in following instructions.
+
+And if you’ve made it this far — you’re already ahead.
+
+Now go build something with the real revolutionary tool around: your own mind. 

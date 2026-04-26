@@ -1,0 +1,164 @@
+AI Isn't The Problem. You Are.
+Prompt Guy
+AI ISN'T THE PROBLEM. YOU ARE.
+
+Everyone has access to the same tools. So why are the results so different?
+
+Apr 14, 2026
+
+•
+
+8 min read
+
+
+Hey Prompt Lover,
+
+I'm going to say something that might sting a little.
+
+Most people using AI right now are getting maybe 20 percent of what it can actually do.
+
+Not because the tool is hard. Not because they're not smart enough. Not because they need a course or a certification or a YouTube playlist.
+
+Because of a few habits so common I see them every single day — in screenshots people send me, in replies to this newsletter, in conversations with people who tell me AI "doesn't really work" for them.
+
+And here's the thing. None of this is hard to fix. Once you see it, you can't unsee it.
+
+So let's talk about it.
+
+The AI Playbook for Video Teams That Can't Slow Down
+
+Wistia's new AI Video Marketing Trends report shows how marketers are using AI to handle the unglamorous work, so creative energy stays where it matters.
+
+Marketing leaders across industries are using AI to reach broader audiences, move faster, and extend the shelf life of every video they make. The report breaks down how AI is improving speed and output quality, helping teams keep up with demand and raise the bar while they're at it.
+
+Because when every channel needs video, you need leverage, not another meeting that could've been an email. AI clears the runway so ideas actually take off.
+
+See how top teams are using AI to iterate, refine, and ship while keeping a human grip on taste, voice, and strategy.
+
+Get the Free Report
+
+The first problem is the biggest one.
+
+People treat AI like a search engine.
+
+They type a short question. They get a short answer. They move on.
+
+"Give me marketing ideas."
+
+"Write me an email."
+
+"Summarize this."
+
+And then they're surprised when what comes back is generic. Vague. Basically useless.
+
+Here's the thing — when you give AI nothing to work with, it has nothing to work with. It doesn't know who you are. It doesn't know who you're talking to. It doesn't know what good looks like for your specific situation.
+
+So it guesses. And guesses give you the kind of output that sounds like it could be for anyone, anywhere, doing anything.
+
+Compare these two prompts.
+
+"Write me a marketing email."
+
+Versus.
+
+"Write a marketing email for a freelance graphic designer targeting small restaurant owners in Lagos. The offer is a one page menu redesign for 50,000 naira. The tone should be direct and friendly, not corporate. Keep it under 150 words."
+
+Same tool. Same AI. Completely different output.
+
+The people getting great results aren't smarter.
+
+They're just more specific.
+
+The second problem is that people give up after the first response.
+
+Someone asks AI to write something. The first version isn't quite right. They decide AI isn't good at this and close the tab.
+
+That is like asking a colleague to draft something, reading the first version, saying "this isn't what I wanted" to yourself, and then firing them without ever telling them what was wrong.
+
+AI is not magic. It's a conversation.
+
+The first response is almost never the final response. The people who get consistently good output are the ones who push back. Who say "make this shorter." Who say "this sounds too formal, try again." Who say "you missed the point, here's what I actually need."
+
+One round of feedback can t ake a mediocre first draft to something genuinely good. Most people never try it.
+
+The third problem is treating every task the same.
+
+Not all AI models are equal and not all of them are good at the same things.
+
+Using Haiku to do deep research and analysis is like bringing a pocket knife to build a house. It'll kind of work but not really. Using Opus to check grammar on a quick email is like hiring a surgeon to put on a bandaid.
+
+Poor prompting remains the primary reason AI automations fail to deliver value. But picking the wrong tool for the job is a close second.
+
+Simple tasks — quick answers, formatting, grammar, short drafts — that's Haiku all day. Fast and cheap.
+
+Real work — analysis, writing that needs to sound like you, complex documents, research — that's Sonnet.
+
+The hard stuff — long documents, serious thinking, anything high stakes — that's Opus.
+
+Most people default to one model for everything and then wonder why results are inconsistent. The model matters.
+
+The fourth problem is starting from zero every single time.
+
+Every new chat session, they retype the same context. Same role. Same preferences. Same explanation of what they do and who they're writing for.
+
+That's like hiring the same assistant every Monday morning and spending the first two hours of every week explaining who you are.
+
+People often assume the model remembers past details or knows their niche without being told. Models don't have your private context and won't track it across separate sessions.
+
+The fix is simple.
+
+Set up your memory and preferences in settings once. Tell Claude who you are, how you write, what you do, who your audience is. Save it. Never explain yourself from scratch again.
+
+The people getting consistent results aren't prompting better in the moment. They've built a foundation that means every session starts already knowing what they need.
+
+The fifth problem is the most embarrassing one to admit.
+
+People use AI to produce things they haven't read.
+
+They generate a report and send it. They write a blog post and publish it. They draft an email and hit send. Without actually reading what came back.
+
+And then they wonder why a client pushes back or a colleague asks a question they can't answer or someone points out the thing AI got completely wrong.
+
+A lawyer was caught citing non-existent legal cases in a New York federal court filing. The attorney had used ChatGPT to conduct legal research, and the AI tool provided fake case references which the lawyer included in the filing.
+
+That is an extreme version of something that happens at a smaller scale constantly. AI gets things wrong. It makes up facts. It misses the point. It gives you an answer that sounds correct but isn't.
+
+The tool is for doing the heavy lifting — not for replacing your judgment. You still have to read the thing. You still have to know enough to catch what's off.
+
+The people who get caught out by AI are not the ones who use it. They're the ones who use it without paying attention.
+
+So what actually separates the people getting great results from everyone else?
+
+It's not that they know a secret prompt formula. It's not that they have a special setup nobody else has access to.
+
+It's three things.
+
+They give context. Every time. Who they are, who this is for, what good looks like.
+
+They treat it like a conversation, not a vending machine. They push back. They refine. They go back and forth until it's right.
+
+And they stay in the loop. They read what comes back. They catch the mistakes. They add what the AI can't know.
+
+That's it.
+
+The gap between people who say AI is a game changer and people who say AI is overhyped is almost entirely explained by those three habits.
+
+You can close that gap this week. Not by learning something new. By doing what you're already doing but with a bit more intention.
+
+Next time you open Claude, before you type anything, spend thirty seconds answering these three questions.
+
+Who am I in this context?
+
+Who is this for?
+
+What does done actually look like?
+
+Then type your prompt.
+
+See what's different.
+
+Reply and tell me what happened. Seriously. I want to know.
+
+— Prompt Guy
+
+

@@ -1,0 +1,88 @@
+23 Questions Every Heavy AI User Should Ask
+https://www.thealgorithmicbridge.com/p/23-questions-every-heavy-ai-user
+The Algorithmic Bridge
+---
+23 Questions Every Heavy AI User Should Ask
+A checklist for the rest of us
+ALBERTO ROMERO
+APR 13, 2026
+---
+
+Hey there, I’m Alberto! 👋
+
+Each week, I publish long-form AI analysis covering culture, philosophy, and business for The Algorithmic Bridge. Paid subscribers also get Monday how-to guides and Friday news commentary. I publish occasional extra articles. If you’d like to become a paid subscriber, here’s a button for that:
+
+Upgrade to paid
+
+Everyone’s using AI now. At the same time, everyone is starting to notice a bunch of issues and caveats that are emerging with the growing use of this technology. And yet, as far as I know, nobody has made a periodic self-check for AI users.
+
+There are vendor evaluation questionnaires (for companies buying AI), prompting guides (for people learning the basics), and tool comparison lists (for people choosing between products). But there's nothing for the person who uses AI every day and wants to make sure they're not drifting. Thinking about “how you use a tool” is less exciting than using the tool. But it might matter more.
+
+This is my first attempt at that (this is for myself, but it might be of use to you).
+
+I’ve been using AI tools every day for over five years now. I research with AI, brainstorm with it, edit with it, and build personal software tools with it. I’m not yet in the multi-agent stage, but it will eventually happen. My current project is akin to Karpathy’s wiki/knowledge base, but for the entire archive of writing, reading, and interesting stuff that I’ve been capturing and classifying for years, rather than research.
+
+Andrej Karpathy
+@karpathy
+LLM Knowledge Bases
+
+Something I'm finding very useful recently: using LLMs to build personal knowledge bases for various topics of research interest. In this way, a large fraction of my recent token throughput is going less into manipulating code, and more into manipulating
+11:42 PM · Apr 2, 2026 · 19.7M Views
+2.73K Replies · 6.6K Reposts · 55.6K Likes
+
+At this point, my workflow is more AI than not-AI. I’m faster than I’ve ever been and work more than I’ve ever worked (that’s why I wrote “The Most Important Skill in AI Right Now: How to Know When to Stop” and “How to Deal With Infinite Options”).
+
+Yesterday—because I’m too methodical or hedge too much—I sat down to write something without relying on AI assistance from beginning to end—research, editing, grammar, etc.—just to see how it felt, and realized a tinge of vertigo. Not having an AI-enabled “safety net” made me feel weirdly vulnerable (in case you don’t know, English is not my first language, and so I make typos, confuse words, and misuse expressions, etc., at a higher rate than normal).
+
+My work was slower and less comfortable, and I kept reaching for a Claude tab. Imagine you had to work for a day without the internet, it’d be supremely restricting, right? But AI is so new! How is this happening to me already?
+
+My answer is that, for most heavy users using AI for serious work, this shift is going to happen for AI much faster than it did for the internet or the phone. These tools reward speed, so here we are, with a superpower in our hands, doing more than ever, faster than ever, always monitoring the next release or announcement.
+
+And yet.
+
+Have you taken the time to step back for a second and ask whether you’re actually getting better at what you do or just getting faster? Whether you’re getting smarter or dumber? Whether your work is better or just more abundant?
+
+I haven’t.
+
+And I have noticed, after writing those other posts I mentioned above, that it’s not the people who use AI the most who will reach further, but those who start to ask the right questions about the best practices. Those who dedicate 5% of their time to reflect.
+
+This is, it turns out, an old problem with an old solution: the checklist.
+
+To convince you, I’ve compiled four cases in chronological order. You can jump this section if you are already convinced, but I found these four guys’ approaches to be genuinely interesting despite centuries between them and us (except the last one). They are the predecessors to our current work methodology.
+
+Lucius Annaeus Seneca (4 BC - AD 65)
+
+Ignatius of Loyola (1491 - 1556)
+
+Benjamin Franklin (1706 - 1790)
+
+Atul Gawande (1965 - )
+
+Seneca’s most famous line is ”It is not that we have a short time to live, but that we waste a lot of it.” He did not suffer from the laziness that afflicts most of us.
+
+He was one of the sharpest minds in Rome—second in charge to Nero while he was a boy—and he had a nightly practice where he reviewed his entire day. “What did I say? What did I do? What could I have done better?” He describes it in De Ira (on anger), and he makes it sound remarkably undramatic: he doesn’t frame it as self-punishment or spiritual discipline or personal development but as standard maintenance.
+
+He already knew how to live well (although for what we know from his writings on happiness, he could’ve done a better job). The review was about making sure he was doing it. Seneca understood something that I think applies directly to us: knowing what to do and actually doing it are different problems.
+
+Fifteen centuries later, Ignatius of Loyola—a Spaniard, which I appreciate—took this idea and turned it into a system: The Examen. Five steps and five minutes. Twice a day.
+
+It was designed for Jesuits, the most committed, most disciplined practitioners in the Catholic world, so he tailored it, naturally, for religious stuff. But it’s a useful reference because it was for experts. (You may not think of yourself as such, but consider what 99% of the population knows about using AI and then think again.)
+
+Loyola understood that the review becomes more valuable the more competent you already are—not the other way around—because 1) complacency hides in competence and 2) an incompetent person could not even parse it! A beginner may not know what they don’t know, but an expert forgets how much they know.
+
+Then Ben Franklin—probably the one that’s most familiar to you—took the whole thing out of the spiritual domain—this is during the 18th-century Enlightenment—and made it practical with his 13 virtues. He tracked one per week, cycled through all 13 every quarter, and kept a chart (he would have loved Claude Excel).
+
+Franklin’s system made explicit what Seneca and Loyola left implicit: any single day’s answers are meaningless; “I failed at Temperance today, so what?” The insight is in the pattern across months. He also said, and I love this, that he never achieved the perfection the system aimed at, but that the practice of checking made him better than he would have been without it.
+
+Finally, Atul Gawande—the only one here that’s still alive—proved all of this empirically in 2009.
+
+He wrote The Checklist Manifesto after studying a case at Johns Hopkins: a team created a five-step checklist for inserting central line catheters. When they made it mandatory to run the checklist every time for ICU doctors—who knew it by heart—the infection rate dropped from 11% to zero!
+
+Essentially, they stopped skipping steps they had been skipping solely motivated by the tricky disability of expertise. Gawande’s key finding is that the doctors who resisted the checklist the most were the most senior ones. It felt beneath them. And yet, they were the ones who benefited the most. That’s us, you and me, pioneers in the use of AI, paving the way for those who come after, failing to notice our flaws.
+
+Summing up: Seneca introduced the principle of the checklist, Loyola focused it on the experts, Franklin introduced consistency, and Gawande proved it empirically.
+
+This maps directly onto how we’re using AI.
+
+And I’m going to show you how.
+

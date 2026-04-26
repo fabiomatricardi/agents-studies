@@ -1,0 +1,78 @@
+Why Enterprises can’t hire AI Agents | by Steve Jones | Oct, 2025 | Medium
+https://blog.metamirror.io/why-enterprises-cant-hire-ai-agents-3ef9936747b1
+Why Enterprises can’t hire AI Agents
+Or why software vendors don’t get enterprise reality
+Steve Jones
+
+The current premise of Enterprise revenue from selling AI Agents is based on a fundamental, or maybe deliberate, misunderstanding of how enterprises actually work.
+
+There is a joke in SAP projects that everything will be fine as long as you accept “the word according to Walldorf”, the idea is that everything in your SAP program will be fine as long as your business works exactly how they think it should at SAP Headquarters. The same applies to Oracle, Salesforce, Microsoft, Google and indeed pretty much every software vendor out there. Everything is great, just as long as your business works the way they imagine.
+
+Now sometimes companies imagine they are different and implement those systems differently not because they are actually different, but because they feel like they are different. However an awful lot of the time there are bits of the business that absolutely are different and even if the package is “built vanilla” the way it is used between two different companies can differ wildly.
+
+Stock and Sale
+
+Consider three companies, both with SFDC for CRM and Customer Orders and SAP for Inventory and Supplier Orders.
+
+Company A is a MLM wellness drop shipper
+Company B makes its own products
+Company C has a “24 hour guarantee” on confirmed orders
+
+So each of them has a ‘vanilla’ SFDC and SAP implementation, but very different ways of working.
+
+Company A takes an order from a customer, then submits that order against a supplier against their procurement contract, they don’t care about inventory
+Company B checks inventory and if its in stock gives a delivery time, if it isn’t in stock then it asks the customer if they want a special order (costs extra) or can wait for the next batch run, gives different delivery dates for the two scenarios
+Company C never accepts an order where there isn’t inventory and must reserve inventory before committing the order.
+
+Now as these companies have saved their costs on IT implementation, then these three different approaches aren’t hardcoded into their implementations. Its a ‘simple’ matter of the person (or website) just following the approach laid down in the policy. So when they hire a salesperson they not only teach them how to use the systems, but they also teach them these standard operating procedures.
+
+Who onboards the AI?
+
+So these companies are all bombarded by Salesforce about AgentForce and SAP about Joule, and no doubt by whatever cloud provider they also have. All of them claiming to have the very best sales agent in the history of humanity.
+
+But who tells the AI Agent, and how about the unique operating procedures of the company they are being deployed in?
+
+Press enter or click to view image in full size
+An AI Agent has never seen how YOU work
+
+Now the trite answer is “well just code it into the Agent”, but that gives us three core problems
+
+When there is an issue the Agent vendor will absolutely blame these “customizations”
+If we get two or more agents from different vendors then we’ll have to do this work multiple times and maintain it in multiple places if there are changes
+We might not be able to upgrade our 3rd party agents due to our customizations
+
+In other words these companies that have ‘done the right thing’ and implemented vanilla solutions will have to customize their AI Agents to work in their business.
+
+I am special, but why is my agent?
+
+Lets take a fourth company, now they’ve got SFDC and SAP, but they heavily customized it not for any major reason, its just that they didn’t like certain things about the way the systems work. So they’ve added some additional data objects and attributes that they prefer to use over the standard ones.
+
+How does that company describe their differences to these third party agents?
+
+Are they customizing the agent further? At what stage do they just give up and build it themselves?
+
+My data isn’t your data
+
+Our four companies operate differently as well from a geographical perspective, Company A is very much a small band of folks operating out of a single office, Company B is a global multi-national, Company C is focused on core city markets globally, and D is a regional player in the Pacific Northwest.
+
+The first three all use exactly the same schema, straight out of the box from Salesforce and SAP, but for Company B due to some regulatory concerns they have to have regionally separated versions for the EU, North America and the Rest of the World, still the same schema but three different instances.
+
+The fourth has a fully custom schema developed on Databricks.
+
+All four of them want to use an AI agent that helps create marketing campaigns for customers based on historic trends. They’re all using the same schema, but selling different products, in different ways, for Company A they change suppliers regularly, so you aren’t looking at offers on the same products. Company B gets regular repeat sales, but what companies buy from them differs based on scale, its pretty much the same whatever the region, but its the type of company that is the driver, Company C has products that are hyper-tailored for specific city markets.
+
+Same schema, completely different meanings.
+
+How do you describe that to the AI Agent?
+
+If you can’t onboard an Agent, you can’t buy it
+
+A lot of the agents that exist today are trivial, so these issues haven’t become overly prevalent, but the ambition of AI vendors is that these things represent a huge new market opportunity, and one of the few hopes of genuinely getting a return on the trillion dollar investments being made.
+
+So how will these agents learn how your company works? How will you teach them what your standard operating procedures are? How will you ensure that they are following the ways of working that your business has laid down?
+
+You wouldn’t hire a person who was “good on paper” but had zero ability to learn how your company worked, yet it feels like this is the strategy being applied today by AI Agents.
+
+As long as you work the way we want, then our agents will work
+
+That doesn’t feel like a plan.

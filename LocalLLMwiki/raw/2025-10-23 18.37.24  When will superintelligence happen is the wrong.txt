@@ -1,0 +1,253 @@
+“When will superintelligence happen?” is the wrong question
+written by cauri
+
+Everyone wants to know when artificial general intelligence will arrive. I find the question useless.
+
+We haven’t solved basic problems about how these systems learn, remember, and reason — yet genuine capabilities keep emerging in ways nobody designed or predicted. This piece maps five specific frontiers standing between current AI and general intelligence. Each represents a concrete gap with active research and plausible paths forward.
+
+I prefer watching what systems actually do over speculating about arrival dates. That approach won’t give us AGI on a schedule. It might give us something better: a toolkit of intelligences we understand, systems we can steer, and the humility to notice when we’ve built something we didn’t expect.
+
+I watch what systems do when nobody programmes them to do it.
+
+Diffusion models started drawing backgrounds before foregrounds. Nobody taught them about spatial layers or dimensional hierarchy — they learned it from observing millions of images during training. Video models picked up intuitive physics, bouncing water and dropping objects with rough accuracy, extracted from training data that never explicitly encoded Newton’s laws. Language models cluster concepts in ways that let me search semantically, matching intent rather than keywords, even though the training objective just predicted next tokens.
+
+These moments catch my attention not because they feel magical, but because they offer clues. Emergence happens when feedback loops run long enough and objectives align well enough that useful structure appears without explicit instruction. I see that as a signal, not a miracle.
+
+The conversation around AGI swings between wild optimism and existential panic, often in the same week. I find both exhausting. Prophecies about arrival dates feel premature when we haven’t solved basic problems about how these systems learn, remember, and reason. At the same time, dismissing progress because models make odd errors misses the genuine capabilities emerging in laboratories and production systems right now.
+
+I prefer a different frame: map the frontiers we actually face, watch for what emerges as we push on them, and build with both ambition and honesty about what works and what breaks.
+
+Intelligence beyond the human template
+
+We carry a bias towards minds that look like ours. That bias doesn’t trap us — we can imagine and build intelligences that operate differently — but it shapes our default assumptions about what intelligence requires and how it ought to function.
+
+Biology hands us one proof of concept. Brains evolved under specific constraints: energy scarcity, physical vulnerability, and social coordination. Those constraints produced particular solutions — embodied learning, selective attention, and temporal reasoning bound to survival. Digital systems face different constraints and afford different possibilities.
+
+A single AI can learn from multiple bodies moving through the world simultaneously, aggregating experience at a rate no biological intelligence matches. It doesn’t require sleep to consolidate memory. It can route queries through specialised sub-networks rather than forcing every question through a uniform architecture. These aren’t better or worse; they’re different trade-offs in a different design space.
+
+The question that interests me: what capabilities emerge when we design for those different constraints rather than trying to replicate our own architecture? Not to replace human intelligence, but to explore what other forms intelligence might take.
+
+Five frontiers that matter
+
+I see five challenges standing between current systems and something we might reasonably call general intelligence. None of them individually blocks progress, but each exposes a genuine shortcoming between what models do now and what they’d need to do to operate reliably across varied contexts.
+
+Learning — keeping up with drift
+
+Training a model locks its knowledge in place. The world moves on. Facts change, language shifts, products launch, policies update. A model trained in January 2025 knows nothing about events in February unless we rebuild it.
+
+Retraining everything from scratch each time something changes doesn’t scale. The compute costs alone make that approach impractical for most applications, and you lose the implicit knowledge the model developed during earlier training unless you carefully preserve it.
+
+Multiple technical paths address this, and the future likely combines them rather than choosing one winner. Human brains don’t run on a single mechanism — the amygdala handles threat detection, the prefrontal cortex manages planning and reasoning, the hippocampus consolidates memory. These structures work together through different learning rules and timescales. We might build artificial systems the same way: composite architectures where different components handle different aspects of learning.
+
+Continual learning research within transformer architectures explores ways to update models without catastrophic forgetting — the tendency for neural networks to abruptly lose old skills when learning new ones. Current approaches include constraining updates to less sensitive weights (regularisation methods), rehearsing small batches of older examples alongside new data (replay methods), and growing new capacity while preserving old pathways (architectural expansion). These techniques help, but transformers still struggle to balance stability with plasticity.
+
+Liquid neural networks offer a different learning paradigm. Instead of fixed weights adjusted through backpropagation, LNNs use neurons with time-varying dynamics governed by differential equations. These networks adapt continuously to shifting input distributions, making them particularly effective for control tasks, time-series prediction, and edge deployment where retraining remains impractical. The neurons themselves change their behaviour based on what they observe, without requiring gradient descent updates.
+
+I see potential in hybrid designs: a transformer backbone for semantic understanding and retrieval, paired with liquid neural network modules for temporal adaptation and continuous learning from interaction. The transformer provides the broad knowledge base and pattern-matching capability; the LNN handles real-time adjustment to new patterns and environmental drift. One component stores what we know; the other adapts to what changes.
+
+Other architectural combinations might work similarly. Mixture-of-experts transformers already partition knowledge across specialists; adding liquid components for specific experts could enable selective updating. World models built from video diffusion could handle spatial and physical reasoning, while transformers handle language and abstract concepts. The key insight: we don’t need one architecture that does everything. We need complementary architectures that handle different challenges well and compose cleanly.
+
+When I build customer-facing systems now, I work around learning limitations through retrieval and context engineering — injecting current information at query time rather than baking it into weights. That helps, but it dodges the problem rather than solving it. A system that could genuinely update its understanding through interaction — perhaps through liquid modules that adapt online while transformer components provide stable semantic grounding — would change what becomes buildable.
+
+The biological precedent supports this direction. Our brains didn’t evolve a single learning mechanism. They evolved multiple systems working together: fast hippocampal encoding for episodic memory, slow cortical consolidation for semantic knowledge, subcortical circuits for habit learning, and cerebellar systems for motor control. Each operates on different timescales and learning rules. Together they create something more capable than any single mechanism could achieve.
+
+We should expect the same pattern in artificial systems: not one breakthrough architecture, but thoughtful composition of specialised components that handle complementary aspects of learning.
+
+Temporality — living with time
+
+Current models treat facts as timeless unless we force temporal context into the prompt. A statement from 2012 and one from 2025 sit in the same conceptual space, weighted by co-occurrence patterns rather than recency or relevance to the present moment.
+
+This breaks in predictable ways. Ask about a company’s revenue or a country’s leader, and the model might pull from any point in its training distribution. The answer depends less on when the information matters and more on what dominated the training corpus.
+
+Time-aware retrieval systems address part of this. They attach timestamps to documents, build temporal knowledge graphs, and rank results by freshness plus relevance. The TimeR⁴ framework demonstrates one approach: retrieve relevant chunks, rewrite the query with explicit temporal constraints, retrieve again with those filters, then rerank by recency. Benchmarks like TRAM expose persistent weaknesses in reasoning about duration, ordering, and frequency, even with these augmentations.
+
+A practical path forward involves making time a first-class dimension in how we index, retrieve, and weigh information. Queries should carry implicit or explicit temporal scope. Retrieval should prefer recent evidence unless older context specifically matters. Models should learn that “current” and “as of 2015” mark different epistemic states.
+
+I’ve built finance tools where this matters acutely. Without temporal handling, a model cheerfully mixes guidance from deprecated regulations with current policy, or treats a decade-old market analysis as relevant to today’s conditions. The fixes feel crude — manual date filters, aggressive prompt engineering, retrieval systems that front-load recent documents — but they work well enough to ship. The underlying model still lacks temporal intuition; we compensate in the pipeline around it.
+
+Selective ignorance — the skill of forgetting
+
+Human minds survive by ignoring most of what they encounter. Brains filter aggressively: peripheral vision, background noise, irrelevant thoughts, outdated memories. Without that filtering, we’d drown in stimulus. Our ability to ignore might count as one of our most useful cognitive traits.
+
+Current language models don’t filter in the same way. They encode everything from training with relatively uniform attention. In inference, they process all the context we feed them, weighted by learned patterns, but rarely discarding information outright.
+
+Two approaches address this. Engineered sparsity uses architectural choices to route efficiently: Mixture-of-Experts models activate only a subset of parameters per token, concentrating compute on relevant specialists while leaving others dormant. This saves resources and reduces interference between unrelated tasks.
+
+Learned forgetting takes a different angle. Machine unlearning and controlled forgetting techniques remove or down-weight specific knowledge — outdated facts, biased associations, privacy-sensitive training examples — without full retraining. This matters for compliance, safety, and maintenance. Research also documents curious training artefacts like attention sinks, where models anchor strongly to initial tokens, suggesting emergent mechanisms for managing context.
+
+Systems need both: architectural sparsity for efficiency, and deliberate unlearning for adaptation. A model that could selectively prune its own attention based on task demands, ignoring distractions the way a human focuses despite noise, would behave more robustly across varied contexts.
+
+I’ve seen this gap clearly in long-context applications. Feed a model 50 pages of documentation plus a specific question, and it often drowns in irrelevant detail rather than extracting the three relevant paragraphs. Retrieval helps — fetch only what matters — but that pushes the problem upstream. A model with genuine selective attention would handle the filtering internally, the way we do when skimming a long document for a specific fact.
+
+Karpathy frames this need directly: strip away the memory, keep the cognitive algorithms. Models that look things up rather than relying on baked-in knowledge might behave more robustly across contexts where memorised patterns don’t apply. The goal becomes maintaining what he calls the “cognitive core” — the intelligence for reasoning and problem-solving — without the distraction of trying to recall everything from training.
+
+Conceptualisation — relations between ideas
+
+Semantic search groups similar concepts. That capability emerged naturally from training: cluster words and phrases that appear in similar contexts, then match queries to nearby points in that learned space. It works remarkably well for finding documents that discuss related topics.
+
+Reasoning requires more: understanding how concepts relate to each other, not just that they cluster. Three persistent failures reveal this limitation.
+
+Systematic compositionality: models often stumble when combining known elements in new arrangements. They learn “red ball” and “blue cube” separately but fail to reliably generate “red cube” or “blue ball” when prompted. Lake and Baroni’s experiments demonstrate this limitation across various composition tasks. The model learns correlations without grasping the underlying compositional structure.
+
+Inverse facts: after training on “A is B,” many models fail to infer “B is A.” Berglund and colleagues documented this reversal curse extensively. Tell a model “Olaf Scholz serves as Chancellor of Germany,” and it answers that correctly. Ask “Who serves as Chancellor of Germany?” and it might fail to retrieve Scholz, despite having the fact in both directions within its training data. The model doesn’t learn bidirectional relations; it learns directional paths through token space.
+
+Levels of abstraction: humans navigate concept hierarchies with remarkable fluency. We recognize that “vehicle” sits above “car” which sits above “sedan” which sits above “2015 Honda Accord.” We move between these levels effortlessly — generalising up when we need broad patterns, drilling down when we need specifics.
+
+Language models handle simple taxonomic questions reasonably well. Ask “what category does a sedan belong to?” and they’ll answer correctly. The breakdown happens in more subtle ways: knowing when to shift abstraction levels during reasoning, understanding which properties transfer up and down hierarchies, and applying analogical reasoning across different conceptual domains at corresponding levels.
+
+A model might explain database normalisation at the logical level, then jump to discussing specific SQL syntax, then reference abstract data modelling principles — all without clearly marking which level each concept operates at or maintaining consistency about what level the current discussion requires. The transitions happen, but the awareness of making transitions doesn’t seem present.
+
+Token space encodes associations between concepts at different levels, but the hierarchical structure itself remains implicit rather than explicit. The model learns that these things relate without building clean typed relationships like “is-a,” “part-of,” “instance-of,” or “generalises-to.”
+
+When I build systems that need to reason about categories, inheritance, or abstraction levels, the model constantly conflates what sits where in the conceptual hierarchy. Ask it to “explain database architecture,” and it might jump between physical disk layout, logical schema design, and abstract data modelling principles without marking the transitions or maintaining clear levels. The concepts relate, but the model doesn’t track how they relate or at what level of abstraction each operates.
+
+All three failures point to a loose concept geometry. The model knows these things associate, but not how or why. It lacks constraints on relational structure and hierarchical organisation.
+
+Remedies under exploration include training curricula that emphasise compositional structure, explicit reasoning tools that manipulate graphs rather than just vectors, and prompting techniques like Skills-in-Context that scaffold intermediate steps before attempting composition. Some researchers explore neuro-symbolic hybrids that combine learned representations with explicit symbolic reasoning. None of these fully solves the problem, but they narrow the gap between correlation and comprehension.
+
+This limitation surfaces constantly in practical work. A model might know that “increased interest rates slow inflation” and separately know that “the Federal Reserve controls interest rates,” but fail to connect those facts when asked, “What tools does the Fed have to fight inflation?” The pieces sit isolated rather than composed into a reasoning chain. I work around this by breaking complex queries into explicit sub-questions, forcing the model to build connections step by step rather than expecting it to navigate the conceptual graph autonomously.
+
+Embodiment — experience closes loops
+
+Intelligence accelerates when action meets consequence. Static training on text and images provides breadth but lacks the tight feedback loops that come from moving through a physical environment and observing results.
+
+Watch a child who can already walk. Each step brings a new angle on the world. Each room they enter delivers a different curriculum. From their height, the living room becomes a physics laboratory: objects fall, surfaces have friction, corners hurt, soft things compress. They taste everything in sight — that’s why most of us know what wood, dirt, and metal taste like; we tried as babies — mapping the world through their mouth as much as their eyes. They hear the TV humming, feel heat radiating from the heater or cold pouring from the AC vent. Take that same child to the park and the data stream explodes again: new textures underfoot, wind on skin, other children’s movements, unfamiliar sounds, different light.
+
+A static sensor gets a tiny fraction of this input data. A body moving through space at child-height, interacting constantly, generates far more data per hour. That volume matters.
+
+Current AI training relies primarily on digitised human artefacts — text, images, video. The numbers tell a stark story about what that actually means. Google scanned roughly 25–30 million books out of approximately 130 million that exist globally — call it 20–30% of all published books. Newspapers fared worse: over 90% remain undigitised, with the British Library reporting 93% of their newspaper content still sitting on microfilm or crumbling paper. Coverage skews heavily toward English-speaking countries; outside North America, Europe, and Australia, digitisation barely exists. Archives and manuscripts struggle most — European surveys show less than 10% digitised in most collections, with handwritten materials, letters, and institutional records barely touched. Ancient materials performed better than expected: the Cuneiform Digital Library Initiative catalogued roughly 60% of known tablets, and major scroll collections got priority treatment, though most remain imaged rather than transcribed.
+
+AI models train on a fraction of that fraction. GPT-3’s Books1 and Books2 datasets represented perhaps 0.1–1% of all published books. The training mix favoured web crawls at 60%, Reddit posts at 22%, and Wikipedia at 3%. Language bias runs deep: 93% of GPT-3’s training came from English sources, French managed 1.8%, German got 1.5%, and everything else fell below 1%. Most African, Middle-Eastern, and indigenous languages barely registered.
+
+That corpus, however large, represents a tiny fraction of the experiential data humans actually learn from. Most of what we know about the world came from moving through it, touching things, breaking things, tasting things, feeling consequences. We encoded almost none of that into text or images. The models train on perhaps 5–10% of humanity’s written output, and that fraction leans heavily toward modern, Western, English-language sources. The bottleneck stays economic: digitisation costs money and time, copyright creates legal barriers that money can’t solve, and the result leaves 75–90% of global written material analogue, with digitisation advancing slowly and unevenly.
+
+Embodiment unlocks access to that larger dataset. Not through digitised proxies, but through direct sensorimotor interaction. A robot body generates training data that doesn’t exist in any corpus because it comes from experience, not documentation.
+
+Embodied AI models like PaLM-E feed sensor state, images, and language together through a shared backbone, grounding language in physical reference. RT-2 takes this further, translating web-learned semantic knowledge into robot control actions: “pick up the extinct animal” works because the model learned “extinct animal” from text and “pick up” from robot demonstrations, then composed them. The Open X-Embodiment dataset pushes scale: many robots, diverse tasks, shared policy. That matches the intuition I hold — one intelligence learning from many bodies simultaneously, aggregating experience at rates no single organism achieves.
+
+Fei-Fei Li frames this as spatial intelligence, arguing that robust general intelligence requires world-centred representations built through interaction and embodied feedback. World Labs pursues that direction: building 3-D world models that support spatial reasoning and planning. NVIDIA tackles the infrastructure angle through simulation environments like Isaac Sim, enabling what they call the “three computer solution” — one for training foundation models, one for robot simulation and domain randomisation, and one for edge deployment on the robot itself. Their recent joint robotics lab with Abu Dhabi signals the investment momentum behind scaling embodied learning.
+
+Physical robots remain expensive; simulation and video world models offer warm-start paths. Models trained on video can develop rough physical intuition — objects fall, liquids pour, collisions have consequences — extracted from observed physics rather than explicit encoding. That provides a foundation; real-world deployment refines it.
+
+The central challenge: sim-to-reality transfer. Models trained in perfect simulation often stumble when they meet real-world noise, latency, and variation. Techniques like domain randomisation, residual policy learning, and human-in-the-loop corrections help close the gap, but deployment still requires careful engineering.
+
+I haven’t built robot systems directly, but I watch the field closely because embodiment addresses something fundamental: learning from closed loops rather than static datasets. A model that updates its understanding based on action outcomes, rather than only on text correlation, develops different kinds of knowledge. We see glimpses of this in reinforcement learning for games and control tasks; extending it to general-purpose physical intelligence remains the harder problem.
+
+Expecting emergence as design signal
+
+Emergence keeps appearing across model families. Diffusion models learned to represent correspondence and spatial structure; video models learned intuitive physics; language models learned to route through implicit reasoning chains. None of these capabilities got explicitly programmed. They arose from optimisation pressure meeting sufficient capacity and data.
+
+I treat emergence not as a happy accident but as a design signal. If you wire objectives, data flows, and feedback mechanisms in ways that allow useful structure to emerge, then instrument your systems to spot it early, you can steer development rather than just script it.
+
+This requires shifting posture. Instead of specifying every capability upfront, set up conditions where useful capabilities have room to appear. Watch what structure emerges during training. When something unexpected appears, investigate whether it generalises, where it breaks, and what architectural or data changes might strengthen it.
+
+LeCun has expressed scepticism about “mere scale” producing general intelligence, arguing that architecture and learning objectives matter more than parameter count alone. I partially agree: scale without feedback remains insufficient. But scale combined with rich feedback — especially embodied feedback that closes action-perception loops — creates conditions for emergence we haven’t fully explored yet.
+
+The counterpoint matters too. Emergence produces capabilities we didn’t explicitly request, which means it also produces failure modes we didn’t anticipate. Video models that learn “physics” often learn brittle approximations that work in distribution but fail unpredictably outside it. Attention patterns that emerge in language models sometimes amplify bias or encode factual errors. Emergence gives us power and fragility simultaneously.
+
+The design stance I take: expect emergence, instrument for it, validate carefully, and stay ready to constrain or redirect what arises. That feels more productive than either demanding full interpretability upfront or shipping capabilities we don’t understand.
+
+Real-time voice models add another dimension to this exploration. OpenAI’s GPT-4o processes audio natively rather than converting speech to text and back — the model works directly with audio tokens alongside text tokens, handling prosody, tone, and rhythm as first-class data. This differs fundamentally from a text-based token space. I wonder what emerges from this. Audio tokens might encode relationships differently: not just semantic meaning but emotional valence, social signals, and temporal patterns. Will models trained on audio develop different conceptual structures than those trained primarily on text? The architecture allows it; whether useful capabilities actually emerge remains an open question worth watching.
+
+Humans plus AI: the near-term reality
+
+Right now, hybrid workflows outperform either humans or AI working alone when we design the pairing carefully.
+
+I pair my judgment with a model’s recall. I provide context, scaffolding, and error correction; the model provides speed, breadth, and pattern matching across larger corpora than I can hold. That pairing feels less like replacement and more like a new craft — knowing when to delegate, when to verify, when to redirect.
+
+Evidence from decision-making and collaborative work shows potential gains, with an important caveat: naïve pairing often underperforms the best single agent. MIT research on human-AI teaming found that throwing humans and models together without role clarity produces worse outcomes than using either alone. The gains come from thoughtful division of labour — humans handle ambiguity and contextual judgement, models handle retrieval and computation, and hand-offs flow clearly.
+
+Centaur chess offers a useful precedent. After chess engines surpassed top humans, freestyle tournaments allowed any combination: human alone, engine alone, or human-machine teams. The best teams combined decent players with good engines and excellent process — they knew when to trust the engine’s calculation and when to override with strategic intuition. The weakest teams either ignored the engine or followed it blindly.
+
+Andrej Karpathy noted in recent interviews that AI agents still stumble on edge cases and brittle reasoning — the “9.11 vs 9.9” comparison errors, the strawberry letter-counting failures — suggesting we remain years from fully autonomous general agents. I see that playing out in production systems: the models do impressive work on well-defined tasks, then fail unpredictably when context shifts slightly. Keeping humans in the loop for the uncertain cases makes economic and practical sense right now.
+
+This doesn’t mean humans stay indispensable forever, just that current systems work better with us than without us for many tasks. As the frontiers I’ve outlined get addressed — better learning, temporal reasoning, selective attention, compositional understanding, embodied feedback — the balance will shift. Some tasks will move to full automation; others will remain collaborative; new tasks will emerge that require novel combinations of human and machine capabilities.
+
+I design for today’s reality while anticipating tomorrow’s shifts: build systems that leverage AI strengths, compensate for AI weaknesses through human oversight, and architect in ways that allow increasing autonomy as models improve without requiring full rebuilds.
+
+An ecosystem of minds
+
+The path towards AGI doesn’t run through a single model architecture or training paradigm. It runs through an ecosystem: biological intelligences, digital intelligences, hybrid combinations, and forms we haven’t imagined yet.
+
+Different tasks favour different types of intelligence. Retrieving patterns from massive datasets suits transformer-based models. Navigating ambiguous social contexts suits humans. Controlling precise repetitive tasks suits narrow AI optimised for that domain. Exploring novel problem spaces might suit hybrid teams or multi-agent collaborations where different models handle different reasoning modes.
+
+We already operate in early versions of this ecosystem. I use language models for research synthesis, image models for concept visualisation, code assistants for implementation, and human review for strategy and judgement. Each element handles what it does well; the craft lies in orchestration.
+
+As embodied systems scale and learning improves, that ecosystem grows richer. Robots learn from physical interaction and share knowledge through central policies. Simulation environments generate synthetic experience faster than real-world deployment. Language models ground their semantic knowledge in sensor data and action outcomes. Humans provide goals, constraints, and error correction at the edges where systems behave unpredictably.
+
+This framing sidesteps the binary question — “when does AI surpass humans?” — in favour of a more productive one: how do we build systems where different forms of intelligence collaborate effectively? That question has concrete answers we can iterate on now, rather than speculative answers that depend on breakthroughs we can’t time.
+
+Grounded optimism
+
+I don’t chase prophecies. Predicting AGI arrival dates feels premature when we haven’t solved basic problems about forgetting, time, and conceptual composition. The hype cycles around “imminent” breakthroughs and existential threats both miss the current reality: we have powerful, limited systems that do genuinely useful work and fail in predictable ways.
+
+The five frontiers I’ve outlined — learning, temporality, selective ignorance, conceptualisation, and embodiment — offer concrete direction. Each represents a real gap between current capabilities and general intelligence. Each also has active research, plausible technical paths, and economic incentives driving progress.
+
+Progress won’t arrive uniformly. We’ll see advances in one frontier before others. Some tasks will become fully automatable while others remain stubbornly human-dependent. New capabilities will create new failure modes. The path twists.
+
+What I trust: feedback works. Systems that interact with the world, receive consequences, and update their understanding learn in ways that static training can’t match. If we design for embodied experience, temporal awareness, selective attention, and compositional reasoning — and remain open to non-human ways of thinking — we’ll grow something different from biological intelligence but potentially no less capable.
+
+The immediate work matters more than the distant predictions. Build systems that solve real problems. Instrument them carefully. Watch what emerges. Fix what breaks. Collaborate across boundaries — biological, digital, hybrid. Stay sceptical of both hype and doom.
+
+That approach won’t give us AGI on a schedule. It might give us something better: a toolkit of intelligences we understand, systems we can steer, and the humility to notice when we’ve built something we didn’t expect.
+
+Sources
+
+Emergence
+
+Tang et al., “Emergent Correspondence from Image Diffusion,” 2023 — https://arxiv.org/abs/2306.03881
+Garrido et al., “Intuitive physics understanding emerges from self-supervised video models,” 2025 — https://arxiv.org/abs/2502.11831
+
+Learning
+
+Wang et al., “A Comprehensive Survey of Continual Learning,” 2023 — https://arxiv.org/abs/2302.00487
+van de Ven & Tolias, “Continual Learning and Catastrophic Forgetting,” 2024 — https://arxiv.org/pdf/2403.05175
+Hasani et al., “Liquid Time-constant Networks,” 2020 — https://arxiv.org/abs/2006.04439
+Hasani et al., “Closed-form continuous-time neural networks,” 2022 — https://www.nature.com/articles/s42256-022-00556-7
+
+Temporality
+
+Wang et al., “TRAM: Benchmarking Temporal Reasoning for Large Language Models,” 2024 — https://aclanthology.org/2024.findings-acl.382/
+Qian et al., “Large Language Models Know What To Say But Not When To Speak,” 2024 — https://aclanthology.org/2024.emnlp-main.394/
+
+Selective ignorance
+
+Wang et al., “A Comprehensive Survey of Forgetting in Deep Learning Beyond Continual Learning,” 2023 — https://arxiv.org/abs/2307.09218
+Blanco-Justicia et al., “Digital Forgetting in Large Language Models,” 2024 — https://arxiv.org/abs/2404.02062
+Cai et al., “A Survey on Mixture of Experts,” 2024 — https://arxiv.org/pdf/2407.06204
+Gu et al., “When Attention Sink Emerges in Language Models,” 2024 — https://arxiv.org/abs/2410.10781
+
+Conceptualisation
+
+Lake & Baroni, “Generalization without Systematicity,” 2017/2018 — https://arxiv.org/abs/1711.00350
+Berglund et al., “The Reversal Curse: LLMs trained on ‘A is B’ fail to learn ‘B is A’,” 2023/2024 — https://arxiv.org/abs/2309.12288
+Chen et al., “Skills-in-Context Prompting,” 2024 — https://aclanthology.org/2024.findings-emnlp.812.pdf
+
+Embodiment
+
+Driess et al., “PaLM-E: An Embodied Multimodal Language Model,” 2023 — https://arxiv.org/abs/2303.03378
+Brohan et al., “RT-2: Vision-Language-Action Models,” 2023 — https://arxiv.org/abs/2307.15818
+“Open X-Embodiment: Robotic Learning Datasets and RT-X Models,” 2023 — https://arxiv.org/abs/2310.08864
+Li et al., “Embodied Intelligence via Learning and Evolution,” 2021 — https://arxiv.org/abs/2102.02202
+
+Digitisation and AI training data
+
+Google Books digitisation statistics — https://en.wikipedia.org/wiki/Google_Books, various sources 2010–2019
+Leonid Taycher, “Books of the world, stand up and be counted!” Google Books, 2010 — https://booksearch.blogspot.com/2010/08/books-of-world-stand-up-and-be-counted.html
+British Library, “The digitisation challenge: 93% of our newspaper content remains undigitised,” 2019 — https://blogs.bl.uk/thenewsroom/digitisation/
+NUMERIC Project survey on European digitisation, 2009 — cited in Chassanoff, “Scientific Archives in the Age of Digitization,” Isis Vol 107 No 1
+Cuneiform Digital Library Initiative statistics — https://cdli.ucla.edu/ and https://cdli.earth/
+Brown et al., “Language Models are Few-Shot Learners” (GPT-3 paper), 2020 — https://arxiv.org/abs/2005.14165
+OpenAI GPT-3 Model Card — https://github.com/openai/gpt-3/blob/master/model-card.md
+Johnson et al., “Top five languages included in GPT-3 training data,” 2022 — ResearchGate
+
+Hybrid intelligence
+
+MIT Sloan, “When humans and AI work best together,” 2025 — https://mitsloan.mit.edu/ideas-made-to-matter/when-humans-and-ai-work-best-together-and-when-each-better-alone
+Shoresh & Loewenstein, “Modeling the Centaur,” 2025 — https://www.ifaamas.org/Proceedings/aamas2025/pdfs/p1941.pdf
+
+Additional context
+
+Karpathy interviews and talks, 2024–2025 — https://www.dwarkesh.com/p/andrej-karpathy
+NVIDIA embodied AI research — https://research.nvidia.com/labs/gear/
+World Labs spatial intelligence — Stanford HAI interviews and Axios coverage, 2024

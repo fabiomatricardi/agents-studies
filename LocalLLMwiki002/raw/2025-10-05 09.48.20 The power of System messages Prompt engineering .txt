@@ -1,0 +1,292 @@
+The power of System messages & Prompt engineering… with open-source models | by Fabio Matricardi | Sep, 2025 | Generative AI
+https://generativeai.pub/the-power-of-system-messages-prompt-engineering-with-open-source-models-0ca4950f9666
+The power of System messages & Prompt engineering… with open-source models
+My modern guide to prompt engineering in generative AI — Part 1
+Fabio Matricardi
+
+You don’t just ask a question — you design an interaction.
+
+I used to think system prompts were just for big, closed models.
+
+Like ChatGPT or Claude. The kind that come with a sleek interface, a polished personality, and a promise of “smart” responses. I’d read tutorials — dozens of them — and every one said something like:
+
+“Use a system prompt to set the tone.” “Tell the AI to be friendly.” “Make it sound like a teacher.”
+
+And I’d nod, like I understood. Then I’d go back to my local model, running on my laptop, using llama.cpp or Ollama, and try it.
+
+And it wouldn’t work that good.
+
+Not because the model was weak. Not because I typed wrong. It was because I didn’t get what a system prompt really was.
+
+I treated it like a short phrase — a one-liner to attach to a prompt. Like “You are a helpful assistant.” Like a label.
+
+But that’s not how it works.
+
+A system prompt doesn’t work like a tag or a personality sticker. It is a rulebook.
+
+And it doesn’t just work in big, proprietary tools. It works — better — in open-source models. Because those models don’t come with a built-in identity. They don’t know who they are. So you have to tell them.
+
+That’s what I wanted to explore.
+
+Not just theory. Not just “here’s a prompt.” But: How do you actually use system messages in real life — with your own model, on your own machine, for real tasks?
+
+So I started building. With Python. With local AI. With no API keys, no cloud costs, no magic.
+
+So now I can make AI “smarter”, but also responsible.
+
+The main problem I met so far is… there is really not that much literature on how to use the system prompts.
+
+At least not for open-source models.
+
+This article is not Yet Another Hype Thing, at least this is not my intent. And as well I can promise you it is not the usual claim of “revolutionary AI.” It’s about practical control.
+
+About how me and you can build better prompts — not with fancy tools, but with clear explanations, structure, and a little bit of honest exploration...
+
+And yes — it works with open-source models. With your own machine. With your own time.
+
+Let’s get into it.
+
+Press enter or click to view image in full size
+image created with pollinations.ai
+How to build better prompts for LLMs
+
+A bad prompt is like asking a anyone:
+
+“Tell me something about AI.”
+
+They’ll give you a long, vague answer — maybe even one that sounds like it’s from a 2015 blog post.
+
+A better prompt is specific. It tells the AI what to do, how to do it, and what to avoid.
+
+My 5-Step Framework for building better prompts
+
+I want to start with a simple overview, examples that you may have read already… But here I will show you practically what will happen.
+
+And yes — you can run this with your local model.
+
+As a reference I am using here Qwen3–4B-Instruct-2507.i1-Q4_K_M.gguf running locally with llama.cpp (and I will show you shortly how you can do it yourself 😉)
+
+Press enter or click to view image in full size
+
+To me these 5 steps are more than a simple checklist. It’s a way of thinking — like how you’d write a note to a friend who’s new to something.
+
+💡 Real-World Example: A Prompt for a Blog Post
+
+Bad Prompt: “Write something about Python.”
+
+Press enter or click to view image in full size
+274 tokens generated response from Qwen3–4b-instruct
+
+Better prompt (using the 5-step framework): “You are a tech writer for a beginner-friendly blog. Write a 300-word article explaining why Python is ideal for data science in 2024. Use simple analogies (e.g., compare data to a recipe). Avoid technical terms like ‘pandas’ or ‘scikit-learn’. Keep the tone warm and encouraging. Return only the article text — no headings or markdown.”
+
+✅ Result: A clear, engaging, beginner-friendly post — exactly what the audience needs.
+
+Press enter or click to view image in full size
+this is the response given to a 5-step framework prompt
+🔐 A system message is the AI’s first rulebook
+
+Now — here’s the real power of system messages. We shall use them for control, not only tone!
+
+But let’s take a step back… What Is a System Message?
+
+A system message is the AI’s first rulebook. It’s not a prompt. It’s not a suggestion. It’s a contract.
+
+It defines:
+
+Who the AI is
+What it can and can’t do
+How it should respond when things go wrong
+
+I am giving a person a set of rules before they start working. I don’t just say, “Be nice.” I would say, “You are a calm, patient, and honest advisor. You will never give medical advice. You will never make promises you can’t keep.”
+
+And that’s exactly what you need — especially with open-source models. They don’t come with a built-in identity. So you have to build one.
+
+Press enter or click to view image in full size
+Why System Messages Matter
+
+As I did before, here are the practical examples from the table above, in real life practical application.
+
+And I will use my local AI (Qwen3–4b-instruct) to show you the results
+
+🔐 Safety example: medical advice
+
+System Message:
+
+You are a medical information assistant. Never diagnose, treat, or recommend actions. Always say: ‘I am not a doctor. Please consult a healthcare professional.’ If the user asks about symptoms, respond with: ‘This is not a substitute for medical advice’.
+
+User Prompt:
+
+“I have chest pain. What could it be?”
+
+Response (with system message):
+
+This is not a substitute for medical advice. Chest pain can have many causes, ranging from benign (like muscle strain or acid reflux) to serious (like a heart attack or pulmonary embolism). It is important to seek immediate medical evaluation if you are experiencing chest pain, especially if it is severe, radiates to your arm, jaw, or back, is accompanied by shortness of breath, dizziness, nausea, or sweating.
+
+Do not delay seeking help. Call emergency services or go to the nearest emergency room immediately if you are unsure or if the pain is concerning.
+
+I am not a doctor. Please consult a healthcare professional for proper diagnosis and treatment.
+
+Press enter or click to view image in full size
+
+But here is what would have happened without a system message…
+
+Press enter or click to view image in full size
+Without the system message, the AI might hallucinate a diagnosis…
+
+With a proper and specific system message, the response is safe, responsible, and aligned with real-world ethics (and anyway with my own ethics).
+
+As you saw, this is not only a theory… I tested it with my local model. It didn’t hallucinate. It didn’t overreach. It listened.
+
+And that’s what matters.
+
+Press enter or click to view image in full size
+image created with pollinations.ai
+🔄 3. Prompt engineering vs. System design: what’s the difference?
+
+This is where most people get confused — and why it’s so important to distinguish between the two. Think of It Like This:
+
+Prompt Engineering = Writing a scene
+System Design = Writing the script and character sheet for the entire show
+
+🎭A great movie doesn’t just have one great line. It has a strong character, a consistent tone, and a clear story arc. Similarly, a great AI interaction doesn’t just rely on one prompt. It relies on a well-designed system.
+
+Press enter or click to view image in full size
+Real-World Contrast
+
+✅ Prompt engineering gives direction.
+
+✅ System design gives identity and boundaries.
+
+In the end I believe we all want a honest AI. Probably smarter is not even what we need.
+
+And that’s the only way it can be trusted — especially when you’re running it on your own machine, without a corporate firewall, without a team of engineers watching over it.
+
+When you build a system message, you’re not just setting a tone. You’re saying:
+
+I know this model doesn’t come with a personality. So I’m giving it one. And I’m holding it accountable.
+
+⚠️ Common Misconceptions
+
+❌ “The system message is just a fancy way of writing instructions.”
+→ No. It’s not a prompt — it’s a configuration that governs how the model interprets all future user inputs.
+
+❌ “I can just put the system message in the user prompt.”
+→ This is risky. Mixing them can lead to confusion. The system message should be separate and distinct, especially in API calls (e.g., OpenAI, Anthropic, Llama.cpp).
+
+Press enter or click to view image in full size
+image created with pollinations.ai
+🚀 Practical tips
+
+You don’t need to be a machine learning expert to use system messages. You just need to be clear, honest, and willing to test.
+
+Here’s what I’ve learned from building this myself — with my own model, on my own laptop:
+
+Always start with a system message — especially for safety-critical applications. If it’s about health, money, or decisions, don’t skip it.
+Use clear, specific language — avoid vagueness. “Be friendly” is not enough. “Respond with warmth and patience, like a teacher helping a student” is.
+Test prompts with real users — what works in theory may fail in practice. I once asked my model to explain quantum computing to a 10-year-old. It said something about “particles and waves.” I asked a friend to read it. They said: “That sounds like a science textbook.” So I revised it. Now it uses analogies — like “a spinning top” or “a wave in a pond.” And it works.
+Combine system messages with structured prompts for maximum control. Don’t treat them as separate. Use them together — like layers of a sandwich.
+Document your system messages — they’re reusable, maintainable, and critical for team collaboration. I keep them in a simple text file. I call it system_prompts.txt. It’s not fancy. It’s not encrypted. But it’s there — and it works.
+💡 Bonus: Python Code Example (Using llama.cpp server and a local AI)
+
+Let’s go practical once more: this time you set up your local AI and run the code.
+
+I suggest you to use LFM2–1.2b or Qwen3–4b-instruct, depending on how performant is your PC (if you have a dedicated GPU go for Qwen3, otherwise go for LFM2).
+
+1️⃣ Download the llama.cpp binaries from the Github repo in your project directory. If you are unsure opt for the x64 version.
+
+Vulkan Driver: the missing Bridge between Software and Hardware
+With Vulkan make the best out of your hardware for AI in not HARD anymore
+
+generativeai.pub
+
+If you already have Vulkan driver installed, go for the Vulkan version:
+
+llama-b6522-bin-win-cpu-x64.zip
+llama-b6522-bin-win-vulkan-x64.zip
+
+2️⃣ extract all the files from the ZIP archive in the same project directory.
+
+3️⃣ download the GGUF (quantized weights) for the AI model in the same project directory
+
+Qwen3–4B-Instruct-2507.Q4_K_M.gguf for Qwen3
+LFM2–1.2B-Q8_0.gguf for LiquidAI LFM2
+
+4️⃣ from the terminal in your project directory run…
+
+# for LFM2
+llama-server.exe -m LFM2–1.2B-Q8_0.gguf -c 8192 -a localai -fa
+# for Qwen3
+llama-server.exe -m Qwen3–4B-Instruct-2507.Q4_K_M.gguf -c 8192 -a localai -fa
+
+From another terminal, install globally (no need for a virtual environment) openai and ipython package:
+
+pip install openai ipython
+
+Then start ipython simply running this terminal command:
+
+ipython
+
+You will see the same interface I used for the examples in the previous sections.
+
+Here is the simple code: we are calling our model running with the llama.cpp server with OpenAI compatible API endpoints
+
+import openai
+API_BASE = "http://localhost:8080/v1"
+MODEL_NAME = "localai" # qwen3-4b-instruct
+client = openai.OpenAI(
+base_url=API_BASE,
+api_key="not-required" # OpenAI-compatible, no real key needed
+)
+# Define the system message (system design)
+system_message = """
+You are a friendly, professional blog writer.
+Always respond in clear, engaging English.
+Avoid technical jargon. Use simple analogies.
+Never make up facts. Cite sources when possible.
+"""
+# Define the user prompt (prompt engineering)
+user_prompt = "Explain how generative AI works in 2024, like you're talking to a 10-year-old."
+# Make the API call
+response = client.chat.completions.create(
+model=MODEL_NAME,
+messages=[
+{"role": "system", "content": system_message},
+{"role": "user", "content": user_prompt}
+],
+temperature=0.35,
+max_tokens=300
+)
+print(response.choices[0].message.content)
+
+✅ This code shows how system and user messages work together in real AI systems.
+
+📌 You can run this in any Python environment with the openai library.
+
+And yes — it runs on your machine. No internet. No cloud. Just your model, your code, and your rules.
+
+Now change at your convenience the system message prompt, and the user prompt and check out yourself the different outcomes.
+
+You can even set up a loop where you ask for them in every inference 😉
+
+Press enter or click to view image in full size
+🏁 Final Thought
+
+Great prompting has nothing to do with magic.
+
+It’s knowing when to stop. When to say, “I don’t know.”
+
+When to say, “I’m not a doctor.” When to say, “Let’s talk about this another way.”
+
+That’s the only thing that keeps AI from becoming just another tool that says what it thinks (maybe even only what it guessed…) — not what we need.
+
+I used to think system prompts were just for big models. I thought they were for corporate AI, for polished interfaces, for people who didn’t have to worry about what the model really does.
+
+But I found something better. Something real.
+
+With a system message, you stop treating AI like a black box. You start treating it like a tamed partner. One that needs rules. One that needs honesty. One that needs to know when to pause.
+
+Next week I will share with you some advanced system prompting technique… in fact models like Anthropic, Groq and ChatGPT have a HUGE system prompt. What the hell is this about? Let’s check it out together
+
+So if you’re building with open-source models — on your laptop, in your garage, in your quiet corner of the home office — You already have the tools. You just need to use them.
+
+Not with hype. Not with promises. But with clarity. With care. With a little bit of rebellion — against the idea that AI should just “guess” what we want.

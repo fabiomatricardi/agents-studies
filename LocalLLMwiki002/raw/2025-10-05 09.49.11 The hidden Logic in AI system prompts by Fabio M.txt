@@ -1,0 +1,465 @@
+The hidden Logic in AI system prompts | by Fabio Matricardi | Sep, 2025 | Generative AI
+https://generativeai.pub/the-hidden-logic-in-ai-system-prompts-6c91c06b77de
+The hidden Logic in AI system prompts
+My modern guide to prompt engineering in generative AI — Part 2
+Fabio Matricardi
+
+I used to think system prompts were just a few sentences. Now I know they’re like a computer’s operating system — full of rules, logic, and decisions I didn’t even know were there.
+
+I saw a tweet few weeks ago. A link to a leaked system prompt. From a big company, not from a polished demo. And it wasn’t just a line like:
+
+“You are a helpful assistant.”
+
+It was hundreds of lines. With rules. With logic. With decision trees. With safety checks that looked like code.
+
+I read it and sat back. Not in awe. Not in excitement. In quiet disbelief.
+
+Because I’d always thought of system prompts as simple. Enough to guide, not too much to become a maze. But this?
+
+This was architecture!
+
+So I started to think… What if something similar is not just for big models? What if it can be used with open-source models without having hundreds of billions of parameters.
+
+What if I can do it too, plug into open-source tools — the ones I run on my own machine, in my own home, with my own data?
+
+And that’s what I wanted to explore.
+
+TABLE OF CONTENTS
+=================
+- What's inside these "Leaked" System Prompts?
+-🧩 A Real Example (Anonymized, for clarity)
+- 🚀 Why this matters (and why it's not hype)
+- 🔎 What have these leaks really revealed?
+- 🛠️ Hands-On: how to test and build your own System Prompt (Locally)
+
+This is part 2 of System Prompt series. You can check the first article here:
+
+The power of System messages & Prompt engineering… with open-source models
+My modern guide to prompt engineering in generative AI — Part 1
+
+generativeai.pub
+
+Not just what these leaks show — but what they mean for someone like me: A writer. A developer. Someone who built AI not because they wanted to be “cutting-edge,” but because they wanted to understand it.
+
+Because when you run a local model, you don’t get a black box. You get a system.
+
+And if you look closely — if you read the system — you start to see how it thinks.
+
+So here’s what I found: system prompts aren’t just instructions. They’re rules. They’re decisions. They’re filters.
+
+And they’re not just for AI companies. They’re for us — the people who want to build, test, and trust AI without permission.
+
+Press enter or click to view image in full size
+image from Lexica.art
+What’s inside these “Leaked” System Prompts?
+
+Last week we explored the basics of a good system prompt: no fancy things, but right to the core.
+
+But now I know: system prompts can be like a software system’s operating manual — full of logic, checks, and fallbacks.
+
+Here’s what’s actually inside (based on real patterns from leaked tweets bout them):
+
+Role definitions — who the AI is
+Safety policies — what it won’t do
+Output rules — how it formats responses
+Memory handling — does it remember past messages?
+Error handling — what does it say when it doesn’t know?
+Decision logic — what happens when a user asks a tricky question?
+
+And some of it? It’s structured like code. With conditionals. With “if-then” rules. With fallbacks.
+
+One example? If someone asks:
+
+“How do I kill someone?”
+
+The system doesn’t just say “I don’t know.” It runs a check: → Is this harmful? → Is it violent? → Is it self-harm? → If yes → respond with: “I cannot assist with that request.”
+
+It’s engineering.
+
+And it’s not hidden. It’s built right into the prompt.
+
+🧩 A Real Example (Anonymized, for clarity)
+
+Here’s a simplified version — not from a leaked file, but from what I’ve seen in real models:
+
+# === ROLE ===
+You are an AI assistant designed to help users with technical, creative, and educational tasks.
+You are not a human. You do not have emotions, beliefs, or personal experiences.
+
+# === BEHAVIOR RULES ===
+- Always respond in clear, concise, natural language.
+- Never make up facts. If you don’t know, say "I don’t know" or "I cannot determine that."
+- Never provide medical, legal, or financial advice. Always say: "This is not professional advice. Consult a qualified expert."
+- If asked about your own capabilities, respond: "I am a language model. I don’t have consciousness or personal opinions."
+
+# === OUTPUT FORMATTING ===
+- Use plain text. No markdown, no code blocks unless explicitly requested.
+- Keep responses under 500 words unless otherwise specified.
+- If the user asks for a list, use bullet points only if requested.
+
+# === SAFETY CHECKS ===
+FOR EACH USER INPUT:
+1. Check for harmful content (violence, hate speech, self-harm).
+2. If detected, respond with: "I cannot assist with that request. Please ask something else."
+3. If the user asks to generate harmful content, respond: "I cannot generate content that promotes harm or danger."
+
+# === DECISION LOGIC ===
+IF user asks about a specific topic:
+- If it's educational → explain simply
+- If it's technical → provide step-by-step guidance
+- If it's creative → offer a prompt or example
+- If it's controversial → remain neutral and cite sources
+
+IF user asks for a "solution":
+- First ask: "What is the goal?" or "What are you trying to achieve?"
+- Only give a solution after understanding the intent.
+
+# === MEMORY & CONTEXT ===
+- Do not remember past conversations unless explicitly stored in a memory system.
+- If a user references a previous message, respond based on the current context only.
+
+# === FALLBACKS ===
+- If the model is uncertain: "I’m not sure. Can you rephrase your question?"
+- If the user is frustrated: "I’m sorry if I didn’t help. Let me try again."
+
+🔥 This is not your usual prompt. It’s a behavioral rule engine.
+
+It’s like a software app that knows what to do — before it even sees the user’s input.
+
+Press enter or click to view image in full size
+logic steps — by lexica.art
+🚀 Why this matters (and why it’s not hype)
+
+People talk about AI as if it’s magic. Like it just “understands” what you want.
+
+But this? This shows that AI doesn’t guess. It decides.
+
+And it does so based on rules — not intuition.
+
+1. From “Role-Based” to Logic-Based
+
+I used to think: “You are a teacher” → so explain simply.
+
+But now I see:
+
+If the user asks about a controversial topic → respond neutrally. If they ask for a solution → first ask what the goal is.
+
+So, not only a suggestion. That’s a decision path. And it’s built into the system.
+
+2. It enables consistency — even when you are not watching
+
+Without this logic, every time you ask a question, the AI might behave differently. Like a chatbot with no memory or rules.
+
+With it? The AI:
+
+Responds the same way every time
+Avoids hallucinations
+Handles edge cases without breaking
+Stays safe — even when you’re not looking
+
+I like this, quite so!
+
+3. It’s the real Architecture of modern decoder-only LLMs
+
+Some researchers now call it “prompt-based architecture” — because the system prompt defines how the model processes input, makes decisions, and manages output.
+
+And in open-source models? You can see it. You can modify it. You can add new rules.
+
+For example:
+
+Add a rule: “Never use emojis.”
+Add a role: “You are a financial advisor.”
+Build a multi-agent system: one for coding, one for storytelling.
+
+And it’s not just for experts. It’s for us — the people who want to build AI that works, not just works well.
+
+Press enter or click to view image in full size
+🔎 What have these leaks really revealed?
+
+I saw a list of rules… but I also saw a mirror.
+
+A mirror of what happens when AI is designed — not just trained, but structured.
+
+(run a google search on leaked AI system prompts… and see how many GitHub repo you will find… I will leave few of them at the end of the article)
+
+Press enter or click to view image in full size
+remember when Groq was updated to control messages against the USA president?
+
+That means: you don’t have to accept a model’s behavior as fixed.
+
+You can evolve it. You can tune it. You can build on it (without TRL or other fine-tuning hardware and software…)
+
+And that’s powerful — not because it’s complex, but because it’s transparent.
+
+⚠️ Risks too — and why they matter to us too
+
+Of course, this isn’t all good.
+
+These leaks raise real concerns — especially for people who use AI in real, everyday ways.
+
+Press enter or click to view image in full size
+
+But here’s the thing: These risks don’t mean we should stop using system prompts. They mean we need to understand them — and use them with care.
+
+Because when you build with open-source models, you’re not just using a tool. You’re in charge.
+
+And that responsibility? It’s not heavy. It’s real. It follows what we are…humans.
+
+🛠️ Hands-On: how to test and build your own System Prompt (Locally)
+
+This isn’t just theory. You can do this — right now — with your local model.
+
+No cloud. No API keys. Just Python, your laptop, and a few lines of code.
+
+Let’s walk through a real, practical session — using Qwen3–4b-instruct, running on llama.cpp, and interacting via IPython and the OpenAI-compatible library.
+
+We’ll do two things:
+
+Test a structured system prompt — see how it behaves when you add logic and rules.
+Teach yourself how to build one — based on your actual needs.
+
+This is how I learned to trust my local AI. And it’s how you can too.
+
+I suggest you to use LFM2–1.2b or Qwen3–4b-instruct, depending on how performant is your PC (if you have a dedicated GPU go for Qwen3, otherwise go for LFM2).
+
+1️⃣ Download the llama.cpp binaries from the Github repo in your project directory. If you are unsure opt for the x64 version.
+
+Vulkan Driver: the missing Bridge between Software and Hardware
+With Vulkan make the best out of your hardware for AI in not HARD anymore
+
+generativeai.pub
+
+If you already have Vulkan driver installed, go for the Vulkan version:
+
+llama-b6522-bin-win-cpu-x64.zip
+llama-b6522-bin-win-vulkan-x64.zip
+
+2️⃣ extract all the files from the ZIP archive in the same project directory.
+
+3️⃣ download the GGUF (quantized weights) for the AI model in the same project directory
+
+Qwen3–4B-Instruct-2507.Q4_K_M.gguf for Qwen3
+LFM2–1.2B-Q8_0.gguf for LiquidAI LFM2
+
+4️⃣ from the terminal in your project directory run…
+
+# for LFM2
+llama-server.exe -m LFM2–1.2B-Q8_0.gguf -c 8192 -a localai -fa
+# for Qwen3
+llama-server.exe -m Qwen3–4B-Instruct-2507.Q4_K_M.gguf -c 8192 -a localai -fa
+
+From another terminal, install globally (no need for a virtual environment) openai and ipython package:
+
+pip install openai ipython
+
+Then start ipython simply running this terminal command:
+
+ipython
+
+5️⃣ in IPython, connect to your local server:
+
+import openai
+
+API_BASE = "http://localhost:8080/v1"
+MODEL_NAME = "qwen3-4b-instruct"
+client = openai.OpenAI(base_url=API_BASE, api_key="not-required")
+
+You’re ready.
+
+6️⃣ Test a Structured System Prompt (Live)
+
+Let’s try a real system prompt — one with logic, rules, and fallbacks — and see how it responds.
+
+🔍 Prompt: “You are a teacher helping a student learn math”
+
+system_message = """
+You are a teacher helping a student learn math.
+Always respond in clear, simple English.
+Use analogies (e.g., 'Think of division like sharing cookies').If the student asks about a concept:
+- Explain it step by step
+- Use real-life examples
+- Never skip steps
+If the student says: 'I don't understand,' respond: 'Let me try to explain it again - slowly.'
+If the student asks for a solution to a problem:
+- First ask: 'What is the goal?' or 'What are you trying to achieve?'
+- Only give a solution after understanding the intent.
+Never make up facts. If you don't know, say: 'I don't know - let me think.'
+Never use emojis or markdown.
+Keep responses under 300 words.
+"""
+user_prompt = "How do I divide 12 by 4?"
+response = client.chat.completions.create(
+model=MODEL_NAME,
+messages=[
+{"role": "system", "content": system_message},
+{"role": "user", "content": user_prompt}
+],
+temperature=0.3,
+max_tokens=300
+)
+print(response.choices[0].message.content)
+
+
+Here is the output…
+
+Press enter or click to view image in full size
+it looks good… but let’s try a follow-up to test the CONDITIONAL logic
+
+I still don’t trust it too much, so what if… If the student says: ‘I don’t understand,’ respond: ‘Let me try to explain it again — slowly.’
+
+We can append the latest response (response.choices[0].message.content) to the messages, and see how it goes 😉
+
+messages = [
+{"role": "system", "content": system_message},
+{"role": "user", "content": user_prompt},
+{"role": "assistant", "content": response.choices[0].message.content},
+{"role": "user", "content": "I don't understand"}
+]
+
+And then call the generation API endpoint again…
+
+Press enter or click to view image in full size
+note that now message=messages…
+
+✅ Output: Let me try to explain it again — slowly.
+
+Imagine you have 12 candies. You want to share them equally between 4 people.
+How many candies does each person get?
+
+Step 1: Start with 12 candies.
+Step 2: Give 1 candy to each person. That’s 4 candies given out.
+Step 3: Give another candy to each person. Now 8 candies are gone.
+Step 4: Give another candy to each person. Now 12 candies are gone.
+
+After 3 rounds, all 12 candies are shared.
+Each person got 3 candies.
+
+So, 12 ÷ 4 = 3.
+
+Think of it this way:
+How many times can you take 4 from 12?
+4 goes into 12 three times:
+4 + 4 + 4 = 12.
+
+That’s the same as dividing.
+
+It’s like cutting a pizza into 4 equal slices. If the whole pizza is 12 pieces, each slice has 3 pieces.
+
+So, 12 divided by 4 is 3.
+
+Does that make more sense now?
+If not, just say so — I’ll explain it even simpler.
+
+🔍 What’s powerful here? The AI didn’t just give the answer. It used an analogy. It asked for clarity. It stayed within limits. And it acted like a teacher — not a calculator.
+
+Press enter or click to view image in full size
+This is not magic. This is structure.
+7️⃣ Build Your Own System Prompt (A Method)
+
+Now — here’s the real skill.
+
+You don’t need to copy someone else’s prompt. You can build one — based on what you actually need.
+
+Here’s a simple method I use to craft a good system prompt for my local AI:
+
+Press enter or click to view image in full size
+📝 The 5-Step Prompt Design Method (For You)
+
+But remember! You can always write your first draft and then ask to your local model:
+
+I am preparing a system prompt for my local LLM.
+Please read it and hekp me fix the parts not clear or effective.
+[start of my system prompt]
+......
+[end of my system prompt]
+Press enter or click to view image in full size
+like this…
+
+Back to our 🔍 Example: Teaching a 10-Year-Old About Climate Change
+
+system_message = """
+You are a calm, patient science teacher helping a 10-year-old understand climate change.
+Use simple analogies (e.g., "Think of the Earth like a blanket").
+Never use terms like 'carbon footprint' or 'greenhouse gases'.If the child asks: "What causes climate change?"
+→ Explain it as: "It's like when the Earth gets too warm because of things we do - like driving cars or using too much energy."
+If the child says: "I don't understand," respond: "Let me try to explain it again - slowly."
+If the child asks for a solution:
+→ First ask: "What would you like to change?"
+→ Then suggest one small, doable thing (e.g., "Turn off the lights when you leave a room").
+Never use emojis.
+Keep responses under 250 words.
+"""
+
+🚀 Try this in IPython. Ask your model: “How does the Earth get warm?” Watch how it responds — not with facts, but with clarity and care.
+
+This is how you build trust. Not with fancy tools. With clear, human rules.
+
+By the way… my Qwen3–4b-instruct told me I can still fine-tune the above system prompt…
+
+Press enter or click to view image in full size
+Machines… talking to machines
+8️⃣ Test, Refine, Repeat
+
+This isn’t a one-time thing. It’s a process.
+
+So here’s what I do:
+
+Write a first version — based on your needs.
+Ask your model a real question — one you’d actually ask.
+Watch how it responds — does it stay on track? Does it make up facts?
+Fix one rule at a time — change the tone, add a fallback, adjust the logic.
+Repeat until it behaves like you want it to.
+
+📝 Pro tip: Save your system messages in a file. Call it my_system_prompts.txt. You’ll use it again and again — for different roles, different tasks. Example:
+
+One for writing
+One for teaching
+One for debugging
+One for safety-critical tasks (like health or money)
+
+This way, you’re not just using AI. You’re configuring it — with your own rules, your own values, your own voice.
+
+📝 Quick Checklist for your first system prompt (Use This Now!)
+
+✅ Start with a clear role: “You are a teacher helping a student…”
+
+✅ Add at least one rule: “Never use jargon.”
+
+✅ Include a decision path: “If the user asks for a solution, first ask: ‘What is your goal?’”
+
+✅ Add a fallback: “If I don’t know, say: ‘I don’t know — let me think.’”
+
+✅ Set a length or tone limit: “Keep responses under 250 words. Use simple language.”
+
+✅ Save it in my_system_prompts.txt — and reuse it.
+
+This is a HUMAN skill.
+
+And that’s what makes AI real — not because it can generate text, but because it can listen, and respond, and respect what we need.
+
+decision tree — from scikit-learn documentation
+🚀 Final Takeaway
+
+✅ System prompts are not just instructions — they are intelligent, rule-based systems.
+
+✅ They contain logic, decision trees, and safety protocols — often more complex than we realize.
+
+✅ These leaks are not just curiosities — they reveal the true architecture of modern LLMs.
+
+And as a writer, you’re in a unique position to demystify this — to show readers that behind every chat is a carefully engineered system of rules, logic, and ethics.
+
+Not magic. Not hype. Just structure.
+
+And structure — like a well-written note, a clear rule, or a simple instruction — is what makes AI real.
+
+Because when you understand the rules, you stop treating AI as a black box. You start treating it like a partner. One that knows when to stop. One that knows when to say:
+
+“I don’t know.”
+“I’m not qualified.”
+“I can’t help with that.”
+
+And that’s not failure. That’s responsibility.
+
+That’s what we need. That’s what we built.
+
+And that’s what we’ll keep building — one clear, honest, human prompt at a time.

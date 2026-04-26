@@ -1,0 +1,354 @@
+Why you should start using system prompting - by Fabio Matricardi
+Structured Output generation is the untold technique to tame your language model and get what you want. And here is how…
+
+In the past weeks we discovered together the power of system prompts.
+
+What is the real difference among huge LLM and Small Language Models?
+
+I believe every one of us can give a reply to this question. Certainly ChatGPT or Claude or Qwen are powerful AI, running 50 billion plus parameters under the hood.
+
+But when you force the output structure of a Small Language Model, even a mere 3 Billion model can achieve the same performances of the mentioned above.
+
+And they can run even on your computer. You don’t need to pay a subscription, or pray that your free API quota (like an openrouter.ai one) is depleted.
+
+In this article I will show you how to do it yourself with two practical (and useful) examples. What you need is only:
+
+a computer with at least 8 Gb of RAM
+python
+llama.cpp
+time to be spent learning and experimenting on your own.
+
+Let’s start
+
+Taming the Beast — Controlling LLM Output
+
+The reality is that little I knew about all of this before I started asking questions in forums, replying to Medium articles, and running endless tests on my local machine.
+
+Sure, prompting helps. But if you want predictable, programmable responses — not just poetic guesses — you need more than vibes and trial-and-error.
+
+You need output control.
+
+And there are actually three powerful ways to force an LLM to generate exactly what you want, when you want it:
+
+1. Grammar-Based Sampling (GGUF-style)
+
+This one’s for the hardcore tinkerers. With tools like llama.cpp, you can define a GBNF (GGML Backus-Naur Form) that constrains every token the model generates. Think of it as putting the LLM in handcuffs — it can only speak in valid JSON, XML, or even custom DSLs.
+
+Example: Want only "yes" or "no"? Define a grammar that allows nothing else.
+
+🔧 Pros: Maximum precision.
+⚠️ Cons: Complex syntax, hard to debug, not all models support it easily.
+
+2. Logit Bias
+
+Here, you manually boost or suppress specific tokens. For instance, if you don’t want the model saying “maybe,” you can penalize those words at the logits level before sampling.
+
+It’s like tuning a radio — you reduce noise by turning down unwanted frequencies.
+
+🔧 Pros: Lightweight, works with basic API calls.
+⚠️ Cons: Fragile. Easy to over-constrain. Doesn’t scale well beyond simple choices.
+
+3. Structured Output (my preferred option)
+
+This is the structured output generation , an elegant middle ground.
+
+Instead of fighting tokens or writing Backus-Naur Form grammars (honestly more difficult than ancient Greek grammar…), you tell the model:
+
+“Respond using this Pydantic schema.”
+
+Behind the scenes, the API (like OpenAI’s .parse() or llama.cpp’s JSON mode) combines prompt engineering, constrained decoding, and post-processing to ensure valid, predictable JSON — every single time.
+
+🔧 Pros: Clean, developer-friendly, composable, works great with small models.
+💡 Bonus: It also reduces hallucinations — because the model must follow rules, not improvise.
+
+Why Structure fights Hallucinations
+
+Here’s something most people miss: structured output is not only a pretty formatting job: it also increases truthfulness.
+
+When you define a strict response schema and pair it with clear instructions (“only use the context”), you are guiding the model and we can limit its ability to lie.
+
+Small language models are notorious for sounding confident while making things up. They were trained on Wikipedia, books, and forums — so they think they know everything. But force them into a box:
+→ No free-form rambling.
+→ No poetic detours.
+→ Only reply if the answer exists in the provided context.
+
+Suddenly, that same model starts saying “unanswerable” instead of bluffing.
+
+When you are able to combine structured output with retrieval-augmented generation (RAG), you can create a system that is at the same time smart and honest. 
+
+And that’s a rare thing in the world of AI.
+
+Practically speaking, to use this technique you need 3 things:
+
+an output scheme (usually a pydantic JSON structure)
+a dedicated system prompt
+a LLM call dedicated to structure outputs
+
+Let’s have a look
+
+My LLM can suggest next questions
+
+Our task is to always provide the reply to the user request, and suggest some follow up questions.
+
+Almost all online chat interfaces are doing so… and we can do it too.
+
+Let’s import the required libraries and then we will proceed with the 3 main ingredients.
+
+from openai import OpenAI
+from pydantic import BaseModel
+from typing import List
+from rich import print as rprint #to format JSON structure
+Auto (Python)
+1. Define the output structure
+
+We want a reply to the user and a list of suggested questions. If we translate this in pydantic language it will look like this:
+
+# Define the response model
+class ResponseModel(BaseModel):
+reply: str
+suggestions: List[str]
+Auto (Python)
+
+Quite simple right? 
+
+TIP: you can always ask your llm to help you defining the pydantic structure. In my case I asked my local qwen3–4b-instruct to suggest me the right python code!
+
+2. Craft a special system prompt
+
+The second ingredient is the system prompt. The structure output generation calls are useful when you want a consistent output scheme. And the instruction that rule the entire game is the system prompt.
+
+In our example it should be something like this:
+
+system_prompt = """You are a helpful assistant.
+Respond to the user question in JSON with the reply and a list possible follow-up questions."""
+Python
+
+The system prompt will guide the model with the same structure we defined in the pydantic class ResponseModel: so remember that you need to adjust it if the output structure changes.
+
+3. Call the LLM API endpoint for structure outputs
+
+In my example I am running different model with llama.cpp server on my pc. I will show you different results with different model family and sizes.
+
+For the first example consider we are using LFM2–700M
+
+llama-server.exe -m LFM2-700M-Q6_K.gguf -c 8192
+Bash
+
+This will serve the openAI compatible API calls at localhost:8080. So my python connection will be like this:
+
+client = OpenAI(
+base_url="http://localhost:8080/v1",
+api_key="not-required" # No key needed for local server
+)
+Python
+
+I like to create function to make repetitive calls easier, so here a generation function that will pack together all the things we need:
+
+def generate(
+client, # OpenAI client
+response_model, # The Pydantic model
+user_prompt,
+system_prompt="You are a helpful assistant.",
+):
+completion = client.beta.chat.completions.parse(
+model="local-model",
+messages=[
+{"role": "system", "content": system_prompt},
+{"role": "user", "content": user_prompt},
+],
+response_format=response_model, # special LLM Call
+)
+# Returns a dict with reply and suggestions
+return completion.choices[0].message.parsed
+Auto (Python)
+
+Note that this is not our standard client.create.chat.completion call, but something new (client.beta.chat.completions.parse). This is a dedicated endpoint that knows to return a JSON object (choices[0].message.parsed).
+
+To call it we just do:
+
+prompt = input('User> ')
+response = generate(client,ResponseModel,prompt,system_prompt)
+print(response)
+Python
+
+Here LFM2–700M reply… this is what a less than 1 Billion model is already capable of doing!
+
+⚠️ Special Notes: not all model are trained to handle structured output well. I saw recently the slim facebook.MobileLLM-R1 series released in GGUF format so I wanted to give them a test run. They say these tiny reasoning models are designed for edge and mobile devices. You can judge the outputs…
+
+the MobileLLM-R1 with 140 Million parameters
+the MobileLLM-R1 with 360 Million parameters
+
+I didn’t try gemma3–270m: maybe you can do it and let me know?
+
+Long Story Short: a model between 600M and 1.5B can do a wonderful job in generating clean and reliable structured output. And I will show you more with the next example.
+
+this is my honest opinion…
+RAG with truthfulness
+
+One of the main issues with Generative AI is that it can hallucinate. Even giving you a formally correct answer, plausible, a LLM can generate fact that are not true.
+
+So, what if we can force a language model to stick to the truth?
+
+SPOILER: one of the problem of Small Language Models is that is not able to say I don’t know. Check with me this example and you will understand. We will deal with the code shortly.
+
+I set this context in the prompt:
+
+Science is the pursuit and application of knowledge and understanding of the natural and social world following a systematic methodology based on evidence. The scientific method involves observation, measurement, experimentation, and the formulation, testing, and modification of hypotheses. Key branches include physics, chemistry, biology, astronomy, and earth sciences.
+
+And this is the prompt with placeholders that will be given to the LLM
+
+full_prompt = f"""
+Context (use ONLY this to answer):
+{context}
+
+Question:
+{user_question}
+
+Instructions:
+- Answer based ONLY on the context above.
+- If the answer cannot be found in the context, respond with "unanswerable".
+- Provide your response in JSON format with 'reply' and 'suggestions' fields.
+"""
+Python
+
+Asking to LFM2–700M “Who is Anne Frank?”, completely out of the given context, this is the reply:
+
+Even asking about Artificial Intelligence, the model is not able to follow the instructions (because in this scenario the internal knowledge coming from the training is clashing with the user requests)
+
+But what will happen with a slightly bigger model, like LFM2–1.2b? 
+
+Let’s take the same 3 ingredients and adjust them to the new task.
+
+1. Define the output structure
+
+We want a reply to the user and a list of suggested questions. If the information are not included in the given context, we want the rply to be “unanswerable”. 
+
+If we translate this in pydantic language it will look like this:
+
+# Define the response model
+class ResponseModel(BaseModel):
+reply: str
+suggestions: List[str]
+Auto (Python)
+
+As you can see there are no changes here. In fact the structure of the output is the same, but the rules and content have some more logic.
+
+So the keys are in the hand of the system prompt and user instructions.
+
+2. Craft a special system prompt
+
+The second ingredient is still the system prompt. Let’s add here some of the logic behind our intent:
+
+system_prompt = (
+"You are a helpful assistant. "
+"Answer the user's question strictly based on the provided context. "
+"If the answer is not contained in the context, set 'reply' to 'unanswerable'. "
+"Always return a valid JSON matching the schema: {reply: string, suggestions: array of strings}."
+)
+Python
+
+So here we add some more specific rules, like If the answer is not contained in the context, set ‘reply’ to ‘unanswerable’.
+
+Note that now also the prompt is different (I reported it few sections above)
+
+full_prompt = f"""
+Context (use ONLY this to answer):
+{context}
+
+Question:
+{user_question}
+
+Instructions:
+- Answer based ONLY on the context above.
+- If the answer cannot be found in the context, respond with "unanswerable".
+- Provide your response in JSON format with 'reply' and 'suggestions' fields.
+"""
+Python
+
+
+
+
+3. Call the LLM API endpoint for structure outputs
+
+Putting everything together, but using a bigger model, let’s first run the LFM2–1.2B-Q6_K.gguf with llama.cpp server:
+
+llama-server.exe -m LFM2-1.2B-Q6_K.gguf -c 8192
+Auto (R)
+
+And now we club the new generation function (that accept also the context, like retrieved documents):
+
+def generate(
+client,
+response_model,
+user_question: str,
+context: str, # this is new
+system_prompt: str = "You are a helpful assistant."
+):
+# Format the user message to include both context and question
+full_prompt = f"""
+Context (use ONLY this to answer):
+{context}
+
+Question:
+{user_question}
+
+Instructions:
+- Answer based ONLY on the context above.
+- If the answer cannot be found in the context, respond with "unanswerable".
+- Provide your response in JSON format with 'reply' and 'suggestions' fields.
+"""
+
+completion = client.beta.chat.completions.parse(
+model="local-model",
+messages=[
+{"role": "system", "content": system_prompt},
+{"role": "user", "content": full_prompt},
+],
+response_format=response_model,
+)
+return completion.choices[0].message.parsed
+Auto (Python)
+
+We don’t need to change the openAI client connection: in fact at the same address and endpoint we have now LFM2–1.2b instead of the previous model.
+
+# Get user input
+user_question = input('User> ')
+# Generate response
+response = generate(client, ResponseModel,
+user_question, context, system_prompt)
+rprint(response)
+Python
+
+Here the same two examples, but with a totally different outcome:
+
+what is Artificial Intelligence
+
+The reply is correctly tagged as unanswerable, and look at the suggestions:
+
+The given context does not contain information about Artificial Intelligence.
+
+So good. 
+
+With Anne Frank, I found that all models struggle. Even bigger ones. Because it is part of the wikipedia common knowledge. But surprisingly, we got almost everything 100% correct
+
+LOL… not for being mentioned within the given context.
+Conclusions
+
+So here’s a small recap: you don’t need billion-dollar servers or a corporate API key to build your own smart AI.
+
+You just need three things:
+🧠 A clear structure.
+🗣️ A well-crafted system prompt.
+💻 And a tiny LLM running quietly on your laptop like it owns the place.
+
+We’ve seen how a model smaller than most smartphone apps can outperform its weight class — not by knowing everything, but by following rules, sticking to facts, and admitting when it doesn’t know. 
+
+We have to do our own job, looking at the integrity in the code.
+
+With structured outputs and context-aware prompting, we are not only using AI: we can give directions.
+
+And if your 1.2B model says “unanswerable” instead of making up nonsense? Congratulations. You’ve built something more trustworthy than half the chatbots online.
+
+This is my idea (so far) of structured intelligence.
+
+by the way… I tried gemma3–270m-instruct!

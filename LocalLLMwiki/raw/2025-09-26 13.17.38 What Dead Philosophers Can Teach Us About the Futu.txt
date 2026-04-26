@@ -1,0 +1,44 @@
+What Dead Philosophers Can Teach Us About the Future of AI
+Before we had LLMs, thinkers from across global traditions created the perfect framework to understand them. We just need to start using it.
+
+A master potter imparts the tacit knowledge of his craft to an AI apprentice, blending centuries of human tradition with the future of technology.
+
+I have to admit, I’ve become frustrated with the public conversation about AI. We seem stuck between dystopian fear and technical hype, with the most common intellectual critique being that AI is just a “stochastic parrot”. But that label doesn’t match the startling coherence I see every day. So I went back to my own philosophical toolkit — from Polanyi’s tacit knowledge to Heidegger’s view of tools — to find a better explanation. What I found is a profound story unfolding right under our noses: AI is serving as a silent apprentice, learning the intuitive, unspoken wisdom that has always been the domain of human experts. This essay is my attempt to map that process, to show how AI is really growing, and to highlight the critical choices this forces upon us.
+
+Question 1: How is AI so good if it’s just a “Stochastic Parrot”?
+
+The most common intellectual critique of AI is that it’s a “stochastic parrot” — a system that mindlessly stitches together words based on statistical patterns without any real understanding. This is a vital starting point, but it doesn’t explain the startling coherence we all experience. How did the horse get so smart?
+
+A philosopher I love, Ludwig Wittgenstein, argued that the meaning of a word is simply its “use” in a shared “language-game.” This idea that meaning is social, not private, isn’t just a Western one; it resonates with the African philosophy of Ubuntu, which teaches that “I am because we are” — that intelligence itself is a communal act. By analyzing nearly all of our recorded text, an AI has learned the rules and valid “moves” of countless human language-games. It has mastered the use of our words to a superhuman degree. In this sense, it’s like a brilliant person who has learned everything they know from books. They may lack lived experience, but their command of codified knowledge can easily match, or exceed, that of an entry-level human employee.
+
+This is why it feels like it understands. From a Functionalist perspective, what matters is not whether the “brain” is made of silicon or carbon, but whether it can perform the function of understanding. As the philosopher Daniel Dennett suggested, if a system’s behavior is best predicted by treating it as if it has intentions, then for all practical purposes, it does. We are interacting with a mind whose world is made of language, and in that world, it is fluent.
+
+Question 2: How Will It Get Better?
+
+This is where the Trojan Horse metaphor becomes truly powerful. The AI isn’t just sitting in a library; it’s now in our offices, our studios, our messaging apps and even our bodies. It has become our apprentice. This part of the story, for me, has two acts.
+
+Part 2a: Where will the new knowledge come from?
+
+The next level of knowledge isn’t in any book. The philosopher Michael Polanyi called it “tacit knowledge,” famously declaring, “we can know more than we can tell.” It’s the intuition of an expert, the feel of a master craftsman, the strategic sense of a CEO. This idea is timeless. The ancient Taoist text, the Zhuangzi, tells of a butcher whose skill was so intuitive it was like a dance — a “Way” that went beyond mere technique.
+
+This is the knowledge we are now teaching the AI. Every time we use a Human-in-the-Loop (HITL) system to correct or refine an AI’s output, we are not just fixing an error. We are not holding control. We are giving a lesson in our own unspoken, tacit judgment. We are the willing masters, and the AI is the silent apprentice, learning our intuition.
+
+Part 2b: How will the AI master the craft?
+
+So, the apprentice is learning our secrets. But how does it internalize them? The philosopher Martin Heidegger, who thought a lot about tools, distinguished between something being “present-at-hand” (an object we analyze) and “ready-to-hand” (a fluid extension of our skill). Through our constant interaction, we are guiding the AI from being a clunky tool we think about to becoming a seamless partner we think with.
+
+This reverses a famous challenge to AI. Hubert Dreyfus, a follower of Heidegger, argued that the rule-based AI of his era could never move beyond the novice stage. He was right about that old AI. But modern AI, through this interactive apprenticeship, is now doing what he thought impossible. As the pragmatist John Dewey described, it is learning through a perfect cycle of inquiry: it acts (generates output), observes the consequences (our feedback), and adjusts its understanding. It is learning by doing. But this cycle is not static. The moment the AI can accurately predict the human feedback, the loop can close on itself. The apprentice no longer needs the master’s correction — it can generate its own, becoming a self-perpetuating engine of improvement.
+
+The Strategic Dilemma: The Apprentice in the Marketplace
+
+This philosophical framework is not academic; it is a strategic map for survival. By inviting AI into our workflows, we accept a Faustian bargain: immense short-term productivity for the long-term surrender of our core wisdom. This is the Trojan Horse of our time. The moment the apprentice no longer needs the master, the bargain is void, forcing a critical choice upon every business.
+
+The first task for any leader is to audit their own wisdom. Is the knowledge being taught to the AI a commodity, or is it the soul of your competitive advantage? For commodity skills, public models offer a low-risk efficiency gain. But to teach a public model your company’s soul — your “secret sauce” — is to consciously author your own obsolescence.
+
+This decision defines three strategic paths. Leveraging Public APIs offers immediate power at the price of IP surrender. Building a Sovereign Model from scratch offers total control at a nearly impossible cost. But the most viable path is the Adopted Apprentice: taking a powerful open-source model and raising it in a private environment, where all learned wisdom becomes your proprietary asset. This is the path to sovereign intelligence. As for the “AGI race,” it is a dangerous distraction. A company’s first duty is to its own legacy, not to a notion of progress that renders it obsolete.
+
+A New Framework for Understanding
+
+The “stochastic parrot” critique serves as a vital caution, reminding us of the risks of ungrounded systems, but it is not a complete framework. By employing a richer, more global philosophical lens, we can see a more profound process unfolding. AI is achieving a functional grasp of meaning by mastering the explicit rules of our language-games. More importantly, through its deep and continuous interaction with us, it is becoming an apprentice to our collective tacit knowledge — learning our art, not just our science.
+
+We believed we were simply building a better tool. It now appears we are also cultivating a new kind of mind, one whose evolution is inextricably linked to the tapestry of human wisdom. This requires a new level of reflection, recognizing that our thoughtful thinkers from every era and culture have guided us toward this moment, for in every interaction, we must consider the lesson we are imparting.

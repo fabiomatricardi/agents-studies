@@ -1,0 +1,416 @@
+Your AI your rules: a free fully local Perplexity app on your PC | by Fabio Matricardi | Mar, 2026 | Stackademic
+https://blog.stackademic.com/your-ai-your-rules-a-free-fully-local-perplexity-app-on-your-pc-bde201ffa4dc
+Your AI your rules: a free fully local Perplexity app on your PC
+How to use Perplexica with llama.cpp server and forget about any monthly fee
+Fabio Matricardi
+13 min read
+·
+Mar 27, 2026
+
+Last week I stumbled on a super cool project on GitHub, originally called Perplexica (now renamed to Vane). And it looked to me an opportunity not to miss. In fact I could have an amazing local web app, resembling Perplexity.ai, running with my local LLM, served with llama.cpp.
+
+Vane is an open-source, self-hosted AI-powered answering engine by ItzCrazyKns. It functions as a privacy-focused alternative to Perplexity AI, enabling local deployment with tools like SearxNG for searches, LLMs (via Ollama or cloud providers), and features for cited responses.
+
+PS: llama.cpp is not included, but in this article I will show you how to do it!
+
+As the original name implies, in fact, Vane (Perplexica) is a project that mimic the notorious Perplexity, that I have been using for the past 3 months.
+
+By the way, if you have a Revolut account with at least a Premium account, you can use perplexity for free, as part of the benefits coming with the tier.
+
+Anyway, Perplexity is a amazing: the model itself is really good, and all the replies are grounded on the web sources collected and evaluated on the spot. Every claim in the model response quotes a different source, avoiding hallucinations from the first token.
+
+Press enter or click to view image in full size
+Perplexica running on my old Lenovo X260 with Qwen3.5 and llama.cpp
+
+In this article I will show you how to run Perplexica on your PC and get the same experience from Perplexity… but without paying a cent. I will give you as well few example, to help you choose the best local model for the job.
+
+Let’s move on.
+
+Table of contents
+=================
+- What is Perplexica?
+- How to install and use Perplexica
+- Install the vane/Perplexica docker container
+- The llama.cpp server is only one step away
+1️⃣ Install the llama.cpp binaries
+2️⃣ Download the quantized weights of a Model
+3️⃣ Run the model with llama-server
+4️⃣ Configure the Model Connection in Perplexica
+5️⃣ Add the model in the Chat model list
+6️⃣ Set the new model as Perplexica AI model
+7️⃣ Run your tests
+- Side notes
+- Best Small Language Models… and why
+- Conclusions and next steps
+Press enter or click to view image in full size
+What is Perplexica?
+
+Perplexica is an open-source AI-powered search engine inspired by Perplexity AI. It uses SearxNG for web searches, local LLMs like Llama3 via Ollama, and advanced techniques like similarity searching and embeddings to deliver cited answers.
+
+GitHub - ItzCrazyKns/Vane: Vane is an AI-powered answering engine.
+Vane is an AI-powered answering engine. Contribute to ItzCrazyKns/Vane development by creating an account on GitHub.
+
+github.com
+
+Originally launched as Perplexica, the project was renamed to Vane, with the GitHub repo at https://github.com/ItzCrazyKns/Vane actively maintained through frequent commits, releases like v1.12.1, and Docker builds.
+
+There are quite a few interesting features:
+
+Supports modes like speed, balance, deep research, file uploads, and domain-specific searches (e.g., Academic, YouTube).
+Runs 100% locally on your hardware for privacy, blending local LLMs with optional cloud models.
+Includes smart suggestions, session management, and API endpoints for integration.
+
+Vane can operate in Normal Mode for direct web searches or Copilot Mode (in development) that generates multiple queries and visits top results. It includes focus modes such as Academic, YouTube, Reddit, Wolfram Alpha, and Writing Assistant.
+
+The outstanding feature is that it supports privacy-focused, up-to-date results without relying on outdated indexes.
+
+Vane’s search modes optimize AI-powered queries for speed, depth, or specificity. They include general modes like Speed, Balanced, and Quality (or Deep Research), plus focus modes tailored to domains such as Academic, YouTube, and Reddit.
+
+In Speed Mode vane/Perplexica delivers quick answers with minimal processing for fast results.
+
+The Balanced Mode,instead, is suited for everyday searches, balancing speed and accuracy.
+
+There is also a Quality/Deep Research Mode: it performs thorough analysis, multiple queries, and site visits for in-depth responses.
+
+In all modes you can:
+
+Restrict searches to specific sources (e.g., Academic for scholarly content, YouTube for videos, Reddit for discussions).
+Support custom configurations via prompts, SearxNG modifiers, and LLMs for user-defined templates.
+Enhance relevance through embeddings and similarity ranking, with options like file uploads and smart suggestions.
+
+We can have all of it without worrying about token costs: in fact, even if slower, there is a way to use llama.cpp server with a good local LLM to have Perplexica run on our computers. And here is how…
+
+How to install and use Perplexica
+
+There are several ways to install on your PC Perplexica. The easiest one is through Docker image. And we will use this one.
+
+The first step is to install Docker desktop (if you don’t have it already): I explained the Chocolatey way in this article below.
+
+Chocolatey for Python & AI enthusiasts: how to turn Windows into your in-house developer…
+How a terminal-first package manager can automate your tools, tame your installs, and make reproducible AI environments…
+
+ai.gopubby.com
+
+In alternative, you can download the Windows binaries (I am testing all of this on Windows 11, but you can do it also with MacOS and Linux)
+
+Press enter or click to view image in full size
+https://www.docker.com/products/docker-desktop/
+
+After downloading the installer, run it. At the end of the process, Docker will start automatically.
+
+Press enter or click to view image in full size
+screenshot of Docker Desktop in the Images tab
+Install the vane/Perplexica docker container
+
+Ensure Docker Desktop is running. Open the Terminal (everywhere) and run this simple command:
+
+docker run -d -p 3000:3000 -v vane-data:/home/vane/data --name vane itzcrazykns1337/vane:latest
+
+Docker will fetch the image of the vane projet (Perplexica), download it and start it for us.
+
+Press enter or click to view image in full size
+Press enter or click to view image in full size
+install it with a simple terminal command
+
+The cool thing of Docker Images is that they come already configured with all the dependencies and features.
+
+For example, Perplexica comes with already installed SearXNG, a powerful and locally running search engine that does not require any API key!
+
+Now… after the terminal complete all the process (see pictures above) your Docker Desktop will have a new entry in the containers:
+
+Press enter or click to view image in full size
+
+Click on the ▶️ Play button to start it: that is all you need to have Perplexica running on your PC.
+
+Press enter or click to view image in full size
+click on vane after Play to check the Logs
+
+If you go in your browser (I am using Comet here) and point to localhost:3000 you can see it running.
+
+Press enter or click to view image in full size
+your browser at http://localhost:3000/
+
+Now we need an AI model.
+
+The llama.cpp server is only one step away
+
+The real issue here is that vane/Perplexica does not come with built in configuration for llama.cpp server.
+
+Press enter or click to view image in full size
+Settings > Models > Manage Connections > + Add Connection
+
+The default available options are:
+
+Press enter or click to view image in full size
+there is no llama.cpp
+
+But with few tricks we can leverage the standard OpenAI connection and get it ready to work with our llama-server!
+
+First of all… let’s talk about the models.
+
+Not every Chat model is good for this application: in fact Perplexica uses (exactly like the original Perplexity…):
+
+reasoning
+tool calling
+
+So, not all models have these kind of features, and the Small Language Models are even less.
+
+I tested myself on my crappy Lenovo X260 laptop the following:
+
+Gemma-3n-E2B-it
+LFM-2.5–1.2b-instruct
+Qwen3.5–0.8b
+Ministral-3–3B-Instruct-2512
+Granite-4.0-h-tiny
+Granite-3.1–3b-a800m-instruct
+Trinity-Nano-Preview
+Qwen3.5–2b
+Qwen3–4b-instruct
+NVIDIA-Nemotron3-Nano-4B
+Qwen3–1.7B
+
+Testing all of them I understood that not all model are fit for Perplexica, even the real good Ministral-3–3B-Instruct-2512 that usually works like a charm on low spec hardware, with accuracy and reliability.
+
+I will give you detailed feedbacks later. For now let’s see how to make it work on your PC.
+
+Note: all these examples are for Windows OS users, but easily applicable for Linux and Mac ones. In case of doubt you can read more here:
+
+Your AI your rules... on Linux computers
+How to have your own Language Model running on a Ubuntu based Linux computer
+
+generativeai.pub
+
+1️⃣ Install the llama.cpp binaries
+
+Download the latest llama.cpp binaries for CPU only users from the official GitHub repo:
+
+download llama-b8508-bin-win-cpu-x64.zip
+unzip the archive in a new directory called PerplexicaAI
+2️⃣ Download the quantized weights of a Model
+
+As I showed you, I tested several small language models, the best one for CPU only user is Qwen3.5–0.8b-GGUF.
+
+Download Qwen3.5–0.8B-Q6_K.gguf from the Unsloth repo (just click on the link to download). I chose the Q6 to reduce as much as possible loss in quality.
+put in the same directory called PerplexicaAI
+
+The Unsloth repo gives us also the suggested hyperparameters:
+
+to use Perplexica suggested to use Thinking mode for text tasks: temperature=1.0, top_p=0.95, top_k=20, min_p=0.0, presence_penalty=1.5, repetition_penalty=1.0
+
+We need these settings in the next step.
+
+3️⃣ Run the model with llama-server
+
+Open the terminal in the same directory called PerplexicaAI,and run:
+
+.\llama-server.exe -m .\Qwen_Qwen3.5-0.8B-Q6_K.gguf --mmap -ngl 0 -t 2 -c 32288 --host 0.0.0.0 --port 8888 --reasoning-budget -1 -fa on --temp 1.0 --top-k 20 --top-p 0.95 --presence-penalty 1.5 -a qwen3.5-0.8
+
+This command will enable the thinking mode (even if we are using the non-thinking settings), with a context lenght of 32k tokens (vane/Perplexica needs a lot of tokens), enable flash attention and Memory Map. We will use only 2 threads (but if you have more increase it: leave at least 1 thread free for the OS).
+
+To expose the endpoints on the network, we set--host 0.0.0.0 on--port 8888
+
+If you want to know more about how to give the best performance of your llama.cpp, follow my series called “Not All Quantizations Are Born Equal”
+
+Your CPU is NOT Broken: the hidden Truth about GGUF quantization
+Bits per weight are not tokens per second (ant his is an unexpected plot twist)
+
+medium.com
+
+Note that we assigned an alias to the model with the option -a qwen3.5–0.8: this means that when you call the endpoint, you need to specify the model name as qwen3.5–0.8.
+
+We will see in the next step!
+
+Running a local LLM server shouldn’t feel like guesswork. The llama.cpp server is a powerful, lightweight tool, but its long list of parameters can be overwhelming.
+
+Get the CheatSheet for free
+
+This downloadable cheat sheet is your essential reference guide to cut through the complexity. I have consolidated the most critical command-line flags into one, color-coded infographic, making it simple to find the perfect configuration for your hardware and use case.
+
+Press enter or click to view image in full size
+Press enter or click to view image in full size
+Settings > Models > Manage Connections > + Add Connection
+4️⃣ Configure the Model Connection in Perplexica
+
+To do this, click on Settings > Models > Manage Connections > + Add Connection and choose OpenAI.
+
+Give the connection a name (like lcpp-qwen3.5), write something in the API key (even if we don’t use it) and, very important, set the Base URL as follows:
+
+http://host.docker.internal:8888
+since we have Perplexica running in the Docker container, we point to our computer local host pointing to http://host.docker.internal
+and we asked llama-server to host the endpoints at port 8888, so the final Base URL must be http://host.docker.internal:8888
+
+This is only the Main connection. Now we need to link a Chat Model (see picture above, the one on the right).
+
+5️⃣ Add the model in the Chat model list
+
+Find your new connection in the settings and click on + Add in the Chat Models section.
+
+Press enter or click to view image in full size
+
+Model name must be the same we set in llama-server with the option -a qwen3.5–0.8
+
+Remember we said that when you call the endpoint, you need to specify the model name as qwen3.5–0.8.
+
+Never leave empty the Model Key, even if we don’t use it
+
+Click on Add Model.
+
+Press enter or click to view image in full size
+6️⃣ Set the new model as Perplexica AI model
+
+Go to the home page of Perplexica, and click on the cpu symbol and look for your connection/Chat Model.
+
+⚠️ATTENTION: sometimes you need to restart the container if you cannot see the new connections, or simply refresh the page
+
+7️⃣ Run your tests
+
+I also suggest you to change the research mode to Balanced.
+
+Press enter or click to view image in full size
+
+Put your query and run it. To be fair I tested all models asking:
+
+search the web to help me understand: who is Fabio Matricardi?
+
+I am not so famous, so certainly a good web search is required.
+
+In the terminal window running llama-server you should be able to see new POST calls coming: it means that it is working
+
+Press enter or click to view image in full size
+
+Prepare yourself to wait up to 30 minutes for entire completion, and the token budget is high (but it is on your PC, so no surprises with strange bills).
+
+Press enter or click to view image in full size
+Press enter or click to view image in full size
+web sources collection and thinking process before final reply
+
+Almost at the end of the process, Perplexica will search for images related to the query. If you cannot see them, click on the icon.
+
+Press enter or click to view image in full size
+Side notes
+
+The vane/Perplexica, running with local AI is a mission possible.
+
+Even with a small model like Qwen3.5–0.8b the results are quite good, the reasoning process fluent, and the hallucinations almost not accounted for.
+
+But…
+
+One query takes up to 30 minutes, depending on how fast is your CPU and how many threads you can use
+The process is token expensive: increase your context window at least up to 32k
+Press enter or click to view image in full size
+middle check point of toke counts used
+Best Small Language Models… and why
+
+Here my brief report on all the Small Language Models I used to test Perplexica:
+
+Gemma-3n-E2B-it: this is a sparse model, with only 2B active parameters. It is overall quite good, but it does not get the right results in one shot. The retrieved links are consistent. Probably an uncensored version would do better. Recommended!
+
+LFM-2.5–1.2b-instruct: I was not able to get good results. If you manage, please leave a comment with your settings.
+
+Qwen3.5–0.8b: the smallest one and surprisingly one of the best. It got the right results in one shot, but there are few issues in the link results. Be aware that you need more than 25k tokens context window. Recommended!
+
+Ministral-3–3B-Instruct-2512: as anticipated, it is not good.
+
+Granite-4.0-h-tiny: this is an IBM LLM, Mixture of Experts. Generally is good, but some issues with the cited links. But it worked in one shot!
+
+Granite-3.1–3b-a800m-instruct: another Misxture of experts from IBM. This is not good at all, and it is hallucinating from start to finish.
+
+Trinity-Nano-Preview: this is an MoE, with a total 6b parameters but only 1b active. The model is good and responsive, but we cannot get proper links. There are no reasoning traces, but we have the images.
+
+Qwen3.5–2b: this model is a thinking model, last generation from Alibaba. It is a little better than the 0.8b version, but quite slower. Overall is very good. Recommended!
+
+Conclusions and next steps
+
+If you managed to read up to the end… congratulation!
+
+I tried to give all the steps because I didn’t want any of you to waste the same amount of time I did to make it work.
+
+And if you are curious, I will show in feature posts, maybe on my Substack too, to use perplexica with:
+
+openrouter free models (out of the box it is not possible, but I created my way)
+a model running on another computer in your local network
+
+And for the models, I will leave here below the link to the articles on the series “Not All Quantizations Are Born Equal”, so you can experiment yourself with a clear blueprint.
+
+Stay tuned!
+
+I hope you enjoyed the article. If this story provided value and you wish to show a little support, you could:
+
+Clap a lot of times for this story
+Highlight the parts more relevant to be remembered (it will be easier for you to find them later and for me to write better articles)
+Join my totally free weekly Substack newsletter here
+Follow me on Medium
+Follow my publication https://medium.com/artificial-intel-ligence-playground
+
+If you want to read more, here are some ideas:
+
+Not All Quantizations Are Born Equal — Series
+
+Your CPU is NOT Broken: the hidden Truth about GGUF quantization
+Bits per weight are not tokens per second (ant his is an unexpected plot twist)
+
+medium.com
+
+Byteshape’s discovery: not all bits are created equal
+How CPUs and GPUs “think” differently about data — Not All Quantizations Are Born Equal part 2
+
+medium.com
+
+Pick Your Poison: a friendly guide to quantization formats
+The 3 questions that matter (RAM, context length, patience) — Not All Quantizations Are Born Equal part 3
+
+medium.com
+
+Not all quantizations are born equal part 4 — llama.cpp optimization for CPU
+Your results are in: what your Intel i5 just taught us
+
+medium.com
+
+Under 30: the Twilight Zone of AI
+Cool to say to a Language Model — Thirty and thriving. Is this a new paradigm?
+
+generativeai.pub
+
+30 ways to build a prototype AI app with no budget
+Learn how you can have free API calls at not costs and create powerful app with top-notch Generative AI models.
+
+generativeai.pub
+
+Your AI your rules... on Linux computers
+How to have your own Language Model running on a Ubuntu based Linux computer
+
+generativeai.pub
+
+Cited sources:
+
+Welcome to SearXNG - SearXNG Documentation (2026.3.23+2c1ce3bd3)
+SearXNG is a free internet metasearch engine which aggregates results from up to 242 search services . Users are…
+
+docs.searxng.org
+
+GitHub - ItzCrazyKns/Vane: Vane is an AI-powered answering engine.
+Vane is an AI-powered answering engine. Contribute to ItzCrazyKns/Vane development by creating an account on GitHub.
+
+github.com
+
+Perplexity
+Perplexity is a free AI-powered answer engine that provides accurate, trusted, and real-time answers to any question.
+
+www.perplexity.ai
+
+GitHub - ggml-org/llama.cpp: LLM inference in C/C++
+LLM inference in C/C++. Contribute to ggml-org/llama.cpp development by creating an account on GitHub.
+
+github.com
+
+Perplexica
+Llamacpp
+Thepoorgpuguy
+Your Ai Your Rules
+Local Gpt
+
+151
+
+Published in Stackademic
+81K followers
+
