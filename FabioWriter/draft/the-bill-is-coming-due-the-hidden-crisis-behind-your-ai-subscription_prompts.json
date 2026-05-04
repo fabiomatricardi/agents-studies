@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "prompt": "A vast ocean surface with a shimmering, perfect mirror reflection beneath it - the reflection shows dollar signs and stock charts while the surface shows friendly AI chatbot interfaces, drone shot from above, dramatic golden hour lighting, photorealistic style with slight surrealism, color palette: deep ocean blue, gold reflections, white clouds, subtle green undertones --ar 16:9 --style cinematic"
+  },
+  {
+    "id": 2,
+    "prompt": "Close-up of a hospital IV drip bag labeled 'Venture Capital' feeding into a patient's arm, but the patient is a glowing AI chip, clinical lighting, dark background, photorealistic medical photography meets tech aesthetic, color palette: sterile white, hospital blue, glowing cyan chip, deep shadows --ar 4:3 --style raw"
+  },
+  {
+    "id": 3,
+    "prompt": "Abstract daisy chain of glowing colored circles connected by light threads: blue circle (Microsoft) connects to red circle (OpenAI) connects to green circle (Amazon) connects to orange circle (Nvidia) connecting back, dark void background with particle effects, 3D render with luminous glow, color palette: electric blue, crimson red, emerald green, amber orange, deep black --ar 16:9 --style digital-art"
+  },
+  {
+    "id": 4,
+    "prompt": "A boardroom table with documents showing circular arrows between logos: Microsoft, OpenAI, Amazon, Nvidia - all pointing to each other in a loop, top-down view, dramatic shadows, cinematic lighting, photorealistic document photography, color palette: corporate gray, blue glass, white paper, subtle gold accents --ar 16:9 --style cinematic"
+  },
+  {
+    "id": 5,
+    "prompt": "A beautiful but empty theater stage with velvet curtains, spotlight shining on a podium with a small Sora logo, dust motes in the light, abandoned feel, dramatic theatrical lighting, moody atmosphere, photorealistic style, color palette: deep red curtains, golden spotlight, dark void audience, warm amber --ar 16:9 --style cinematic"
+  },
+  {
+    "id": 6,
+    "prompt": "Split screen: left side shows a high-tech server room with glowing GPUs like a futuristic cityscape, right side shows a simple Chinese government building with a balanced scale - photorealistic side-by-side comparison, documentary style, color palette: cyan and teal on left, warm red and gold on right, deep black dividing line --ar 16:9 --style raw"
+  },
+  {
+    "id": 7,
+    "prompt": "A countdown timer on a massive digital billboard in a neon-lit city street, showing 12-24 months ticking down, people walking by looking up concerned, cyberpunk street photography, color palette: neon pink, electric blue, warm streetlight amber, deep black --ar 16:9 --style cinematic"
+  },
+  {
+    "id": 8,
+    "prompt": "Two paths diverging in a beautiful forest: one path labeled 'Frontier AI' with golden expensive signs leading to a gleaming futuristic tower, the other labeled 'Open Source' with simple wooden signs leading to cozy cottage, autumn forest photography with soft bokeh, color palette: warm autumn orange and gold vs cool blue and silver --ar 16:9 --style photographic"
+  },
+  {
+    "id": 9,
+    "prompt": "Three diverse professional portraits (knowledge worker, developer, executive) looking at their phones showing rising monthly bills, concerned expressions, urban coffee shop background with soft natural light, lifestyle photography style, color palette: warm skin tones, soft cafe lighting, blue phone screens, warm brown wood --ar 4:3 --style lifestyle"
+  },
+  {
+    "id": 10,
+    "prompt": "A developer at a laptop in their bedroom, multiple small local AI model icons floating around like fireflies - llama, Ollama, llama.cpp logos as gentle glowing orbs, warm desk lamp lighting, cozy atmosphere, photorealistic style, color palette: warm amber lamp, soft white glow from icons, deep brown desk, terminal green accents --ar 16:9 --style cinematic"
+  }
+]
