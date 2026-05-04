@@ -1,0 +1,58 @@
+[
+  {
+    "id": 1,
+    "prompt": "A frustrated developer (40s-50s) looking at a screen showing scattered code files floating chaotically - some with tests, some without, some formatted, some messy - while a robot assistant in the corner appears to ignore them, warm amber desk lamp casting shadows, cinematic portrait style with depth of field, color palette: warm amber, deep charcoal, terminal green, soft gray --ar 4:3 --style cinematic"
+  },
+  {
+    "id": 2,
+    "prompt": "Split screen conceptual: left side shows a document labeled 'CLAUDE.md' with faded, ghostly text saying 'please run tests' dissolving into particles; right side shows a solid golden padlock with a gear inside, locked chain connecting to a test tube with a green checkmark, dramatic backlighting, symbolic digital art style, color palette: faded gray left, solid gold right, deep black --ar 16:9 --style artistic"
+  },
+  {
+    "id": 3,
+    "prompt": "Abstract visualization of deterministic vs probabilistic: top shows a ghostly hand offering suggestions that drift away like smoke particles labeled 'run tests please' - bottom shows a solid metal gear engaging a lever that positively triggers a green 'TEST PASSED' indicator, side-by-side comparison, dramatic cinematography, color palette: ghostly white smoke, solid steel gray, terminal green pass, deep charcoal --ar 16:9 --style cinematic"
+  },
+  {
+    "id": 4,
+    "prompt": "A glowing timeline showing the AI agent decision points as floating dice, some landing on 'tests run' (green), others on 'skip tests' (red), with golden hooks positioned at each decision point physically stopping the wrong dice, conceptual infographic style, color palette: green dice, red dice, gold hooks, soft gray timeline --ar 16:9 --style infographic"
+  },
+  {
+    "id": 5,
+    "prompt": "A distinguished architect (Addy Osmani type, 30s-40s) placing the final piece - a glowing skill crystal labeled '/spec /plan /build /test' - into a structure that's being built by robot assistants, golden hour lighting from above, photorealistic style, color palette: warm gold, steel blue robots, soft amber light, deep navy sky --ar 16:9 --style cinematic"
+  },
+  {
+    "id": 6,
+    "prompt": "Elegant technical diagram:20 interconnected skill nodes forming a development lifecycle (define→plan→build→verify→review→ship) connected by glowing light-blue lines, each node showing a different tool icon (spec icon, test tubes, code brackets, magnifying glass, checklist, rocket), dark blueprint background with subtle grid, clean vector art style, color palette: electric blue, cyan nodes, soft white connections, deep navy --ar 16:9 --style infographic"
+  },
+  {
+    "id": 7,
+    "prompt": "Futuristic control room with holographic displays showing OpenCode interface - skill discovery happening in real-time as laser-scan lines sweep through code folders and match them to glowing skill icons that fly into the main terminal window, cyberpunk aesthetics with clean lines, color palette: electric cyan, soft magenta scan lines, deep space black, terminal green accents --ar 16:9 --style digital-art"
+  },
+  {
+    "id": 8,
+    "prompt": "A developer's workspace where the AGENTS.md file floats as a glowing golden ring/window above the setup, casting light down on skill folders that respond by opening and sending skill scrolls flowing toward the OpenCode terminal, organized workflow visualization, magical realism style with warm lighting, color palette: warm gold AGENTS.md, electric blue skills, soft cream light beam, deep charcoal desk --ar 16:9 --style cinematic"
+  },
+  {
+    "id": 9,
+    "prompt": "Abstract mechanical diagram showing 5 hook event points as glowing ports on a stylized code editor: SessionStart (green) at top, PreToolUse (yellow) on left, PostToolUse (cyan) on right, Stop (orange) at bottom, TaskCompleted (blue) in center - each with literal hook/gate visual, connected by glowing circuits, technical blueprint aesthetic, color palette: five distinct neon colors, deep black background, soft white circuit lines --ar 16:9 --style infographic"
+  },
+  {
+    "id": 10,
+    "prompt": "Close-up macro of a JSON hook configuration emerging from code as glowing 3D structure - the 'hooks' object opening like a panel revealing event listeners (PostToolUse, PreToolUse) as golden ports with tiny gear mechanisms, the 'matcher' filter appearing as a fine mesh screen, the 'command' appearing as a laser beam connecting to test tubes, photorealistic high-tech aesthetic, color palette: gold ports, cyan laser, soft gray mesh, terminal green test tubes --ar 16:9 --style cinematic"
+  },
+  {
+    "id": 11,
+    "prompt": "Three-layer shield/wall visualization: Layer 1 shows wispy cloud labeled 'Skills' being pushed through; Layer 2 shows stronger steel bars labeled 'AGENTS.md' - some things pass; Layer 3 shows solid concrete wall labeled 'HOOKS' with golden 'ENFORCED' sign - NOTHING passes unless verified, architectural defense metaphor viewed from above, photorealistic with dramatic side lighting, color palette: wispy white cloud, steel gray, solid concrete gold, deep charcoal --ar 16:9 --style cinematic"
+  },
+  {
+    "id": 12,
+    "prompt": "Workflow diagram rendered as a factory assembly line: raw requirement enters → spec skill station (green light) → plan skill station → build/implement station with code appearing → verification station with tests running (green liquid flowing) → quality gate (lint brush) → ship station with rocket taking off, all automated with gold gears, warm industrial lighting, infographic style, color palette: warm amber lights, steel gray machines, terminal green pass indicators, deep navy background --ar 16:9 --style infographic"
+  },
+  {
+    "id": 13,
+    "prompt": "Hopeful scene: a developer (40s-50s) leaning back satisfied, arms crossed, looking at a terminal showing green checkmarks for - spec exists? ✓ tests exist? ✓ lint passes? ✓ - the workflow complete without a single reminder note visible, warm golden home office lighting, film photography style with soft depth of field, color palette: warm skin tones, soft cream light, terminal green checkmarks, warm wood desk --ar 4:3 --style film-photography"
+  },
+  {
+    "id": 14,
+    "prompt": "Three-tiered celebration visualization: bottom tier shows floating skill icons, middle tier shows golden AGENTS.md scroll with rules, top tier shows glowing hook mechanisms all connected by flowing light forming a pyramid, the whole structure illuminated from within with warm golden light, hopeful upward angle, symbolic digital art style, color palette: warm gold pyramid, electric blue tiers, soft white light rays, deep navy sky --ar 16:9 --style artistic"
+  }
+]

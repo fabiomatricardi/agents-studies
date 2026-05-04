@@ -1,6 +1,10 @@
 {
   "$schema": "https://opencode.ai/config.json",
   "command": {
+    "audit": {
+      "description": "Audit a draft article against the VOICE DNA writing rules",
+      "template": "Execute the Audit workflow:\n\n1. List all .md files in `draft/` directory\n2. Ask user which file to audit (use the question tool)\n3. Read the selected file\n4. Audit the content against the VOICE DNA in .opencode/skills/audit/SKILL.md:\n   - Scan for banned words (Section 3A: dead AI vocabulary)\n   - Scan for dead phrases (Section 3B: dead phrases)\n   - Scan for dead transitions (Section 3C)\n   - Scan for engagement bait (Section 3D)\n   - Scan for negative parallelisms (Section 3F - THE BIG ONE)\n   - Check AI writing patterns (Section 4: puffery, rule of three, false ranges, etc.)\n   - Verify formatting rules (Section 2: short paragraphs, no em dashes, numbers as digits)\n5. Report ALL violations found on screen with line numbers and specific fixes\n6. Rewrite the file with all corrections applied\n7. Confirm completion with summary of fixes"
+    },
     "style-setup": {
       "description": "Run Style setup workflow (one-time)",
       "template": "Execute the Fabio Writer Style Setup workflow:\n\n1. Check if `outputs/fabio_matricardi_style.md` exists\n2. IF it exists:\n   - Inform the user: \"Style guide already exists at outputs/fabio_matricardi_style.md\"\n   - Ask: \"Do you want to regenerate it, or use the existing one?\"\n   - If user wants to regenerate → proceed with step 3\n   - If user wants to keep existing → confirm and stop\n3. IF it does NOT exist:\n   - Read ALL files from `style-sources/*.md`\n   - Analyze each for: tone, word patterns, structure, first-person usage, colloquialisms\n   - Create `outputs/fabio_matricardi_style.md` with the style guide\n   - Confirm completion to user\n\nUse the author's persona: \"I\" perspective, fellow learner tone, encouraging, admits limitations, \"Poor-GPUguy\" identity."

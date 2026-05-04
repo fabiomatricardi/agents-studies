@@ -1,0 +1,70 @@
+[
+  {
+    "id": 1,
+    "prompt": "A developer's desk at golden hour, dual monitors showing a terminal with a blinking cursor on the left and a browser with too many tabs on the right, steaming coffee mug in foreground, shallow depth of field focusing on the terminal, cinematic lighting with warm amber key light and cool blue fill light, photorealistic style, 35mm film aesthetic with subtle grain, color palette: deep navy, warm amber, terminal green, soft gray --ar 16:9 --style raw"
+  },
+  {
+    "id": 2,
+    "prompt": "Abstract conceptual art: silhouette of a person at a desk, with glowing golden threads connecting floating terminal commands to scattered browser windows and search bars, soft bokeh background in deep teal and charcoal, digital painting style with painterly textures and luminous accents, mood: contemplative but empowered, color palette: electric cyan, warm gold, deep purple, soft white highlights --ar 16:9 --style artistic"
+  },
+  {
+    "id": 3,
+    "prompt": "Extreme macro close-up of a vintage mechanical keyboard with green monospaced terminal text reflected on the keycaps, shallow depth of field with bokeh lights in background, soft glow emanating from the Enter key, photorealistic macro photography style, color palette: terminal green, matte black, warm brass accents, deep shadow --ar 4:3 --style raw"
+  },
+  {
+    "id": 4,
+    "prompt": "Isometric illustration of a minimalist developer workspace: a glowing terminal window as the central hub, with elegant light-blue lines connecting to floating icons for documentation, code, and deployment, soft gradient background transitioning from deep navy to charcoal, clean vector art style with subtle gradients and soft shadows, color palette: electric blue, cyan, deep navy, soft white --ar 16:9 --style digital-art"
+  },
+  {
+    "id": 5,
+    "prompt": "Conceptual split composition: left side shows tangled, glowing Python strings with escape characters like knotted neon ropes; right side shows clean, organized file folders labeled `documentation/` with soft light breaking through, cinematic high-contrast lighting, photorealistic with magical realism touches, color palette: chaotic red/orange on left, calm teal/green on right, deep black background --ar 16:9 --style cinematic"
+  },
+  {
+    "id": 6,
+    "prompt": "A hand gently placing a simple text file into a folder labeled documentation/, warm golden light emanating from the file, soft-focus background showing a blurred code editor, shallow depth of field, film photography aesthetic with Kodak Portra tones, color palette: warm amber, soft cream, deep brown, terminal green accent --ar 4:3 --style film-photography"
+  },
+  {
+    "id": 7,
+    "prompt": "The get_base_path() Python function floating in 3D space with beautiful syntax highlighting (keywords in cyan, strings in amber, comments in soft gray), surrounded by subtle particle effects representing file paths converging on a folder icon, dark background with electric blue and cyan accent lighting, cyberpunk-minimalist style with clean lines and luminous details --ar 16:9 --style digital-art"
+  },
+  {
+    "id": 8,
+    "prompt": "Beautiful infographic-style flowchart: terminal icon → folder scan animation → menu generation → user selection → rendered output, connected by glowing light-blue pathways with subtle particle flow, soft gradient background transitioning from deep purple to teal, clean modern illustration style with soft shadows and luminous accents, color palette: deep purple, electric blue, cyan, soft white --ar 16:9 --style infographic"
+  },
+  {
+    "id": 9,
+    "prompt": "Side-by-side terminal comparison on a sleek monitor: left shows plain monochrome text on black background; right shows the same content beautifully rendered with Rich library - colorful panels, markdown tables, syntax-highlighted code - with a subtle luminous glow effect on the right side, dark theme, photorealistic monitor display with subtle screen reflections, color palette: terminal green, amber, cyan, deep black --ar 16:9 --style raw"
+  },
+  {
+    "id": 10,
+    "prompt": "Abstract representation of terminal enhancement: waves of color (emerald green, warm amber, electric cyan) flowing like liquid light over a grid of monospaced characters, forming elegant panels and highlights, digital art style with fluid dynamics and luminous particles, dark background with deep space aesthetic, color palette: emerald green, amber, cyan, deep navy with luminous accents --ar 16:9 --style artistic"
+  },
+  {
+    "id": 11,
+    "prompt": "Warm, contemplative portrait of an experienced developer (40s-50s) looking thoughtfully at a terminal screen, soft window light illuminating their face from the side, subtle reflection of clean code visible in their glasses, shallow depth of field with blurred background of bookshelves, film photography style with natural tones and soft contrast, color palette: warm skin tones, soft white light, deep wood browns, terminal green accent --ar 4:3 --style film-photography"
+  },
+  {
+    "id": 12,
+    "prompt": "Symbolic composition: a well-worn leather notebook open next to a sleek modern mechanical keyboard, with terminal output subtly reflected on the notebook's aged pages, golden hour lighting streaming through a window, shallow depth of field focusing on the notebook, photorealistic style with a touch of nostalgia, color palette: warm amber, aged leather brown, matte black keyboard, soft terminal green --ar 16:9 --style cinematic"
+  },
+  {
+    "id": 13,
+    "prompt": "Minimalist flat lay photography: a laptop showing the TerminalHelper menu with colorful Rich rendering, a printed cheat sheet beside it with handwritten notes, a ceramic cup of coffee with steam rising, all arranged on a warm wooden desk with soft natural light from a nearby window, overhead shot with slight angle, lifestyle photography style with soft shadows and natural textures, color palette: warm wood tones, soft white, terminal green, coffee brown --ar 16:9 --style lifestyle"
+  },
+  {
+    "id": 14,
+    "prompt": "Animated-style sequence panel: four elegant frames showing (1) terminal with git clone command, (2) hand adding a .md file to documentation folder, (3) app running with colorful menu, (4) developer smiling at clean terminal output - connected by subtle glowing arrows, soft pastel gradient background in lavender to mint, modern illustration style with soft shadows and luminous accents, color palette: soft lavender, mint green, warm amber, deep navy --ar 16:9 --style digital-art"
+  },
+  {
+    "id": 15,
+    "prompt": "GitHub contribution visualization: a glowing central repo icon for TerminalHelper, with elegant light-blue network lines connecting to small avatar silhouettes of diverse developers contributing forks and pull requests, subtle particle effects flowing along the connections, dark background with electric blue and green accent lighting, data visualization art style with luminous details, color palette: deep navy, electric blue, terminal green, soft white --ar 16:9 --style digital-art"
+  },
+  {
+    "id": 16,
+    "prompt": "Hands of diverse developers (different ages, skin tones, genders) each gently placing a documentation file into a shared central folder labeled `documentation/`, warm collaborative lighting from above creating soft highlights, shallow depth of field focusing on the hands and folder, photorealistic style with a hopeful, community-focused mood, color palette: warm skin tones, soft cream folder, terminal green accents, deep background --ar 4:3 --style cinematic"
+  },
+  {
+    "id": 17,
+    "prompt": "Abstract hopeful closing image: a single green terminal cursor blinking softly in a vast, calm dark space, with subtle particles of luminous light floating upward like fireflies or stars, minimalist digital art style with deep space aesthetic, gentle glow around the cursor, color palette: deep navy background, luminous terminal green cursor, soft white and amber particle accents --ar 16:9 --style artistic"
+  }
+]

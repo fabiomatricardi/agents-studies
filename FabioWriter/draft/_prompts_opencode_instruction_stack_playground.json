@@ -1,0 +1,82 @@
+[
+  {
+    "id": 1,
+    "prompt": "A developer at their desk, frustrated, staring at 47 open files in their code editor all needing fixes, warm amber desk lamp lighting, cinematic style, shallow depth of field showing chaos of broken code on screen --ar 16:9 --style cinematic"
+  },
+  {
+    "id": 2,
+    "prompt": "The same developer has a moment of clarity, light bulb turning on above their head, terminal screen showing a clean AGENTS.md file loading, warm to cool light transition, photorealistic --ar 16:9 --style raw"
+  },
+  {
+    "id": 3,
+    "prompt": "Abstract layered architecture diagram: user interaction at top, primary agent brain below, tool access layer, memory system with AGENTS.md glowing, extensibility layer with skills and commands icons, clean infographic style, deep navy and electric blue palette --ar 16:9 --style infographic"
+  },
+  {
+    "id": 4,
+    "prompt": "A floating document labeled AGENTS.md being loaded into an AI brain, golden light flowing into the neural network, symbolic representation of memory persistence, digital art style with luminous particles --ar 16:9 --style artistic"
+  },
+  {
+    "id": 5,
+    "prompt": "Close-up of a terminal showing the five AGENTS.md sections: Commands, Architecture Map, Hard Rules, Workflow Preferences, What NOT to Include - each section highlighted with color-coded borders, clean code editor aesthetic --ar 16:9 --style raw"
+  },
+  {
+    "id": 6,
+    "prompt": "A toolbox opening with modular compartments labeled Skills, each compartment glowing with different colored lights - domain knowledge, consistency, compounding, safety rails, photorealistic with warm lighting --ar 16:9 --style cinematic"
+  },
+  {
+    "id": 7,
+    "prompt": "Speed dial buttons on a phone, each labeled with slash commands like /create-skill /refactor /security, neon glow effect, dark background with electric cyan accents, digital art style --ar 16:9 --style digital-art"
+  },
+  {
+    "id": 8,
+    "prompt": "Gate or checkpoint on a coding highway, automated gate lowering each time code is written, green light passing through, symbolic of automated quality gates via hooks, cinematic lighting --ar 16:9 --style cinematic"
+  },
+  {
+    "id": 9,
+    "prompt": "Stack of transparent layers: conversations at top, commands flowing down, skills triggered by context, AGENTS.md as foundation, OpenCode core at bottom, 3D layered cake visualization, soft blue gradient background --ar 16:9 --style digital-art"
+  },
+  {
+    "id": 10,
+    "prompt": "Split comparison: left side Claude Code logo with CLAUDE.md, right side OpenCode logo with AGENTS.md, connecting wires showing they're functionally equivalent, technical diagram style --ar 16:9 --style infographic"
+  },
+  {
+    "id": 11,
+    "prompt": "Four golden rules written in elegant script floating above a code editor: clarify before acting, minimize changes, verify outputs, ask when unsure, each with a subtle glow, warm cinematic lighting --ar 16:9 --style cinematic"
+  },
+  {
+    "id": 12,
+    "prompt": "Timeline showing a developer's first week: Day 1 AGENTS.md foundation, Day 2 first command, Day 3 skills experiment, Day 4 hooks added, Day 5 iterate, calendar style with checkmarks, progressive disclosure concept --ar 16:9 --style infographic"
+  },
+  {
+    "id": 13,
+    "prompt": "Three parallel AI agents working simultaneously: one writing code, one researching API, one running tests - different colored streams converging, parallel processing visualization, digital art style with particle effects --ar 16:9 --style artistic"
+  },
+  {
+    "id": 14,
+    "prompt": "Warning signs blocking common mistakes: too much in AGENTS.md (encyclopedia icon), vague skill descriptions (fog), commands needing context (puzzle pieces), each with red warning tape, educational poster style --ar 16:9 --style infographic"
+  },
+  {
+    "id": 15,
+    "prompt": "Three distinct workspace setups: minimalist (40 lines), test-driven developer, enterprise CRM - each as a small diorama showing different AGENTS.md configurations, comparison gallery style --ar 16:9 --style digital-art"
+  },
+  {
+    "id": 16,
+    "prompt": "Amateur vs Professional: amateur handing a task to AI uncertainly vs professional with infrastructure controls, side by side comparison, documentary photography style with warm/cool color coding --ar 16:9 --style cinematic"
+  },
+  {
+    "id": 17,
+    "prompt": "Tiered pyramid showing progressive disclosure: tier 1 bare essentials (30 lines), tier 2 task-specific (skills, commands), tier 3 situational complexities - pyramid construction, clean vector style --ar 16:9 --style infographic"
+  },
+  {
+    "id": 18,
+    "prompt": "Real developer setup: .claude folder with AGENTS.md, settings.json, commands/, skills/, agents/ directories, files glowing softly, warm desk lamp lighting, photorealistic flat lay --ar 16:9 --style raw"
+  },
+  {
+    "id": 19,
+    "prompt": "Hopeful closing: developer walking away from desk toward bright window, terminal screen showing successful session with AGENTS.md working, golden hour light streaming in, narrative film photography style --ar 16:9 --style film-photography"
+  },
+  {
+    "id": 20,
+    "prompt": "Abstract road being built by AI, pavement made of configuration files (AGENTS.md, skills, commands), stretching toward horizon with glowing light, infrastructure metaphor for building better roads, digital art --ar 16:9 --style artistic"
+  }
+]

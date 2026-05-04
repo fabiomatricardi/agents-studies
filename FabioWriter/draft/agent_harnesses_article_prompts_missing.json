@@ -1,0 +1,18 @@
+[
+  {
+    "id": 19,
+    "prompt": "Metaphor: a ship captain (the person) at the wheel of their AI ship, the wheel is made of neural network patterns. The ship has modular interchangeable parts (sandbox, tools, execution). Ocean represents AI capability. Cinematic ship wheel photo with neural network wheel, dramatic lighting --ar 16:9 --style cinematic-metaphor"
+  },
+  {
+    "id": 20,
+    "prompt": "Split screen: left side shows ' MODEL = CPU' with brain icon, right side shows ' HARNESS = OS' with operating system layers. The 'equal' signs show they're both essential, technical diagram style with glowing neon outlines on dark background --ar 16:9 --style technical-split"
+  },
+  {
+    "id": 21,
+    "prompt": "Close-up of hands testing stress on an AI agent — feeding it bad inputs, making it plan 20+ steps, pushing boundaries. The agent glitches slightly but holds together like stress-tested material. Breaking point analysis visualization, dramatic close-up with tension lighting --ar 16:9 --style dramatic-closeup"
+  },
+  {
+    "id": 22,
+    "prompt": "Quick prototype three-panel comic: panel 1: 'pick a framework', panel 2: 'build simple agent', panel 3: 'break it on purpose'. Simple illustration style, instructional comic aesthetic with soft colors and clear arrows --ar 16:9 --style instructional-comic"
+  }
+]

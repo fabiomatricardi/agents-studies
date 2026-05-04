@@ -10,7 +10,7 @@ Display the Fabio Writer command reference:
 |---------|-------------|
 | `/style-setup` | Run Style setup workflow (one-time). Checks if style guide exists, creates if needed. |
 | `/write` | Start Write article workflow. Pick topic → draft TOC → write 4000-4500 words → move raw to processed/ |
-| `/refine` | Start Refine workflow. Check for contradictions, stale claims, orphaned concepts, add FLUX prompts |
+| `/refine` | Start Refine workflow. Check contradictions, stale claims, orphaned concepts → generate image prompts → run bulk_gen.py |
 | `/style-help` | Display this help message |
 
 ## Usage

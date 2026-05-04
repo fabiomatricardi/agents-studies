@@ -1,0 +1,90 @@
+[
+  {
+    "id": 1,
+    "prompt": "An abstract architectural diagram showing a simple request-response cycle transforming into a complex autonomous agent loop with multiple feedback arrows, filesystem access icons, and sub-agent coordination nodes connecting to a central brain. The transition from single arrow to circular multi-layered diagram represents the shift from simple prompts to autonomous agents. Dark background with neon cyan and amber accent lines, technical blueprint aesthetic, subtle glow effects on the agent loop --ar 16:9 --style technical-diagram"
+  },
+  {
+    "id": 2,
+    "prompt": "A sleek minimalist icon representing 'the harness' — a glowing mechanical harness/brake system wrapped around a brain icon, symbolizing infrastructure controlling AI execution. The harness has gear teeth on the edges, neural network patterns inside the brain, warm amber and cool cyan lighting split across the image, photorealistic 3D render with shallow depth of field --ar 16:9 --style 3d-render"
+  },
+  {
+    "id": 3,
+    "prompt": "Three distinct sleek pillars/towers in a glowing data center environment. Left tower: sealed vault door with Claude logo, golden light emanating. Middle tower: open blueprint with OpenAI logo, code symbols floating. Right tower: gears and chains with LangChain logo, green data streams. Connecting light beams between them, cinematic dark atmosphere with volumetric lighting, professional tech photography style --ar 16:9 --style cinematic-tech"
+  },
+  {
+    "id": 4,
+    "prompt": "Close-up of a high-tech vault door with 'Anthropic' glowing emblem, surrounded by floating secure data streams being proxy-filtered before entering. The vault has a glowing seal, ethereal security layer visible like force field, deep navy and gold color palette, photorealistic with subtle bokeh background of server racks, cinematic security visualization --ar 16:9 --style cinematic-security"
+  },
+  {
+    "id": 5,
+    "prompt": "Open-source illustration: a gear-wrapped chain forming the letters 'LC' with MIT license badge, code streams flowing through the gears like oil. The chain has semi-transparent sections showing 'free' inside but transitions to a locked enterprise building, contrast between open code and closed production, digital art style with luminescent green and locked gold --ar 16:9 --style digital-art"
+  },
+  {
+    "id": 6,
+    "prompt": "Developer hands holding an open laptop with 'OpenAI Agents SDK' manifested as code blocks and sandbox icons, showing developer ownership. The laptop sits on a wooden desk with natural window light, warm inviting atmosphere, the code glows with amber highlights, lifestyle tech photography style with soft shadows and natural lighting --ar 16:9 --style lifestyle-tech"
+  },
+  {
+    "id": 7,
+    "prompt": "Four circular icons arranged in a diamond pattern representing the four primitives: agent definition (person icon), session state (hourglass/clock icon), sandbox (container icon), credential isolation (lock icon). Glowing connection lines between each, neural network background, technical infographic style with neon cyan and amber accents on dark background --ar 16:9 --style infographic"
+  },
+  {
+    "id": 8,
+    "prompt": "A comparison chart visualized: left side shows simple 'you → LLM → response' flow, right side shows complex multi-node 'agent brain → tools → sandbox → state → credentials → results' circular loop. The right side glows with complexity, both sides in clean infographic style, professional blue-gray palette with amber highlights for the complex loop --ar 16:9 --style infographic"
+  },
+  {
+    "id": 9,
+    "prompt": "A warning sign with dollar symbol, showing runtime costs stacking up like bricks into a wall. Three brick columns: one labeled 'Claude $0.08/hr', one labeled 'LangChain $39/seat', one labeled 'OpenAI sandbox + tokens'. The wall threatens to collapse, dramatic lighting from below, photorealistic with slight surrealism --ar 16:9 --style surreal-warning"
+  },
+  {
+    "id": 10,
+    "prompt": "Spreadsheet visualization with three columns showing cost curves. Claude curve rises steeply after 150 hours, LangChain starts high at $39, OpenSDK stays relatively flat. The break-even point at 150-200 hours glows as a key milestone. Clean data visualization style with amber/cyan/green curves on dark background --ar 16:9 --style data-viz"
+  },
+  {
+    "id": 11,
+    "prompt": "Three trophy pedestals in winner's circle formation. Center (top): speed trophy labeled 'Claude' with lightning bolt. Left: flexibility trophy labeled 'LangChain' with multiple MODEL icons. Right: cost-savings trophy labeled 'OpenSDK' with dollar sign. Glowing spotlight on all three, celebration confetti in background, cinematic award ceremony lighting --ar 16:9 --style cinematic-award"
+  },
+  {
+    "id": 12,
+    "prompt": "Decision flow tree diagram: speed-to-market path → one road leads to glowing Claude vault. Model-agnosis path → branching roads lead to LangChain gears. Cost-predictability path → road leads to OpenSDK blueprint. Each path glows with color, dark background with wayfinding light style, illustrated map aesthetic --ar 16:9 --style illustrated-map"
+  },
+  {
+    "id": 13,
+    "prompt": "Security comparison: three layers of protection. Top layer: proxy pattern with shield and filters between user and sandbox. Middle layer: vault-to-sandbox injection showing vault icon → firewall → sandbox without model seeing secrets. Bottom layer: blank YOUR CALL with question mark, suggesting you decide. Color-coded: Claude gold, OpenSDK blue, LangChain green for 'your choice', infographic style --ar 16:9 --style infographic-security"
+  },
+  {
+    "id": 14,
+    "prompt": "A conceptual art piece showing credentials as golden keys being filtered through a proxy filter before reaching a sandbox container, representation of Claude's proxy pattern. The filter glows green for 'safe', keys turn to light beams, dark sci-fi aesthetic with data stream visualizations --ar 16:9 --style sci-fi-concept"
+  },
+  {
+    "id": 15,
+    "prompt": "OpenAI vault icon connecting to ephemeral sandbox workers via secure tunnel, the vault has Cloudflare/HashiCorp branding possibilities shown as generic secure vault. Light beams inject into temporary workers that vanish, showing ephemeral nature, clean security visualization with blue accent lighting --ar 16:9 --style security-viz"
+  },
+  {
+    "id": 16,
+    "prompt": "Two giant hands reaching toward each other — one labeled 'Anthropic MCP' with connecting cable, one labeled 'Linux Foundation AGENTS.md' — they clasp in the middle with a handshake. Two stars above them represent standardization. Warm cinematic lighting, hopeful mood, documentary photography style --ar 16:9 --style documentary"
+  },
+  {
+    "id": 17,
+    "prompt": "Abstract convergence: three colored rivers (Claude blue, OpenAI gold, LangChain green) flowing together into one unified sea labeled 'Standard Primitives'. REST API icon floating on the unified sea, representing the future convergence, digital art with flowing data streams and soft luminous particles --ar 16:9 --style artistic"
+  },
+  {
+    "id": 18,
+    "prompt": "A person at a desk with personal AI setup, looking at a glowing 'harness controls' panel with multiple toggles they can adjust. The desk shows modest hardware (poor GPU setup), the person smiles with control, warm golden hour desk setup photography, lifestyle tech aesthetic with amber and warm tones --ar 16:9 --style lifestyle"
+  },
+  {
+    "id": 19,
+    "prompt": "Metaphor: a ship captain (the person) at the wheel of their AI ship, the wheel is made of neural network patterns. The ship has modular interchangeable parts (sandbox, tools, execution). Ocean represents AI capability. Cinematic ship wheel photo with neural network wheel, dramatic lighting --ar 16:9 --style cinematic-metaphor"
+  },
+  {
+    "id": 20,
+    "prompt": "Split screen: left side shows ' MODEL = CPU' with brain icon, right side shows ' HARNESS = OS' with operating system layers. The 'equal' signs show they're both essential, technical diagram style with glowing neon outlines on dark background --ar 16:9 --style technical-split"
+  },
+  {
+    "id": 21,
+    "prompt": "Close-up of hands testing stress on an AI agent — feeding it bad inputs, making it plan 20+ steps, pushing boundaries. The agent glitches slightly but holds together like stress-tested material. Breaking point analysis visualization, dramatic close-up with tension lighting --ar 16:9 --style dramatic-closeup"
+  },
+  {
+    "id": 22,
+    "prompt": "Quick prototype three-panel comic: panel 1: 'pick a framework', panel 2: 'build simple agent', panel 3: 'break it on purpose'. Simple illustration style, instructional comic aesthetic with soft colors and clear arrows --ar 16:9 --style instructional-comic"
+  }
+]
