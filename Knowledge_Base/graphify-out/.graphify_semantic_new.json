@@ -1,0 +1,1456 @@
+{
+  "nodes": [
+    {
+      "id": "ai-gateways",
+      "label": "AI Gateways",
+      "file_type": "document",
+      "source_file": "wiki/ai-gateways.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "bifrost",
+      "label": "Bifrost",
+      "file_type": "document",
+      "source_file": "wiki/bifrost.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "bifrost-cli",
+      "label": "Bifrost-CLI",
+      "file_type": "document",
+      "source_file": "wiki/bifrost-cli.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "lite_llm",
+      "label": "LiteLLM",
+      "file_type": "document",
+      "source_file": "wiki/bifrost.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "llm_providers",
+      "label": "LLM Providers",
+      "file_type": "document",
+      "source_file": "wiki/ai-gateways.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "local_llms",
+      "label": "Local LLMs",
+      "file_type": "document",
+      "source_file": "wiki/ai-gateways.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "ai_usage_checklist",
+      "label": "AI Usage Checklist",
+      "file_type": "document",
+      "source_file": "wiki/ai-usage-checklist.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "knowledge_compounding",
+      "label": "Knowledge Compounding",
+      "file_type": "document",
+      "source_file": "wiki/ai-usage-checklist.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "llm_wiki_pattern",
+      "label": "LLM Wiki Pattern",
+      "file_type": "document",
+      "source_file": "wiki/ai-usage-checklist.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "coding_agents",
+      "label": "Coding Agents",
+      "file_type": "document",
+      "source_file": "wiki/coding-agents.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "opencode",
+      "label": "Opencode",
+      "file_type": "document",
+      "source_file": "wiki/bifrost-cli.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "claude_code",
+      "label": "Claude Code",
+      "file_type": "document",
+      "source_file": "wiki/bifrost-cli.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "codex_cli",
+      "label": "Codex CLI",
+      "file_type": "document",
+      "source_file": "wiki/bifrost-cli.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "gemini_cli",
+      "label": "Gemini CLI",
+      "file_type": "document",
+      "source_file": "wiki/bifrost-cli.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "mcp_servers",
+      "label": "MCP Servers",
+      "file_type": "document",
+      "source_file": "wiki/bifrost-cli.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "chain_of_thought",
+      "label": "Chain of Thought",
+      "file_type": "document",
+      "source_file": "wiki/chain-of-thought.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "hierarchical_reasoning_model",
+      "label": "Hierarchical Reasoning Model",
+      "file_type": "document",
+      "source_file": "wiki/hierarchical-reasoning-model.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "chunking",
+      "label": "Chunking",
+      "file_type": "document",
+      "source_file": "wiki/chunking.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "rag",
+      "label": "RAG",
+      "file_type": "document",
+      "source_file": "wiki/chunking.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "embeddings",
+      "label": "Embeddings",
+      "file_type": "document",
+      "source_file": "wiki/embeddings.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "contextual_retrieval",
+      "label": "Contextual Retrieval",
+      "file_type": "document",
+      "source_file": "wiki/contextual-retrieval.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "cosine_similarity",
+      "label": "Cosine Similarity",
+      "file_type": "document",
+      "source_file": "wiki/cosine-similarity.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "gemma_4",
+      "label": "Gemma 4",
+      "file_type": "document",
+      "source_file": "wiki/gemma-4.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "llama_cpp",
+      "label": "llama.cpp",
+      "file_type": "document",
+      "source_file": "wiki/bifrost.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "llama_server",
+      "label": "llama-server",
+      "file_type": "document",
+      "source_file": "wiki/gemma-4.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "gpu_poor_solutions",
+      "label": "GPU-Poor Solutions",
+      "file_type": "document",
+      "source_file": "wiki/gpu-poor-solutions.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "perplexica",
+      "label": "Perplexica",
+      "file_type": "document",
+      "source_file": "wiki/gemma-4.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "ollama",
+      "label": "Ollama",
+      "file_type": "document",
+      "source_file": "wiki/gpu-poor-solutions.md",
+      "source_location": null,
+      "contributor": null
+    },
+    {
+      "id": "gguf_format",
+      "label": "GGUF Format",
+      "file_type": "document",
+      "source_file": "wiki/gpu-poor-solutions.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "nvidia_nim",
+      "label": "NVIDIA NIM",
+      "file_type": "document",
+      "source_file": "wiki/gpu-poor-solutions.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "re_ranking",
+      "label": "Re-ranking",
+      "file_type": "document",
+      "source_file": "wiki/contextual-retrieval.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "vlvm",
+      "label": "vLLM",
+      "file_type": "document",
+      "source_file": "wiki/gpu-poor-solutions.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "knowledge_base_gaps",
+      "label": "Knowledge Base Gaps",
+      "file_type": "document",
+      "source_file": "wiki/knowledge-base-gaps.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "knowledge_compounding",
+      "label": "Knowledge Compounding",
+      "file_type": "rationale",
+      "source_file": "wiki/knowledge-compounding.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "llama_cli",
+      "label": "llama-cli",
+      "file_type": "document",
+      "source_file": "wiki/llama-cli.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "llama_cpp",
+      "label": "llama.cpp",
+      "file_type": "document",
+      "source_file": "wiki/llama-cpp.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "llama_server",
+      "label": "llama-server",
+      "file_type": "document",
+      "source_file": "wiki/llama-server.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "llm_providers",
+      "label": "LLM Providers",
+      "file_type": "document",
+      "source_file": "wiki/llm-providers.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "llm_wiki_pattern",
+      "label": "LLM Wiki Pattern",
+      "file_type": "rationale",
+      "source_file": "wiki/llm-wiki-pattern.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "local_llms",
+      "label": "Local LLMs",
+      "file_type": "document",
+      "source_file": "wiki/local-llms.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "log",
+      "label": "Knowledge Base Log",
+      "file_type": "document",
+      "source_file": "wiki/log.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "nvidia_nim",
+      "label": "NVIDIA NIM",
+      "file_type": "document",
+      "source_file": "wiki/nvidia-nim.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "opencode",
+      "label": "Opencode",
+      "file_type": "document",
+      "source_file": "wiki/opencode.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "rag_vs_llm_wiki",
+      "label": "RAG vs LLM Wiki",
+      "file_type": "document",
+      "source_file": "wiki/rag-vs-llm-wiki.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "rag",
+      "label": "RAG",
+      "file_type": "rationale",
+      "source_file": "wiki/rag.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "re_ranking",
+      "label": "Re-ranking",
+      "file_type": "rationale",
+      "source_file": "wiki/re-ranking.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    }
+  ],
+  "edges": [
+    {
+      "source": "bifrost",
+      "target": "ai-gateways",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "wiki/ai-gateways.md",
+      "source_location": 22,
+      "weight": 1.0
+    },
+    {
+      "source": "bifrost",
+      "target": "lite_llm",
+      "relation": "compares_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "wiki/bifrost.md",
+      "source_location": 31,
+      "weight": 1.0
+    },
+    {
+      "source": "bifrost",
+      "target": "llm_providers",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "wiki/bifrost.md",
+      "source_location": 15,
+      "weight": 1.0
+    },
+    {
+      "source": "bifrost",
+      "target": "local_llms",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "wiki/bifrost.md",
+      "source_location": 16,
+      "weight": 1.0
+    },
+    {
+      "source": "bifrost",
+      "target": "llama_cpp",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "wiki/bifrost.md",
+      "source_location": 47,
+      "weight": 1.0
+    },
+    {
+      "source": "bifrost_cli",
+      "target": "bifrost",
+      "relation": "connects_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "wiki/bifrost-cli.md",
+      "source_location": 43,
+      "weight": 1.0
+    },
+    {
+      "source": "bifrost_cli",
+      "target": "opencode",
+      "relation": "configures",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "wiki/bifrost-cli.md",
+      "source_location": 24,
+      "weight": 1.0
+    },
+    {
+      "source": "bifrost_cli",
+      "target": "claude_code",
+      "relation": "configures",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "wiki/bifrost-cli.md",
+      "source_location": 25,
+      "weight": 1.0
+    },
+    {
+      "source": "bifrost_cli",
+      "target": "codex_cli",
+      "relation": "configures",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "wiki/bifrost-cli.md",
+      "source_location": 26,
+      "weight": 1.0
+    },
+    {
+      "source": "bifrost_cli",
+      "target": "gemini_cli",
+      "relation": "configures",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "wiki/bifrost-cli.md",
+      "source_location": 27,
+      "weight": 1.0
+    },
+    {
+      "source": "bifrost_cli",
+      "target": "coding_agents",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "wiki/bifrost-cli.md",
+      "source_location": 44,
+      "weight": 1.0
+    },
+    {
+      "source": "bifrost_cli",
+      "target": "mcp_servers",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "wiki/bifrost-cli.md",
+      "source_location": 16,
+      "weight": 1.0
+    },
+    {
+      "source": "bifrost_cli",
+      "target": "ai-gateways",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "wiki/bifrost-cli.md",
+      "source_location": 43,
+      "weight": 1.0
+    },
+    {
+      "source": "bifrost",
+      "target": "bifrost_cli",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "wiki/bifrost.md",
+      "source_location": 14,
+      "weight": 1.0
+    },
+    {
+      "source": "bifrost",
+      "target": "coding_agents",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "wiki/bifrost.md",
+      "source_location": 17,
+      "weight": 1.0
+    },
+    {
+      "source": "bifrost",
+      "target": "opencode",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "wiki/bifrost.md",
+      "source_location": 45,
+      "weight": 1.0
+    },
+    {
+      "source": "coding_agents",
+      "target": "bifrost_cli",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "wiki/coding-agents.md",
+      "source_location": 20,
+      "weight": 1.0
+    },
+    {
+      "source": "coding_agents",
+      "target": "ai-gateways",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "wiki/coding-agents.md",
+      "source_location": 20,
+      "weight": 1.0
+    },
+    {
+      "source": "coding_agents",
+      "target": "bifrost",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "wiki/coding-agents.md",
+      "source_location": 20,
+      "weight": 1.0
+    },
+    {
+      "source": "coding_agents",
+      "target": "llm_providers",
+      "relation": "connects_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "wiki/coding-agents.md",
+      "source_location": 20,
+      "weight": 1.0
+    },
+    {
+      "source": "coding_agents",
+      "target": "local_llms",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "wiki/coding-agents.md",
+      "source_location": 26,
+      "weight": 1.0
+    },
+    {
+      "source": "coding_agents",
+      "target": "mcp_servers",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "wiki/coding-agents.md",
+      "source_location": 27,
+      "weight": 1.0
+    },
+    {
+      "source": "chain_of_thought",
+      "target": "hierarchical_reasoning_model",
+      "relation": "critiques",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "wiki/chain-of-thought.md",
+      "source_location": 28,
+      "weight": 1.0
+    },
+    {
+      "source": "hierarchical_reasoning_model",
+      "target": "chain_of_thought",
+      "relation": "improves_upon",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "wiki/hierarchical-reasoning-model.md",
+      "source_location": 13,
+      "weight": 1.0
+    },
+    {
+      "source": "hierarchical_reasoning_model",
+      "target": "local_llms",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "wiki/hierarchical-reasoning-model.md",
+      "source_location": 99,
+      "weight": 1.0
+    },
+    {
+      "source": "gemma_4",
+      "target": "local_llms",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "wiki/gemma-4.md",
+      "source_location": 119,
+      "weight": 1.0
+    },
+    {
+      "source": "gemma_4",
+      "target": "llama_cpp",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "wiki/gemma-4.md",
+      "source_location": 120,
+      "weight": 1.0
+    },
+    {
+      "source": "gemma_4",
+      "target": "llama_server",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "wiki/gemma-4.md",
+      "source_location": 121,
+      "weight": 1.0
+    },
+    {
+      "source": "gemma_4",
+      "target": "gpu_poor_solutions",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "wiki/gemma-4.md",
+      "source_location": 122,
+      "weight": 1.0
+    },
+    {
+      "source": "gemma_4",
+      "target": "perplexica",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "wiki/gemma-4.md",
+      "source_location": 107,
+      "weight": 1.0
+    },
+    {
+      "source": "gpu_poor_solutions",
+      "target": "hierarchical_reasoning_model",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "wiki/gpu-poor-solutions.md",
+      "source_location": 22,
+      "weight": 1.0
+    },
+    {
+      "source": "gpu_poor_solutions",
+      "target": "gemma_4",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "wiki/gpu-poor-solutions.md",
+      "source_location": 28,
+      "weight": 1.0
+    },
+    {
+      "source": "gpu_poor_solutions",
+      "target": "llama_cpp",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "wiki/gpu-poor-solutions.md",
+      "source_location": 39,
+      "weight": 1.0
+    },
+    {
+      "source": "gpu_poor_solutions",
+      "target": "llama_server",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "wiki/gpu-poor-solutions.md",
+      "source_location": 40,
+      "weight": 1.0
+    },
+    {
+      "source": "gpu_poor_solutions",
+      "target": "vlvm",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "wiki/gpu-poor-solutions.md",
+      "source_location": 41,
+      "weight": 1.0
+    },
+    {
+      "source": "gpu_poor_solutions",
+      "target": "ollama",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "wiki/gpu-poor-solutions.md",
+      "source_location": 58,
+      "weight": 1.0
+    },
+    {
+      "source": "gpu_poor_solutions",
+      "target": "gguf_format",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "wiki/gpu-poor-solutions.md",
+      "source_location": 79,
+      "weight": 1.0
+    },
+    {
+      "source": "gpu_poor_solutions",
+      "target": "nvidia_nim",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "wiki/gpu-poor-solutions.md",
+      "source_location": 80,
+      "weight": 1.0
+    },
+    {
+      "source": "gpu_poor_solutions",
+      "target": "local_llms",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "wiki/gpu-poor-solutions.md",
+      "source_location": 76,
+      "weight": 1.0
+    },
+    {
+      "source": "chunking",
+      "target": "rag",
+      "relation": "serves",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "wiki/chunking.md",
+      "source_location": 48,
+      "weight": 1.0
+    },
+    {
+      "source": "chunking",
+      "target": "embeddings",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "wiki/chunking.md",
+      "source_location": 49,
+      "weight": 1.0
+    },
+    {
+      "source": "chunking",
+      "target": "contextual_retrieval",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "wiki/chunking.md",
+      "source_location": 50,
+      "weight": 1.0
+    },
+    {
+      "source": "embeddings",
+      "target": "cosine_similarity",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "wiki/embeddings.md",
+      "source_location": 33,
+      "weight": 1.0
+    },
+    {
+      "source": "embeddings",
+      "target": "rag",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "wiki/embeddings.md",
+      "source_location": 34,
+      "weight": 1.0
+    },
+    {
+      "source": "embeddings",
+      "target": "contextual_retrieval",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "wiki/embeddings.md",
+      "source_location": 36,
+      "weight": 1.0
+    },
+    {
+      "source": "cosine_similarity",
+      "target": "embeddings",
+      "relation": "compares",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "wiki/cosine-similarity.md",
+      "source_location": 32,
+      "weight": 1.0
+    },
+    {
+      "source": "cosine_similarity",
+      "target": "rag",
+      "relation": "powers",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "wiki/cosine-similarity.md",
+      "source_location": 19,
+      "weight": 1.0
+    },
+    {
+      "source": "contextual_retrieval",
+      "target": "rag",
+      "relation": "enhances",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "wiki/contextual-retrieval.md",
+      "source_location": 62,
+      "weight": 1.0
+    },
+    {
+      "source": "contextual_retrieval",
+      "target": "embeddings",
+      "relation": "improves",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "wiki/contextual-retrieval.md",
+      "source_location": 63,
+      "weight": 1.0
+    },
+    {
+      "source": "contextual_retrieval",
+      "target": "re_ranking",
+      "relation": "complements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "wiki/contextual-retrieval.md",
+      "source_location": 64,
+      "weight": 1.0
+    },
+    {
+      "source": "ai_usage_checklist",
+      "target": "knowledge_compounding",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "wiki/ai-usage-checklist.md",
+      "source_location": 73,
+      "weight": 1.0
+    },
+    {
+      "source": "ai_usage_checklist",
+      "target": "llm_wiki_pattern",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "wiki/ai-usage-checklist.md",
+      "source_location": 74,
+      "weight": 1.0
+    },
+    {
+      "source": "hierarchical_reasoning_model",
+      "target": "gpu_poor_solutions",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "wiki/hierarchical-reasoning-model.md",
+      "source_location": 95,
+      "weight": 1.0
+    },
+    {
+      "source": "chain_of_thought",
+      "target": "rag",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.7,
+      "source_file": "wiki/chain-of-thought.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "bifrost",
+      "target": "ollama",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.7,
+      "source_file": "wiki/bifrost.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "gemma_4",
+      "target": "nvidia_nim",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.65,
+      "source_file": "wiki/gemma-4.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "llm_providers",
+      "target": "nvidia_nim",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.7,
+      "source_file": "wiki/gpu-poor-solutions.md",
+      "source_location": 53,
+      "weight": 1.0
+    },
+    {
+      "source": "llama_cli",
+      "target": "llama_cpp",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "wiki/llama-cli.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "llama_cli",
+      "target": "llama_server",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "wiki/llama-cli.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "llama_cpp",
+      "target": "llama_cli",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "wiki/llama-cpp.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "llama_cpp",
+      "target": "llama_server",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "wiki/llama-cpp.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "llama_cpp",
+      "target": "local_llms",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "wiki/llama-cpp.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "llama_server",
+      "target": "llama_cpp",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "wiki/llama-server.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "llama_server",
+      "target": "llama_cli",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "wiki/llama-server.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "llama_server",
+      "target": "local_llms",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "wiki/llama-server.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "local_llms",
+      "target": "llama_cpp",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "wiki/local-llms.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "local_llms",
+      "target": "llama_cli",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "wiki/local-llms.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "local_llms",
+      "target": "llama_server",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "wiki/local-llms.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "local_llms",
+      "target": "llm_providers",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "wiki/local-llms.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "llm_providers",
+      "target": "nvidia_nim",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "wiki/llm-providers.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "llm_providers",
+      "target": "local_llms",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "wiki/llm-providers.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "nvidia_nim",
+      "target": "llm_providers",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "wiki/nvidia-nim.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "llm_wiki_pattern",
+      "target": "knowledge_compounding",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "wiki/llm-wiki-pattern.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "llm_wiki_pattern",
+      "target": "rag_vs_llm_wiki",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "wiki/llm-wiki-pattern.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "knowledge_compounding",
+      "target": "llm_wiki_pattern",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "wiki/knowledge-compounding.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "knowledge_compounding",
+      "target": "rag_vs_llm_wiki",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "wiki/knowledge-compounding.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "rag_vs_llm_wiki",
+      "target": "llm_wiki_pattern",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "wiki/rag-vs-llm-wiki.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "rag_vs_llm_wiki",
+      "target": "rag",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "wiki/rag-vs-llm-wiki.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "rag_vs_llm_wiki",
+      "target": "knowledge_compounding",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "wiki/rag-vs-llm-wiki.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "rag",
+      "target": "rag_vs_llm_wiki",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "wiki/rag.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "rag",
+      "target": "re_ranking",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "wiki/rag.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "re_ranking",
+      "target": "rag",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "wiki/re-ranking.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "opencode",
+      "target": "llm_providers",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "wiki/opencode.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "llm_wiki_pattern",
+      "target": "rag",
+      "relation": "semantically_similar_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "wiki/llm-wiki-pattern.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "rag",
+      "target": "knowledge_compounding",
+      "relation": "semantically_similar_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.7,
+      "source_file": "wiki/rag.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "llama_cpp",
+      "target": "llm_providers",
+      "relation": "semantically_similar_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.75,
+      "source_file": "wiki/llama-cpp.md",
+      "source_location": null,
+      "weight": 1.0
+    }
+  ],
+  "hyperedges": [
+    {
+      "id": "rag_system_components",
+      "label": "RAG System Components",
+      "nodes": [
+        "chunking",
+        "embeddings",
+        "contextual_retrieval",
+        "cosine_similarity",
+        "re_ranking",
+        "rag"
+      ],
+      "relation": "form",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "wiki/chunking.md"
+    },
+    {
+      "id": "local_ai_infrastructure",
+      "label": "Local AI Infrastructure",
+      "nodes": [
+        "llama_cpp",
+        "llama_server",
+        "ollama",
+        "gemma_4",
+        "local_llms",
+        "gpu_poor_solutions"
+      ],
+      "relation": "participate_in",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "wiki/gemma-4.md"
+    },
+    {
+      "id": "reasoning_approaches",
+      "label": "Reasoning Approaches",
+      "nodes": [
+        "chain_of_thought",
+        "hierarchical_reasoning_model",
+        "contextual_retrieval"
+      ],
+      "relation": "form",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "wiki/chain-of-thought.md"
+    },
+    {
+      "id": "llama_cpp_ecosystem",
+      "label": "llama.cpp Ecosystem Components",
+      "nodes": [
+        "llama_cpp",
+        "llama_cli",
+        "llama_server"
+      ],
+      "relation": "form",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "wiki/llama-cpp.md"
+    },
+    {
+      "id": "knowledge_management_architecture",
+      "label": "LLM Wiki Pattern Architecture",
+      "nodes": [
+        "llm_wiki_pattern",
+        "knowledge_compounding",
+        "rag_vs_llm_wiki"
+      ],
+      "relation": "form",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "wiki/llm-wiki-pattern.md"
+    },
+    {
+      "id": "rag_enhancement_pipeline",
+      "label": "RAG Enhancement Pipeline",
+      "nodes": [
+        "rag",
+        "re_ranking"
+      ],
+      "relation": "form",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "wiki/rag.md"
+    }
+  ],
+  "input_tokens": 0,
+  "output_tokens": 0
+}

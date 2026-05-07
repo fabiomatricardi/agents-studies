@@ -90,9 +90,36 @@ Process:
 5. Update wiki/index.md with any new entries
 6. Log action in wiki/log.md
 
+### //graphify
+Build or query a knowledge graph from the project files.
+
+Usage:
+- `//graphify` - Build knowledge graph for current directory
+- `//graphify . --update` - Incrementally update existing graph
+- `//graphify query "question"` - Query the graph (requires existing graph.json)
+- `//graphify path "Concept A" "Concept B"` - Find shortest path between concepts
+- `//graphify explain "Concept"` - Explain a concept and its neighbors
+
+When invoked:
+1. Use the Skill tool to load the graphify skill: `skill: "graphify"`
+2. Follow the skill's step-by-step instructions
+3. If no LLM API key is set, run AST-only extraction or inform the user
+
+Note: Requires an LLM API key (OPENAI_API_KEY, ANTHROPIC_API_KEY, etc.) for full semantic extraction. AST extraction works without API keys.
+
 The critical loop: good answers compound in the knowledge base just like ingested sources do. Every question makes the next answer better.
 
 Example high-value questions:
 - "What are the three biggest gaps in this knowledge base?"
 - "Which sources disagree with each other, and on what?"
 - "Write a 500-word briefing on [topic] using only wiki content"
+
+## graphify
+
+This project has a graphify knowledge graph at graphify-out/.
+
+Rules:
+- Before answering architecture or codebase questions, read graphify-out/GRAPH_REPORT.md for god nodes and community structure
+- If graphify-out/wiki/index.md exists, navigate it instead of reading raw files
+- For cross-module "how does X relate to Y" questions, prefer `graphify query "<question>"`, `graphify path "<A>" "<B>"`, or `graphify explain "<concept>"` over grep — these traverse the graph's EXTRACTED + INFERRED edges instead of scanning files
+- After modifying code files in this session, run `graphify update .` to keep the graph current (AST-only, no API cost)

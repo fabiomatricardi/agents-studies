@@ -1,0 +1,13 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "command": {
+    "graphify": {
+      "description": "Build or query a knowledge graph from any folder of files",
+      "subtask": true,
+      "template": "Load the graphify skill: skill({ name: \"graphify\" })"
+    }
+  },
+  "plugin": [
+    ".opencode/plugins/graphify.js"
+  ]
+}

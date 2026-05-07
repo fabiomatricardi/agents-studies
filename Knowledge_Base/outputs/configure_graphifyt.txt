@@ -1,0 +1,53 @@
+# Install graphify on loca project
+> requires global install already done as per python installation
+
+$ graphify opencode install
+graphify section written to C:\FABIO-AI\Agent_projects\Knowledge_Base\AGENTS.md
+  .opencode\plugins\graphify.js  ->  tool.execute.before hook written
+  .opencode\opencode.json  ->  plugin registered
+
+Opencode will now check the knowledge graph before answering
+codebase questions and rebuild it after code changes.
+
+
+# change AGENTS.ms
+
+> add custom invoke and update the /help (optional)
+
+### //wiki-help
+Lists all available custom commands with brief descriptions.
+**Usage:** `//wiki-help`
+
+**Behavior:**
+1. Read AGENTS.md Custom Commands section
+2. Display list of all commands with their descriptions
+
+**Available commands:**
+- `//wiki-list` - Lists unprocessed source files in raw/ for ingestion
+- `//wiki-explore` - Finds gaps and research opportunities in the knowledge base
+- `//wiki-lint` - Runs monthly health checks on the wiki
+- `//wiki-pdf` - Converts PDF sources to markdown for ingestion
+- `//wiki-help` - Lists all available commands (this command)
+- `/graphify` - Turn any folder into a knowledge graph with community detection
+
+### //graphify
+Turns any folder into a knowledge graph with community detection and audit trail.
+
+**Usage:** `/graphify [path] [--options]`
+
+**Behavior:**
+1. Invoke the Skill tool with `skill: "graphify"` — pass through the full invocation
+2. Follows the workflow in .opencode/skills/graphify/SKILL.md
+
+**Options:**
+- `--mode deep` - Thorough extraction, richer INFERRED edges
+- `--update` - Incremental: re-extract only new/changed files
+- `--cluster-only` - Re-run clustering on existing graph
+- `--no-viz` - Skip visualization, just report + JSON
+- `--svg` - Also export graph.svg
+- `--neo4j` - Generate cypher.txt for Neo4j import
+
+**Query subcommands:**
+- `/graphify query "<question>"` - BFS traversal to answer questions
+- `/graphify path "NodeA" "NodeB"` - Find shortest path between concepts
+- `/graphify explain "<concept>"` - Plain-language explanation of a node

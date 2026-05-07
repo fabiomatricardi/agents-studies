@@ -1,0 +1,441 @@
+{
+  "directed": false,
+  "multigraph": false,
+  "graph": {},
+  "nodes": [
+    {
+      "label": "Gguf",
+      "file_type": "document",
+      "source_file": "wiki/GGUF.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "GGUF_pagenode",
+      "community": 1,
+      "norm_label": "gguf"
+    },
+    {
+      "label": "Gguf Quantization Guide",
+      "file_type": "document",
+      "source_file": "wiki/GGUF_Quantization_Guide.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "GGUF_Quantization_Guide_pagenode",
+      "community": 0,
+      "norm_label": "gguf quantization guide"
+    },
+    {
+      "label": "Index",
+      "file_type": "document",
+      "source_file": "wiki/index.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "index_pagenode",
+      "community": 0,
+      "norm_label": "index"
+    },
+    {
+      "label": "Iq Formats",
+      "file_type": "document",
+      "source_file": "wiki/IQ_Formats.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "IQ_Formats_pagenode",
+      "community": 0,
+      "norm_label": "iq formats"
+    },
+    {
+      "label": "Knowledge Gaps",
+      "file_type": "document",
+      "source_file": "wiki/Knowledge_Gaps.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "Knowledge_Gaps_pagenode",
+      "community": 2,
+      "norm_label": "knowledge gaps"
+    },
+    {
+      "label": "K Formats",
+      "file_type": "document",
+      "source_file": "wiki/K_Formats.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "K_Formats_pagenode",
+      "community": 0,
+      "norm_label": "k formats"
+    },
+    {
+      "label": "Llm Wiki Pattern",
+      "file_type": "document",
+      "source_file": "wiki/LLM_Wiki_Pattern.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "LLM_Wiki_Pattern_pagenode",
+      "community": 2,
+      "norm_label": "llm wiki pattern"
+    },
+    {
+      "label": "Log",
+      "file_type": "document",
+      "source_file": "wiki/log.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "log_pagenode",
+      "community": 2,
+      "norm_label": "log"
+    },
+    {
+      "label": "Markdown",
+      "file_type": "document",
+      "source_file": "wiki/Markdown.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "Markdown_pagenode",
+      "community": 1,
+      "norm_label": "markdown"
+    },
+    {
+      "label": "Quantization",
+      "file_type": "document",
+      "source_file": "wiki/Quantization.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "Quantization_pagenode",
+      "community": 1,
+      "norm_label": "quantization"
+    },
+    {
+      "label": "Quantization Formats",
+      "file_type": "document",
+      "source_file": "wiki/Quantization_Formats.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "Quantization_Formats_pagenode",
+      "community": 0,
+      "norm_label": "quantization formats"
+    },
+    {
+      "label": "Qwen3.5 Local Guide",
+      "file_type": "document",
+      "source_file": "wiki/Qwen3.5_Local_Guide.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "Qwen3.5_Local_Guide_pagenode",
+      "community": 0,
+      "norm_label": "qwen3.5 local guide"
+    },
+    {
+      "label": "Stop Chasing Ai Benchmarks Be The Benchmark",
+      "file_type": "document",
+      "source_file": "wiki/Stop chasing AI benchmarks Be the Benchmark.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "Stop chasing AI benchmarks Be the Benchmark_pagenode",
+      "community": 3,
+      "norm_label": "stop chasing ai benchmarks be the benchmark"
+    },
+    {
+      "label": "The Smallest 8B Model Ever Created Is Not Really A",
+      "file_type": "document",
+      "source_file": "wiki/The smallest 8B model ever created is not really a.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "The smallest 8B model ever created is not really a_pagenode",
+      "community": 4,
+      "norm_label": "the smallest 8b model ever created is not really a"
+    }
+  ],
+  "links": [
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "wiki/GGUF_Quantization_Guide.md",
+      "source": "GGUF_Quantization_Guide_pagenode",
+      "target": "GGUF_pagenode"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "wiki/K_Formats.md",
+      "source": "K_Formats_pagenode",
+      "target": "GGUF_pagenode"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.6,
+      "source_file": "wiki/Markdown.md",
+      "source": "Markdown_pagenode",
+      "target": "GGUF_pagenode"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "wiki/Quantization.md",
+      "source": "Quantization_pagenode",
+      "target": "GGUF_pagenode"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "wiki/Quantization_Formats.md",
+      "source": "Quantization_Formats_pagenode",
+      "target": "GGUF_pagenode"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "wiki/Qwen3.5_Local_Guide.md",
+      "source": "Qwen3.5_Local_Guide_pagenode",
+      "target": "GGUF_pagenode"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "wiki/index.md",
+      "source": "index_pagenode",
+      "target": "GGUF_Quantization_Guide_pagenode"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "wiki/GGUF_Quantization_Guide.md",
+      "source": "GGUF_Quantization_Guide_pagenode",
+      "target": "Quantization_pagenode"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "wiki/IQ_Formats.md",
+      "source": "IQ_Formats_pagenode",
+      "target": "GGUF_Quantization_Guide_pagenode"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "wiki/GGUF_Quantization_Guide.md",
+      "source": "GGUF_Quantization_Guide_pagenode",
+      "target": "K_Formats_pagenode"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "wiki/Quantization_Formats.md",
+      "source": "Quantization_Formats_pagenode",
+      "target": "GGUF_Quantization_Guide_pagenode"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "wiki/Qwen3.5_Local_Guide.md",
+      "source": "Qwen3.5_Local_Guide_pagenode",
+      "target": "GGUF_Quantization_Guide_pagenode"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "wiki/index.md",
+      "source": "index_pagenode",
+      "target": "Quantization_Formats_pagenode"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "wiki/index.md",
+      "source": "index_pagenode",
+      "target": "Qwen3.5_Local_Guide_pagenode"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "wiki/index.md",
+      "source": "index_pagenode",
+      "target": "Knowledge_Gaps_pagenode"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "wiki/log.md",
+      "source": "log_pagenode",
+      "target": "index_pagenode"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "wiki/K_Formats.md",
+      "source": "K_Formats_pagenode",
+      "target": "IQ_Formats_pagenode"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "wiki/Quantization.md",
+      "source": "Quantization_pagenode",
+      "target": "IQ_Formats_pagenode"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "wiki/Quantization_Formats.md",
+      "source": "Quantization_Formats_pagenode",
+      "target": "IQ_Formats_pagenode"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "wiki/Knowledge_Gaps.md",
+      "source": "Knowledge_Gaps_pagenode",
+      "target": "LLM_Wiki_Pattern_pagenode"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "wiki/log.md",
+      "source": "log_pagenode",
+      "target": "Knowledge_Gaps_pagenode"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "wiki/Knowledge_Gaps.md",
+      "source": "Knowledge_Gaps_pagenode",
+      "target": "Quantization_Formats_pagenode"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "wiki/Knowledge_Gaps.md",
+      "source": "Knowledge_Gaps_pagenode",
+      "target": "Quantization_pagenode"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "wiki/Quantization.md",
+      "source": "Quantization_pagenode",
+      "target": "K_Formats_pagenode"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "wiki/Quantization_Formats.md",
+      "source": "Quantization_Formats_pagenode",
+      "target": "K_Formats_pagenode"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "wiki/Qwen3.5_Local_Guide.md",
+      "source": "Qwen3.5_Local_Guide_pagenode",
+      "target": "K_Formats_pagenode"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.7,
+      "source_file": "wiki/LLM_Wiki_Pattern.md",
+      "source": "LLM_Wiki_Pattern_pagenode",
+      "target": "Markdown_pagenode"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "wiki/log.md",
+      "source": "log_pagenode",
+      "target": "LLM_Wiki_Pattern_pagenode"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.6,
+      "source_file": "wiki/Markdown.md",
+      "source": "Markdown_pagenode",
+      "target": "Quantization_pagenode"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "wiki/Quantization.md",
+      "source": "Quantization_pagenode",
+      "target": "Quantization_Formats_pagenode"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "wiki/Qwen3.5_Local_Guide.md",
+      "source": "Qwen3.5_Local_Guide_pagenode",
+      "target": "Quantization_Formats_pagenode"
+    }
+  ],
+  "hyperedges": [],
+  "built_at_commit": "0d47cb3871dc5fc067813ad514970008f31f8d09"
+}

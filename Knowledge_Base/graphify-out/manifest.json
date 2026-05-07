@@ -1,0 +1,114 @@
+{
+  "C:\\FABIO-AI\\Agent_projects\\Knowledge_Base\\wiki\\ai-gateways.md": {
+    "mtime": 1776420633.6727924,
+    "hash": "effafd1911140e08bdcb7a82a0fa2616"
+  },
+  "C:\\FABIO-AI\\Agent_projects\\Knowledge_Base\\wiki\\ai-usage-checklist.md": {
+    "mtime": 1776524912.2098682,
+    "hash": "8cd28ce85a185b57f0aceb9c354f7297"
+  },
+  "C:\\FABIO-AI\\Agent_projects\\Knowledge_Base\\wiki\\bifrost-cli.md": {
+    "mtime": 1776420621.2207067,
+    "hash": "984a4d82965ba16424f98d72c1ce5787"
+  },
+  "C:\\FABIO-AI\\Agent_projects\\Knowledge_Base\\wiki\\bifrost.md": {
+    "mtime": 1776420604.4072666,
+    "hash": "806aae2b056386fc5975503ff3acf1ef"
+  },
+  "C:\\FABIO-AI\\Agent_projects\\Knowledge_Base\\wiki\\chain-of-thought.md": {
+    "mtime": 1776524813.9732502,
+    "hash": "ad3d72e207446b35244e71f68800b5e5"
+  },
+  "C:\\FABIO-AI\\Agent_projects\\Knowledge_Base\\wiki\\chunking.md": {
+    "mtime": 1776524459.7331278,
+    "hash": "64858f1eba1422dd871b9a48a9a66623"
+  },
+  "C:\\FABIO-AI\\Agent_projects\\Knowledge_Base\\wiki\\coding-agents.md": {
+    "mtime": 1776420649.1911583,
+    "hash": "9b5a2ee95b92eaaa79ad0a2f024ab2e3"
+  },
+  "C:\\FABIO-AI\\Agent_projects\\Knowledge_Base\\wiki\\contextual-retrieval.md": {
+    "mtime": 1776524289.917002,
+    "hash": "bf451e721c19b1d6006a8988993e4764"
+  },
+  "C:\\FABIO-AI\\Agent_projects\\Knowledge_Base\\wiki\\cosine-similarity.md": {
+    "mtime": 1776523910.7477677,
+    "hash": "4266bc0a0bd721304539f479012b911e"
+  },
+  "C:\\FABIO-AI\\Agent_projects\\Knowledge_Base\\wiki\\embeddings.md": {
+    "mtime": 1776524313.7029734,
+    "hash": "ff6876d33dd7ad05a4c46e886650bde2"
+  },
+  "C:\\FABIO-AI\\Agent_projects\\Knowledge_Base\\wiki\\gemma-4.md": {
+    "mtime": 1776686137.1566083,
+    "hash": "58dc404564e33d456c90f237aca0d92f"
+  },
+  "C:\\FABIO-AI\\Agent_projects\\Knowledge_Base\\wiki\\gpu-poor-solutions.md": {
+    "mtime": 1776686202.3908136,
+    "hash": "8ed00373e6657a8dd4dac5cc85e1290e"
+  },
+  "C:\\FABIO-AI\\Agent_projects\\Knowledge_Base\\wiki\\hierarchical-reasoning-model.md": {
+    "mtime": 1776524774.0587049,
+    "hash": "3b5c25122936ad3844e6283e913112e3"
+  },
+  "C:\\FABIO-AI\\Agent_projects\\Knowledge_Base\\wiki\\index.md": {
+    "mtime": 1776686153.352916,
+    "hash": "58457808823f4c884d5849d78cf8c79d"
+  },
+  "C:\\FABIO-AI\\Agent_projects\\Knowledge_Base\\wiki\\knowledge-base-gaps.md": {
+    "mtime": 1776525171.2983634,
+    "hash": "6beb0bf8e0237d3810efd6951b4ac05f"
+  },
+  "C:\\FABIO-AI\\Agent_projects\\Knowledge_Base\\wiki\\knowledge-compounding.md": {
+    "mtime": 1776498744.738887,
+    "hash": "39ab7f48ebe020e3712cb301a029c803"
+  },
+  "C:\\FABIO-AI\\Agent_projects\\Knowledge_Base\\wiki\\llama-cli.md": {
+    "mtime": 1776499746.3262475,
+    "hash": "f4a038835800fe4cce6dc673f4d98e4b"
+  },
+  "C:\\FABIO-AI\\Agent_projects\\Knowledge_Base\\wiki\\llama-cpp.md": {
+    "mtime": 1776499743.0476418,
+    "hash": "9363702cdc95c3d332f6e222f0e76da0"
+  },
+  "C:\\FABIO-AI\\Agent_projects\\Knowledge_Base\\wiki\\llama-server.md": {
+    "mtime": 1776499759.1373074,
+    "hash": "27b3d2af3a701fecbec1b7b599f667b2"
+  },
+  "C:\\FABIO-AI\\Agent_projects\\Knowledge_Base\\wiki\\llm-providers.md": {
+    "mtime": 1776604440.7092626,
+    "hash": "e277e76165289a32712429a13f4a2a18"
+  },
+  "C:\\FABIO-AI\\Agent_projects\\Knowledge_Base\\wiki\\llm-wiki-pattern.md": {
+    "mtime": 1776498719.6824863,
+    "hash": "ef716364aae8bc09ba30bf55fae7827d"
+  },
+  "C:\\FABIO-AI\\Agent_projects\\Knowledge_Base\\wiki\\local-llms.md": {
+    "mtime": 1776686234.2290556,
+    "hash": "b6b578e3ee417d7bd3ea2d1e73d9edb9"
+  },
+  "C:\\FABIO-AI\\Agent_projects\\Knowledge_Base\\wiki\\log.md": {
+    "mtime": 1776686255.381895,
+    "hash": "eed58cda99e56d9022f176b8316469cd"
+  },
+  "C:\\FABIO-AI\\Agent_projects\\Knowledge_Base\\wiki\\nvidia-nim.md": {
+    "mtime": 1776604396.932288,
+    "hash": "9aec04734858028be7497ccc63817643"
+  },
+  "C:\\FABIO-AI\\Agent_projects\\Knowledge_Base\\wiki\\opencode.md": {
+    "mtime": 1776420640.428,
+    "hash": "8f1f441f4493a5d8131f4bef26478e17"
+  },
+  "C:\\FABIO-AI\\Agent_projects\\Knowledge_Base\\wiki\\rag-vs-llm-wiki.md": {
+    "mtime": 1776498771.9837978,
+    "hash": "4df45624203af3df8e9500e40d2b3dca"
+  },
+  "C:\\FABIO-AI\\Agent_projects\\Knowledge_Base\\wiki\\rag.md": {
+    "mtime": 1776524451.569267,
+    "hash": "4d87b7ccfc7aa624887de48d08ab44d1"
+  },
+  "C:\\FABIO-AI\\Agent_projects\\Knowledge_Base\\wiki\\re-ranking.md": {
+    "mtime": 1776524323.3543499,
+    "hash": "8c0d92cd06390513aa3aa619b3ede698"
+  }
+}

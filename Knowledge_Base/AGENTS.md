@@ -152,3 +152,26 @@ Lists all available custom commands with brief descriptions.
 - `//wiki-lint` - Runs monthly health checks on the wiki
 - `//wiki-pdf` - Converts PDF sources to markdown for ingestion
 - `//wiki-help` - Lists all available commands (this command)
+- `/graphify` - Turn any folder into a knowledge graph with community detection
+
+### //graphify
+Turns any folder into a knowledge graph with community detection and audit trail.
+
+**Usage:** `/graphify [path] [--options]`
+
+**Behavior:**
+1. Invoke the Skill tool with `skill: "graphify"` — pass through the full invocation
+2. Follows the workflow in .opencode/skills/graphify/SKILL.md
+
+**Options:**
+- `--mode deep` - Thorough extraction, richer INFERRED edges
+- `--update` - Incremental: re-extract only new/changed files
+- `--cluster-only` - Re-run clustering on existing graph
+- `--no-viz` - Skip visualization, just report + JSON
+- `--svg` - Also export graph.svg
+- `--neo4j` - Generate cypher.txt for Neo4j import
+
+**Query subcommands:**
+- `/graphify query "<question>"` - BFS traversal to answer questions
+- `/graphify path "NodeA" "NodeB"` - Find shortest path between concepts
+- `/graphify explain "<concept>"` - Plain-language explanation of a node

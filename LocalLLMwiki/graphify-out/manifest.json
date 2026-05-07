@@ -1,0 +1,410 @@
+{
+  "C:\\FABIO-AI\\Agent_projects\\LocalLLMwiki\\ingest-pdf.py": {
+    "mtime": 1776521131.3732376,
+    "hash": "64d14228db4dd40e732dc8696735cc8e"
+  },
+  "C:\\FABIO-AI\\Agent_projects\\LocalLLMwiki\\AGENTS.md": {
+    "mtime": 1778080943.6228414,
+    "hash": "767e4573b0cb46eb78af4475745a781a"
+  },
+  "C:\\FABIO-AI\\Agent_projects\\LocalLLMwiki\\raw\\2025-09-25 16.12.51 Editing The hidden Logic in AI system prompts Me.txt": {
+    "mtime": 1758787981.409,
+    "hash": "427fb74d335f0c923e65bdf87cba5fff"
+  },
+  "C:\\FABIO-AI\\Agent_projects\\LocalLLMwiki\\raw\\2025-09-26 13.17.21 What If AI Outgrows Our Myths Humans survive on .txt": {
+    "mtime": 1758863854.24,
+    "hash": "f0885c2ccfcefff0542b134bbde6a14e"
+  },
+  "C:\\FABIO-AI\\Agent_projects\\LocalLLMwiki\\raw\\2025-09-26 13.17.38 What Dead Philosophers Can Teach Us About the Futu.txt": {
+    "mtime": 1758863860.247,
+    "hash": "fc21045f8ea9bde505d52d2aecc579d1"
+  },
+  "C:\\FABIO-AI\\Agent_projects\\LocalLLMwiki\\raw\\2025-09-27 11.01.54 Ctrl Think Issue 8 Substa.txt": {
+    "mtime": 1758942169.662,
+    "hash": "3f1feb7117d368ed2db1609b9b36aa39"
+  },
+  "C:\\FABIO-AI\\Agent_projects\\LocalLLMwiki\\raw\\2025-09-27 13.33.18 From Prompts to Context The AI Revolution That s .txt": {
+    "mtime": 1758951205.025,
+    "hash": "e6e56038d1493387bbc7ede872cda0da"
+  },
+  "C:\\FABIO-AI\\Agent_projects\\LocalLLMwiki\\raw\\2025-09-27 13.33.31  Activation Steering The Zero Training Revoluti.txt": {
+    "mtime": 1758951213.365,
+    "hash": "0fb9ccccbe5a6b8a8ba604db4c03fd7a"
+  },
+  "C:\\FABIO-AI\\Agent_projects\\LocalLLMwiki\\raw\\2025-09-27 13.40.33 Text to LoRA AI That Fine Tunes Other AI Using Ju.txt": {
+    "mtime": 1758951637.393,
+    "hash": "363d6a0afbe7f14324d99c3941ed7b23"
+  },
+  "C:\\FABIO-AI\\Agent_projects\\LocalLLMwiki\\raw\\2025-09-27 17.18.33 T5Gemma.txt": {
+    "mtime": 1758964726.751,
+    "hash": "a770fa58ced33f96a48c6dbd1db97717"
+  },
+  "C:\\FABIO-AI\\Agent_projects\\LocalLLMwiki\\raw\\2025-10-05 09.48.20 The power of System messages Prompt engineering .txt": {
+    "mtime": 1759628905.487,
+    "hash": "4a464391acdce3adc4ddc0c61eb72a4a"
+  },
+  "C:\\FABIO-AI\\Agent_projects\\LocalLLMwiki\\raw\\2025-10-05 09.49.11 The hidden Logic in AI system prompts by Fabio M.txt": {
+    "mtime": 1759628953.885,
+    "hash": "af1e2c4df602556688babd827988d7d6"
+  },
+  "C:\\FABIO-AI\\Agent_projects\\LocalLLMwiki\\raw\\2025-10-05 09.50.08 Editing The Prompt that stops your local AI from t.txt": {
+    "mtime": 1759629011.184,
+    "hash": "1d5e1781a109c091ad9fdb185aed0cf8"
+  },
+  "C:\\FABIO-AI\\Agent_projects\\LocalLLMwiki\\raw\\2025-10-05 09.51.02 Editing Why you should start using system promptin.txt": {
+    "mtime": 1759629063.88,
+    "hash": "4240af19a5d83777c92cd06aff1f7a96"
+  },
+  "C:\\FABIO-AI\\Agent_projects\\LocalLLMwiki\\raw\\2025-10-05 17.58.39 Why Enterprises can t hire AI Agents by Steve Jo.txt": {
+    "mtime": 1759658326.972,
+    "hash": "fecc99081f6cfc0c387d0f1688b6635a"
+  },
+  "C:\\FABIO-AI\\Agent_projects\\LocalLLMwiki\\raw\\2025-10-23 18.37.24  When will superintelligence happen is the wrong.txt": {
+    "mtime": 1761226655.1,
+    "hash": "bffb46a3b9b75f575b3610c283f5342e"
+  },
+  "C:\\FABIO-AI\\Agent_projects\\LocalLLMwiki\\raw\\2025.08.10-LLMhallucinations.md": {
+    "mtime": 1754810729.21,
+    "hash": "8a38cda9d2231d9870cbaba8828e046b"
+  },
+  "C:\\FABIO-AI\\Agent_projects\\LocalLLMwiki\\raw\\2025.08.13.studyTheCraft.md": {
+    "mtime": 1759496401.061,
+    "hash": "8dd209c7048968e6304e7a477876ae82"
+  },
+  "C:\\FABIO-AI\\Agent_projects\\LocalLLMwiki\\raw\\20250810-Prompt-fools-AIdetector.txt": {
+    "mtime": 1754814605.832,
+    "hash": "e51647ef2f2df8947fe7a7c62c92780d"
+  },
+  "C:\\FABIO-AI\\Agent_projects\\LocalLLMwiki\\raw\\20250810-Prompt_flow-fromothersToMine.md": {
+    "mtime": 1754816117.014,
+    "hash": "a11229ba1ef2d86e11cc5cdc6f997b30"
+  },
+  "C:\\FABIO-AI\\Agent_projects\\LocalLLMwiki\\raw\\AI Frankenstein is alive part 1 by Fabio Matri.txt": {
+    "mtime": 1775724604.0,
+    "hash": "9d2593330a23fca683f2c3ccd3b648d8"
+  },
+  "C:\\FABIO-AI\\Agent_projects\\LocalLLMwiki\\raw\\AI Isn t The Problem You Are .txt": {
+    "mtime": 1776193498.8254323,
+    "hash": "231f430ee372ed0832034b7b1f606bbb"
+  },
+  "C:\\FABIO-AI\\Agent_projects\\LocalLLMwiki\\raw\\Andrej Karpathy Killed RAG. Or Did He_ The LLM Wiki Pattern.md": {
+    "mtime": 1776765404.604154,
+    "hash": "3ad8abb91b3faee2b804d34158e22ad4"
+  },
+  "C:\\FABIO-AI\\Agent_projects\\LocalLLMwiki\\raw\\Are you too a Poor GPU guy Here s how to run 400B.txt": {
+    "mtime": 1775724464.0,
+    "hash": "2cc44309edd897b7af98b3ac551df0c9"
+  },
+  "C:\\FABIO-AI\\Agent_projects\\LocalLLMwiki\\raw\\Beyond RAG How Andrej Karpathy s LLM Wiki Pattern.txt": {
+    "mtime": 1776191486.7756174,
+    "hash": "d3d92849254c8537e4812dbec15d368d"
+  },
+  "C:\\FABIO-AI\\Agent_projects\\LocalLLMwiki\\raw\\Bifrost CLI is the AI gateway for coding agents we.txt": {
+    "mtime": 1775724278.0,
+    "hash": "7b688224b9dac9bc566fb17e61a55f6f"
+  },
+  "C:\\FABIO-AI\\Agent_projects\\LocalLLMwiki\\raw\\Bifrost_AI_Gateway_README.md": {
+    "mtime": 1776184062.0860267,
+    "hash": "43373b5e7ee7f08c62bf4380b0ca112e"
+  },
+  "C:\\FABIO-AI\\Agent_projects\\LocalLLMwiki\\raw\\bm25-kword-semantic_retrieval.md": {
+    "mtime": 1763397717.568417,
+    "hash": "17fbcf029e6f85594f66622c72f7d178"
+  },
+  "C:\\FABIO-AI\\Agent_projects\\LocalLLMwiki\\raw\\Chocolatey for Python AI enthusiasts how to tur.txt": {
+    "mtime": 1775724784.0,
+    "hash": "e1812fd85bbe484df71c73c747635e90"
+  },
+  "C:\\FABIO-AI\\Agent_projects\\LocalLLMwiki\\raw\\Gemma 4 on the Edge high performance AI for the .txt": {
+    "mtime": 1775724350.0,
+    "hash": "8f3c4301088bbe3d2a810b8338062acd"
+  },
+  "C:\\FABIO-AI\\Agent_projects\\LocalLLMwiki\\raw\\How I Boosted RAG Retrieval Recall.txt": {
+    "mtime": 1757569208.683,
+    "hash": "30f0e5ab64a22f3f06b47ed4638d0403"
+  },
+  "C:\\FABIO-AI\\Agent_projects\\LocalLLMwiki\\raw\\I Used Claude Code to Build a Personal Knowledge B.txt": {
+    "mtime": 1776191298.5030782,
+    "hash": "40fb9612ea61ba89c50a8d8628e1a732"
+  },
+  "C:\\FABIO-AI\\Agent_projects\\LocalLLMwiki\\raw\\Ipython_cheatsheet.md": {
+    "mtime": 1776184708.6705506,
+    "hash": "90fc82ef1f2bc3848d3b3b743a0db7af"
+  },
+  "C:\\FABIO-AI\\Agent_projects\\LocalLLMwiki\\raw\\January 2026 AI discoveries ThePoorGPUguy journey.txt": {
+    "mtime": 1775724745.0,
+    "hash": "847cf7d142dc9c82c101ff6d3d30325d"
+  },
+  "C:\\FABIO-AI\\Agent_projects\\LocalLLMwiki\\raw\\karpathy's second brain and  how to build it.md": {
+    "mtime": 1776183514.409896,
+    "hash": "8e865e103be121464b0eb51581867a35"
+  },
+  "C:\\FABIO-AI\\Agent_projects\\LocalLLMwiki\\raw\\karpathy_LLMwiki_gist_README.md": {
+    "mtime": 1776191760.9008105,
+    "hash": "e3244beb1ebd5818419ddf54bfd9e066"
+  },
+  "C:\\FABIO-AI\\Agent_projects\\LocalLLMwiki\\raw\\llama CPP restyle is the workshop for your Local A.txt": {
+    "mtime": 1775724871.0,
+    "hash": "678193a558b582f43b80e4a75b9df881"
+  },
+  "C:\\FABIO-AI\\Agent_projects\\LocalLLMwiki\\raw\\llama.cpp_BUILD_README.md": {
+    "mtime": 1776184009.3533351,
+    "hash": "1ee1a06b19ff17a95e7e500fa078c359"
+  },
+  "C:\\FABIO-AI\\Agent_projects\\LocalLLMwiki\\raw\\llama.cpp_README.md": {
+    "mtime": 1776183875.7078226,
+    "hash": "dc66e2fd7af49319dda304c37a865d69"
+  },
+  "C:\\FABIO-AI\\Agent_projects\\LocalLLMwiki\\raw\\llamaCPP_README_docker.md": {
+    "mtime": 1776148742.9650314,
+    "hash": "ab962bfb05e58db4c3a95a6654ea3182"
+  },
+  "C:\\FABIO-AI\\Agent_projects\\LocalLLMwiki\\raw\\llamaCPP_README_function-calling.md": {
+    "mtime": 1776148742.9806507,
+    "hash": "cec51387cf239badd452af488bf88e66"
+  },
+  "C:\\FABIO-AI\\Agent_projects\\LocalLLMwiki\\raw\\llamaCPP_README_multimodal.md": {
+    "mtime": 1776148742.9806507,
+    "hash": "1d860299835bb43b2818981a2aa0d9c5"
+  },
+  "C:\\FABIO-AI\\Agent_projects\\LocalLLMwiki\\raw\\LLM knows the future.md": {
+    "mtime": 1754555716.356,
+    "hash": "c884642ab91e00c837fc90f7ce360f27"
+  },
+  "C:\\FABIO-AI\\Agent_projects\\LocalLLMwiki\\raw\\Markdown is the king of AI Why you should use it .txt": {
+    "mtime": 1775724637.0,
+    "hash": "c7a195767eaa7289bfc81c4a7f691080"
+  },
+  "C:\\FABIO-AI\\Agent_projects\\LocalLLMwiki\\raw\\Questions Every Heavy AI User Should Ask.txt": {
+    "mtime": 1776192869.8098266,
+    "hash": "8db7905919e34f330514c5f735f2f7ca"
+  },
+  "C:\\FABIO-AI\\Agent_projects\\LocalLLMwiki\\raw\\SERIES RAG that works why chunking is a human job.md": {
+    "mtime": 1768759895.88,
+    "hash": "2740ff483b5d5f7ecd15646ab0714e8b"
+  },
+  "C:\\FABIO-AI\\Agent_projects\\LocalLLMwiki\\raw\\Stop chasing AI benchmarks Be the Benchmark by.txt": {
+    "mtime": 1775724823.0,
+    "hash": "ffc9e815b3737f2e2186edea68d5cac0"
+  },
+  "C:\\FABIO-AI\\Agent_projects\\LocalLLMwiki\\raw\\Text-to-LoRA.txt": {
+    "mtime": 1776627736.648749,
+    "hash": "e9f187b22f137aa9678427c4691f5b45"
+  },
+  "C:\\FABIO-AI\\Agent_projects\\LocalLLMwiki\\raw\\The smallest 8B model ever created is not really a.txt": {
+    "mtime": 1775724408.0,
+    "hash": "c8f708cd41af5c4770b76d5b3b54d5fb"
+  },
+  "C:\\FABIO-AI\\Agent_projects\\LocalLLMwiki\\raw\\Your AI your rules a free fully local Perplexity .txt": {
+    "mtime": 1775724536.0,
+    "hash": "8f72748cad5792c286ea981a6c982a87"
+  },
+  "C:\\FABIO-AI\\Agent_projects\\LocalLLMwiki\\raw\\Your CPU is NOT Broken the hidden Truth about GGU.txt": {
+    "mtime": 1775724564.0,
+    "hash": "7e24f61f46a0483a96955cc4cb2d9e82"
+  },
+  "C:\\FABIO-AI\\Agent_projects\\LocalLLMwiki\\wiki\\GGUF.md": {
+    "mtime": 1776054779.5180247,
+    "hash": "de26a5629832f55295a8be9d592459d0"
+  },
+  "C:\\FABIO-AI\\Agent_projects\\LocalLLMwiki\\wiki\\GGUF_Quantization_Guide.md": {
+    "mtime": 1776045754.5281105,
+    "hash": "c6ef8ac1d5735693f655e25f18c5e972"
+  },
+  "C:\\FABIO-AI\\Agent_projects\\LocalLLMwiki\\wiki\\index.md": {
+    "mtime": 1776765694.1324182,
+    "hash": "6c85dedec05d6a2355a6450731afd0e3"
+  },
+  "C:\\FABIO-AI\\Agent_projects\\LocalLLMwiki\\wiki\\IQ_Formats.md": {
+    "mtime": 1776055529.7123768,
+    "hash": "98996fc1c5ce02fc363d772235e99bea"
+  },
+  "C:\\FABIO-AI\\Agent_projects\\LocalLLMwiki\\wiki\\Knowledge_Gaps.md": {
+    "mtime": 1776765717.1831298,
+    "hash": "01a7a3133bec88ad0d249f08a3ea2094"
+  },
+  "C:\\FABIO-AI\\Agent_projects\\LocalLLMwiki\\wiki\\K_Formats.md": {
+    "mtime": 1776055873.6373498,
+    "hash": "d171445c90e25d524067fc959dd44a16"
+  },
+  "C:\\FABIO-AI\\Agent_projects\\LocalLLMwiki\\wiki\\LLM_Wiki_Pattern.md": {
+    "mtime": 1776765679.3523169,
+    "hash": "aaa6110c960e37262b80b8354d8b72c1"
+  },
+  "C:\\FABIO-AI\\Agent_projects\\LocalLLMwiki\\wiki\\log.md": {
+    "mtime": 1776765759.1680312,
+    "hash": "841e96f6b24b990c55a59f78cf098c0a"
+  },
+  "C:\\FABIO-AI\\Agent_projects\\LocalLLMwiki\\wiki\\Markdown.md": {
+    "mtime": 1776276789.4569252,
+    "hash": "61486a74a06092991fa457c88dcb6f12"
+  },
+  "C:\\FABIO-AI\\Agent_projects\\LocalLLMwiki\\wiki\\Quantization.md": {
+    "mtime": 1776055173.5304406,
+    "hash": "3a287ee3cb54b6f296583f1ccbfc69b3"
+  },
+  "C:\\FABIO-AI\\Agent_projects\\LocalLLMwiki\\wiki\\Quantization_Formats.md": {
+    "mtime": 1776050625.4903355,
+    "hash": "303abc39c4e7e07cf33d1e18c969a447"
+  },
+  "C:\\FABIO-AI\\Agent_projects\\LocalLLMwiki\\wiki\\Qwen3.5_Local_Guide.md": {
+    "mtime": 1776056238.8669434,
+    "hash": "09ef02cbbd1115a52dda26a8398bfaff"
+  },
+  "C:\\FABIO-AI\\Agent_projects\\LocalLLMwiki\\wiki\\Stop chasing AI benchmarks Be the Benchmark.md": {
+    "mtime": 1776261680.289362,
+    "hash": "164252e9a96974107785a605091d9025"
+  },
+  "C:\\FABIO-AI\\Agent_projects\\LocalLLMwiki\\wiki\\The smallest 8B model ever created is not really a.md": {
+    "mtime": 1776267411.9570568,
+    "hash": "7dbe9cd03000b072b15e4d8beb9c31a7"
+  },
+  "C:\\FABIO-AI\\Agent_projects\\LocalLLMwiki\\raw\\1764262839218.MASTERING.RAG.pdf": {
+    "mtime": 1764315137.7905552,
+    "hash": "61d3aeacc6c2b9e72fbc9dde793d05f4"
+  },
+  "C:\\FABIO-AI\\Agent_projects\\LocalLLMwiki\\raw\\202509.similarity_search_with_llamacpp_2025-09-05.pdf": {
+    "mtime": 1757049358.847,
+    "hash": "030caea4e9614da82ab89591a4213c48"
+  },
+  "C:\\FABIO-AI\\Agent_projects\\LocalLLMwiki\\raw\\23 Questions Every Heavy AI User Should Ask.pdf": {
+    "mtime": 1776193133.8551147,
+    "hash": "1ee8e0f0684ac07a56118caac3c829be"
+  },
+  "C:\\FABIO-AI\\Agent_projects\\LocalLLMwiki\\raw\\2506.06105v2_arxiv_text to lora_t2l.pdf": {
+    "mtime": 1758090004.963,
+    "hash": "7d3f865df2fb5d82103ea10cb3ac6aba"
+  },
+  "C:\\FABIO-AI\\Agent_projects\\LocalLLMwiki\\raw\\2506.21734v3 Hirearchical Reasoning Model.pdf": {
+    "mtime": 1754467477.807,
+    "hash": "1cba58fb34b58d9b1d7f77a38eab10c0"
+  },
+  "C:\\FABIO-AI\\Agent_projects\\LocalLLMwiki\\raw\\AI Just Hit a Wall. This Model Smashed Right Through It.pdf": {
+    "mtime": 1754466974.065,
+    "hash": "b8345ed2e15d0b66bc6cbd22ac205052"
+  },
+  "C:\\FABIO-AI\\Agent_projects\\LocalLLMwiki\\raw\\AI Just Learned to Code Like a Human And It Changes Everything _ by Rohit Kumar Thakur _ Jun, 2025 _ Medium.pdf": {
+    "mtime": 1751098206.23,
+    "hash": "841c1f4ffbdbff3d7344b2a406c620f6"
+  },
+  "C:\\FABIO-AI\\Agent_projects\\LocalLLMwiki\\raw\\AI Structured Output_ Beginner Guide.pdf": {
+    "mtime": 1754643492.2,
+    "hash": "021b6318a8a29f83a5461ba409d5017a"
+  },
+  "C:\\FABIO-AI\\Agent_projects\\LocalLLMwiki\\raw\\AIgentsFail.pdf": {
+    "mtime": 1750196810.0,
+    "hash": "a709224cde3a2536e03baa1529e26a37"
+  },
+  "C:\\FABIO-AI\\Agent_projects\\LocalLLMwiki\\raw\\AI\u2019s abundance_ dream or distraction.pdf": {
+    "mtime": 1751177293.302,
+    "hash": "0a54cdda2e89c30b116e71b5d7a7b3ba"
+  },
+  "C:\\FABIO-AI\\Agent_projects\\LocalLLMwiki\\raw\\Another week, another AI Revolution\u2026 Seriously.pdf": {
+    "mtime": 1751177121.679,
+    "hash": "422655ba0f639e49a8bfafaea23b31dc"
+  },
+  "C:\\FABIO-AI\\Agent_projects\\LocalLLMwiki\\raw\\AutomationHandbook-rev05.pdf": {
+    "mtime": 1758845716.708,
+    "hash": "34641a11d43056f45cd8040f81df730b"
+  },
+  "C:\\FABIO-AI\\Agent_projects\\LocalLLMwiki\\raw\\Blaming embeddings is blaming the entire AI game.pdf": {
+    "mtime": 1751177018.934,
+    "hash": "4635feecb5ed34d9551f71e50dde3aaa"
+  },
+  "C:\\FABIO-AI\\Agent_projects\\LocalLLMwiki\\raw\\CEOs and Futurists are building the Future on This Skill\u2026 _ by Gaurav Shrivastav _ Aug, 2025 _ Medium.pdf": {
+    "mtime": 1754296049.277,
+    "hash": "30880ffaa39a6b16dce8eb3b913eb03b"
+  },
+  "C:\\FABIO-AI\\Agent_projects\\LocalLLMwiki\\raw\\Dream 7B _ HKU NLP Group.pdf": {
+    "mtime": 1746405435.417,
+    "hash": "dc1279d9fb6ae823bc8fd40c0092a54e"
+  },
+  "C:\\FABIO-AI\\Agent_projects\\LocalLLMwiki\\raw\\God of Prompt on X_ _\ud83d\udd11 karpathy's second brain_ how to build it_ _ X.pdf": {
+    "mtime": 1775726266.291729,
+    "hash": "af3a7f3c779e8bb2e0de1d8b10641a07"
+  },
+  "C:\\FABIO-AI\\Agent_projects\\LocalLLMwiki\\raw\\Has MIT Solved AI Adaptation_ _ Medium.pdf": {
+    "mtime": 1751098032.494,
+    "hash": "3665240eddc77f45cc076130706b06f6"
+  },
+  "C:\\FABIO-AI\\Agent_projects\\LocalLLMwiki\\raw\\Hierarchical Reasoning Model (HRM).pdf": {
+    "mtime": 1754467114.28,
+    "hash": "fe561b03a6e5fb491500d1dfe61446c4"
+  },
+  "C:\\FABIO-AI\\Agent_projects\\LocalLLMwiki\\raw\\Hierarchical Reasoning Model_ Ultra-Efficient, Brain-Inspired AI.pdf": {
+    "mtime": 1754467270.643,
+    "hash": "ad119346c6bbb04ce5e2ec22ded279ef"
+  },
+  "C:\\FABIO-AI\\Agent_projects\\LocalLLMwiki\\raw\\How I Boosted RAG Retrieval Recall.pdf": {
+    "mtime": 1753772313.252,
+    "hash": "3f68bcfcb71d412ebc9dc4ea7710fafd"
+  },
+  "C:\\FABIO-AI\\Agent_projects\\LocalLLMwiki\\raw\\How to stop your LLM from glazing you _ by Simon Thornewill von Essen _ Aug, 2025 _ Artificial Intelligence in Plain English.pdf": {
+    "mtime": 1754295828.836,
+    "hash": "fac81b6e346883cb9a5c31dd3f13ae08"
+  },
+  "C:\\FABIO-AI\\Agent_projects\\LocalLLMwiki\\raw\\How to Use AI Without Letting It Think for You.pdf": {
+    "mtime": 1753687846.241,
+    "hash": "4a6c6eec9efda6687e52d53020408fd9"
+  },
+  "C:\\FABIO-AI\\Agent_projects\\LocalLLMwiki\\raw\\I Built a System that Brought 2M Views and 16,000 Subscribers. Here\u2019s the Full Breakdown_.pdf": {
+    "mtime": 1775199814.4652977,
+    "hash": "7b093f39c157291edf4af27af95aeae2"
+  },
+  "C:\\FABIO-AI\\Agent_projects\\LocalLLMwiki\\raw\\Inside the Minds of AI by R. Thompson.pdf": {
+    "mtime": 1753683384.074,
+    "hash": "00e194b82a9803821ab9a6699f5b8e6a"
+  },
+  "C:\\FABIO-AI\\Agent_projects\\LocalLLMwiki\\raw\\Is RAG Dead__ Anthropic Says No.pdf": {
+    "mtime": 1753773102.591,
+    "hash": "5acce831e46bb2c0f144498b28169dfe"
+  },
+  "C:\\FABIO-AI\\Agent_projects\\LocalLLMwiki\\raw\\MIT scanned people using ChatGPT. The results are alarming. _ by Samuel Z. Alemayehu _ Jun, 2025 _ Medium.pdf": {
+    "mtime": 1751098107.724,
+    "hash": "34e4f2ff25532bc2259f7564e2d007e0"
+  },
+  "C:\\FABIO-AI\\Agent_projects\\LocalLLMwiki\\raw\\Ollama's new app \u00b7 Ollama Blog.pdf": {
+    "mtime": 1754806902.514,
+    "hash": "1daf4ad07652cb9cd928055079cc38b6"
+  },
+  "C:\\FABIO-AI\\Agent_projects\\LocalLLMwiki\\raw\\Persona Vectors_ How Scientists Cracked the Code to Control AI Personality.pdf": {
+    "mtime": 1754889915.709,
+    "hash": "6bd39709c377f4a62bb5288e55181d18"
+  },
+  "C:\\FABIO-AI\\Agent_projects\\LocalLLMwiki\\raw\\POST RWKV Language Model.pdf": {
+    "mtime": 1746405435.44,
+    "hash": "cd56776a5f000375a4a4e297ddf397ed"
+  },
+  "C:\\FABIO-AI\\Agent_projects\\LocalLLMwiki\\raw\\Qwen3_ Think Deeper, Act Faster _ Qwen.pdf": {
+    "mtime": 1746405435.489,
+    "hash": "175b56179f1d6a97270730f7a05e3d8c"
+  },
+  "C:\\FABIO-AI\\Agent_projects\\LocalLLMwiki\\raw\\RAG_ What Nobody Tells You When Building Your AI Assistant.pdf": {
+    "mtime": 1751098160.793,
+    "hash": "d511b8fb1e8729ac38f56ec5b7fb2520"
+  },
+  "C:\\FABIO-AI\\Agent_projects\\LocalLLMwiki\\raw\\The Unilingual Intelligence_ Are We Building an AI with a Monocultural Mind.pdf": {
+    "mtime": 1754363867.044,
+    "hash": "d3cb81f57fa0abea3158702538bf72af"
+  },
+  "C:\\FABIO-AI\\Agent_projects\\LocalLLMwiki\\raw\\This New AI is 100x Faster at Reasoning Than ChatGPT.pdf": {
+    "mtime": 1754467209.387,
+    "hash": "acd5aea581f996e138728a7b9d514e0c"
+  },
+  "C:\\FABIO-AI\\Agent_projects\\LocalLLMwiki\\raw\\Unlocking the Power of Local LLMs with Ollama Desktop Apps _ by Gary Svenson _ Jul, 2025 _ Medium.pdf": {
+    "mtime": 1754284865.713,
+    "hash": "9ef16ea17ccf04542573c2bad134a850"
+  },
+  "C:\\FABIO-AI\\Agent_projects\\LocalLLMwiki\\raw\\What All Top AI Labs Are WrongAbout. _ Medium.pdf": {
+    "mtime": 1753773240.698,
+    "hash": "7a488b76e43f13e0431d00969feb1b9e"
+  },
+  "C:\\FABIO-AI\\Agent_projects\\LocalLLMwiki\\raw\\Why Abundance Means New Masters.pdf": {
+    "mtime": 1754555988.791,
+    "hash": "b9e2a1a06694b294b22cbeb0683ffa84"
+  },
+  "C:\\FABIO-AI\\Agent_projects\\LocalLLMwiki\\raw\\Why Most AI Products areScams _ Medium.pdf": {
+    "mtime": 1754814474.308,
+    "hash": "db6897da576f144a8a652519bca16bb4"
+  }
+}
