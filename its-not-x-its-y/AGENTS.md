@@ -24,3 +24,9 @@ This is the workspace for "The Poor GPU guy" - articles and code about running A
 - First person voice, strong stances
 - No empty neutrality
 - Variable paragraph length
+
+## Skills
+
+# audit
+- **audit** - Audit draft articles against Fabio Matricardi voice and style rules from about-me.md. Trigger: /audit
+When the user types /audit, invoke the Skill tool with skill: "audit" before doing anything else.

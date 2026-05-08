@@ -1,0 +1,13 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "permission": {
+    "webfetch": "allow",
+    "websearch": "allow"
+  },
+  "command": {
+    "audit": {
+      "description": "Audit a draft article against the VOICE DNA writing rules",
+      "template": "Execute the Audit workflow using the skill in .opencode/skills/audit/SKILL.md"
+    }
+  }
+}
